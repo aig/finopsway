@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FinOpsWay - Databricks cost, with the lag drawn in</title>
+  <title>FinOpsWay - Databricks cost in your workspace navigation</title>
   <meta name="description"
-    content="A free browser extension that puts Databricks cost in the workspace top navigation, scoped to the page you are on. Billing reports on a lag; FinOpsWay ends its window where the data actually ends and draws the missing hours as missing." />
+    content="A free browser extension that shows Databricks cost in the workspace top navigation, for the page you are on. Billing data arrives with a delay, so FinOpsWay shows how recent its numbers are and marks the hours that are not reported yet." />
   <!-- Relative, not root-absolute: this is a project page served from
          /finopsway/, so a leading slash would 404. -->
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
@@ -51,7 +51,7 @@
           <span class="clk-time" id="clk-now">13:42</span>
         </div>
         <div class="clk clk-known">
-          <span class="clk-label">Your bill's clock</span>
+          <span class="clk-label">Latest billing data</span>
           <span class="clk-time" id="clk-known">11:00</span>
         </div>
         <div class="clk clk-gap">
@@ -61,25 +61,24 @@
       </div>
 
       <div class="timeline" role="img"
-        aria-label="A timeline of the last day: most of it reported by billing, the last couple of hours hatched because nobody has data for them yet">
+        aria-label="A timeline of the last day: most of it covered by billing data, the last couple of hours hatched because billing has not reported them yet">
         <div class="timebar">
           <span class="timebar-known"></span>
           <span class="timebar-gap"></span>
         </div>
         <div class="timelabels">
           <span class="timelabels-known">reported by billing</span>
-          <span class="timelabels-gap">nobody knows yet</span>
+          <span class="timelabels-gap">not reported yet</span>
         </div>
       </div>
 
-      <h1>Every cost tool hides those hours. This one draws them.</h1>
+      <h1>See your Databricks cost, and how recent it is.</h1>
       <p class="standfirst">
-        Databricks billing reports on a lag, so a window that ends at
-        <em>now</em> is part empty by construction. FinOpsWay is a free
-        browser extension that puts one number in your workspace navigation,
-        scoped to the page you are on, and ends its window where the data
-        actually ends. The missing hours are hatched, never padded with
-        silence.
+        Databricks billing data arrives a few hours late, so any "last 24
+        hours" figure is missing its most recent hours. FinOpsWay is a free
+        browser extension that shows the cost of the page you are on in the
+        workspace navigation. It tells you when its data ends and marks the
+        unreported hours clearly instead of showing them as zero.
       </p>
 
     </div>
@@ -93,8 +92,8 @@
     <section class="section" id="see">
       <h2>See it</h2>
       <p class="lead">
-        One chip in the workspace navigation, and the whole answer a click
-        below it.
+        A small cost chip in the workspace navigation. Click it for the full
+        breakdown.
       </p>
 
       <figure class="shot">
@@ -116,33 +115,33 @@
 
       <ol class="callouts">
         <li>
-          <b>The chip, in the nav</b>
-          $3.13 for the workspace over the 24 h to 18:00 - and how old that is,
-          because a cost number without an as-of is half a number.
+          <b>The chip in the navigation</b>
+          $3.13 for the workspace over the 24 hours to 18:00, and how old that
+          figure is. A cost number is only useful if you know when it is from.
         </li>
         <li>
           <b>Click for the breakdown</b>
-          24 h, 7 d and 14 d of the same scope. The heading names what you are
-          looking at: workspace, by SKU.
+          The same scope over 24 hours, 7 days and 14 days. The heading says
+          what you are looking at: the workspace, by SKU.
         </li>
         <li>
-          <b>The hatch is the lag</b>
-          Billing stopped at 18:00, so the hours since are drawn hatched rather
-          than filled with a zero.
+          <b>Hatched bars are unreported hours</b>
+          Billing data ends at 18:00, so the hours after that are drawn hatched
+          instead of being shown as zero.
         </li>
         <li>
           <b>Every SKU, with a comparison</b>
-          Each line against the same window a period earlier, so the total
-          arrives with something to measure it against.
+          Each line is compared with the same period before it, so you can see
+          whether cost is going up or down.
         </li>
       </ol>
 
       <!-- A <p>, not a <figcaption>: it comments on the callouts as much as on
            the image, and a figcaption has to live inside the figure. -->
       <p class="caption">
-        The last line of that panel is the extension talking about its own
-        limits: <em>the window ends at 18:00, billing has not reported the 4 h
-          since</em>. That is a real workspace, not a mockup.
+        The last line of the panel explains the gap: <em>the window ends at
+          18:00, billing has not reported the 4 h since</em>. The screenshot is
+        from a real workspace, not a mockup.
       </p>
     </section>
 
@@ -150,32 +149,30 @@
       <h2>What it does</h2>
       <div class="cards">
         <article class="card">
-          <h3>Scoped to the page</h3>
+          <h3>Cost for the page you are on</h3>
           <p>
             On a cluster, SQL warehouse, job, job run, pipeline or pipeline
-            update page the chip answers for that resource, with the
-            workspace as its denominator. On the home page, the workspace
-            alone. An unrecognised page falls back to workspace scope rather
-            than to a blank chip.
+            update page the chip shows the cost of that resource next to the
+            cost of the whole workspace. On the home page, and on any page it
+            does not recognise, it shows the workspace total.
           </p>
         </article>
         <article class="card">
-          <h3>A real query, from your browser</h3>
+          <h3>Runs entirely in your browser</h3>
           <p>
-            It runs read-only SQL against the <code>system.billing</code> and
-            <code>system.compute</code> tables from the browser itself. No
-            backend, no OAuth flow, nothing to deploy. The credential is a
-            workspace personal access token you paste into the options page,
-            or optionally the browser session you already have.
+            It runs read-only SQL queries against the <code>system.billing</code>
+            and <code>system.compute</code> tables directly from the browser.
+            There is no backend, no OAuth flow and nothing to deploy. It
+            authenticates with a personal access token you paste into the
+            options page, or with the browser session you are already signed
+            in with.
           </p>
         </article>
         <article class="card">
-          <h3>Free, structurally</h3>
+          <h3>Free</h3>
           <p>
-            With no servers there are no costs to recover, so free is not a
-            tier, it is architecture. No account, no trial, no telemetry,
-            nothing to sell. The toolbar's own price tag is the one thing in
-            your workspace that reads $0.
+            There are no servers to pay for, so there is nothing to charge
+            for. No account, no trial, no paid tier and no telemetry.
           </p>
         </article>
       </div>
@@ -188,8 +185,8 @@
           <dt>Clouds</dt>
           <dd>
             Databricks on AWS (<code>*.cloud.databricks.com</code>) and Azure
-            (<code>*.azuredatabricks.net</code>). Everything above the hostname
-            is identical on both.
+            (<code>*.azuredatabricks.net</code>). The extension works the same
+            way on both.
           </dd>
         </div>
         <div class="fact">
@@ -202,8 +199,8 @@
         <div class="fact">
           <dt>Credential</dt>
           <dd>
-            A workspace personal access token, pasted into the extension's own
-            options page. It never leaves the browser.
+            A workspace personal access token, pasted into the extension's
+            options page. It is only ever sent to that workspace.
           </dd>
         </div>
       </dl>
@@ -235,17 +232,16 @@
     <section class="section" id="privacy">
       <h2>Your data</h2>
       <p class="lead">
-        The extension has no backend and no telemetry. Nothing it reads leaves
-        your browser except the query itself, which goes to the Databricks
-        workspace you are already signed in to. We operate no server, receive
-        no data, and have no way to see what you query.
+        The extension has no backend and no telemetry. The only network
+        requests it makes are the queries themselves, sent to the Databricks
+        workspace you are signed in to. We run no server, receive no data and
+        cannot see what you query.
       </p>
       <p>
-        Data the extension handles is used only to display your Databricks
-        spend, which is its single purpose. None of it is sold, transferred to
-        third parties, or used for advertising. The cloud machine prices ship
-        inside the extension, so estimating what your clusters cost contacts no
-        cloud provider either.
+        The data the extension reads is used only to display your Databricks
+        spend. None of it is sold, shared with third parties or used for
+        advertising. Cloud machine prices are bundled with the extension, so
+        estimating cluster cost does not contact any cloud provider either.
         <a href="./privacy/">Read the full privacy policy</a>.
       </p>
     </section>
@@ -263,8 +259,8 @@
     </div>
     <!-- One line, because the full notice is one click away. -->
     <p class="legal">
-      Not affiliated with Databricks, Inc. Trademarks belong to their owners -
-      <a href="./privacy/#trademarks">full notice</a>.
+      Not affiliated with Databricks, Inc. Trademarks belong to their owners.
+      <a href="./privacy/#trademarks">Full notice</a>.
     </p>
   </footer>
 

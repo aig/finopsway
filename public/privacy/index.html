@@ -50,20 +50,22 @@
     <main id="main" class="section prose">
       <h1 class="prose-title">Privacy policy</h1>
       <p class="prose-meta">
-        <strong>finopsway-costs</strong> browser extension. Last updated 14 August 2026.
+        <strong>finopsway-costs</strong> browser extension. Last updated 10 September 2026.
       </p>
       <p>
-        The Chrome Web Store and addons.mozilla.org require a privacy policy at a
-        public URL for any extension that handles authentication information.
-        This page is that policy, and it describes the extension's behaviour as
-        shipped.
+        This is the privacy policy for the finopsway-costs extension, as
+        published in the
+        <a href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" rel="noopener">Chrome Web Store</a>
+        and on
+        <a href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" rel="noopener">Firefox Add-ons</a>.
+        It describes what the released extension does.
       </p>
 
       <h2>The short version</h2>
       <p>
-        The extension has no backend. Nothing it reads leaves your browser, except
-        to go back to the Databricks workspace you are already signed in to. We
-        operate no server, receive no data, and have no way to see what you query.
+        The extension has no backend. The only network requests it makes go to
+        the Databricks workspace you are signed in to. We run no server, receive
+        no data and cannot see what you query.
       </p>
 
       <h2>What the extension handles</h2>
@@ -156,9 +158,9 @@
           ever with <code>SELECT</code>.
         </li>
         <li>
-          It reads nothing about the <em>content</em> of your work. No notebook,
-          query text, table, result or file is read at any point - the tables it
-          queries describe cost and compute shape, not data.
+          It does not read the content of your work. No notebook, query text,
+          table, result or file is read at any point. The tables it queries
+          describe cost and compute usage, not your data.
         </li>
       </ul>
 
@@ -181,12 +183,12 @@
 
       <h2>A note on token scope</h2>
       <p>
-        A Databricks personal access token is a full-privilege workspace
-        credential; it cannot be scoped to <code>system.billing</code> alone. The
-        extension only ever issues read-only billing queries with it, but you
-        should treat the token as you would any workspace credential: prefer a
-        short-lived one, and revoke it in Databricks when you no longer need it.
-        Session mode avoids storing a credential at all.
+        A Databricks personal access token has the same permissions as your
+        user account. It cannot be limited to <code>system.billing</code> alone.
+        The extension only uses it for read-only billing queries, but you should
+        treat it like any other workspace credential: prefer a short-lived
+        token and revoke it in Databricks when you no longer need it. Session
+        mode does not store a credential at all.
       </p>
 
       <!-- The site footer's trademark line links here, so this id has to stay. -->
@@ -200,8 +202,8 @@
         Chrome Web Store are trademarks of Google LLC. Firefox and
         addons.mozilla.org are trademarks of the Mozilla Foundation. Microsoft
         Edge and Azure are trademarks of Microsoft Corporation. AWS is a
-        trademark of Amazon.com, Inc. or its affiliates. These names appear above
-        only to say what the extension works with; all trademarks remain the
+        trademark of Amazon.com, Inc. or its affiliates. These names are used only
+        to describe what the extension works with. All trademarks remain the
         property of their respective owners.
       </p>
 
@@ -225,8 +227,8 @@
       </div>
       <!-- Same line as the home page; here it links up the page, not across. -->
       <p class="legal">
-        Not affiliated with Databricks, Inc. Trademarks belong to their owners -
-        <a href="#trademarks">full notice</a>.
+        Not affiliated with Databricks, Inc. Trademarks belong to their owners.
+        <a href="#trademarks">Full notice</a>.
       </p>
     </footer>
   </body>
