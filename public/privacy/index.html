@@ -50,7 +50,7 @@
     <main id="main" class="section prose">
       <h1 class="prose-title">Privacy policy</h1>
       <p class="prose-meta">
-        <strong>finopsway-costs</strong> browser extension. Last updated 10 September 2026.
+        <strong>finopsway-costs</strong> browser extension. Last updated 11 September 2026.
       </p>
       <p>
         This is the privacy policy for the finopsway-costs extension, as
@@ -85,9 +85,13 @@
         <code>system.billing</code> tables of your own workspace and keeps the
         rows in IndexedDB, in the workspace origin's own storage. This is a cache:
         it holds the history you configure on the options page
-        (<strong>Days to keep</strong>, 30 days by default, at most a year), is
-        pruned to that retention on every sync, and can be dropped at any time
-        from the options page. Alongside the rows it keeps only its own
+        (<strong>Days to keep</strong>, a year by default, which is everything
+        Databricks itself retains, and never more), is pruned to that retention
+        on every sync, and can be dropped at any time from the options page.
+        The most recent five weeks are kept at the hourly grain the table has;
+        anything older is folded to one row per day per SKU and compute
+        resource, so the cache holds less detail about a day the further back
+        it is, never more. Alongside the rows it keeps only its own
         bookkeeping: which day was last fetched, when, and how many rows landed.
         It contains only records the signed-in identity is already entitled to
         read.
@@ -114,7 +118,9 @@
       </p>
       <p>
         <strong>Extension settings.</strong> Your warehouse choice, catalog,
-        retention and display preferences, in <code>chrome.storage.local</code>.
+        retention, display preferences and the period the toolbar is showing (a
+        preset such as "month to date", or the dates you chose and what they are
+        compared against), in <code>chrome.storage.local</code>.
       </p>
 
       <h2>Where data goes</h2>
