@@ -130,18 +130,22 @@ a:focus-visible,
 .wordmark.small {
   font-size: 17px;
 }
-/* The S is the mark's road (wordmark-s.svg), not a letter.
- * 1.18em of the ink-cropped box = 1.3x cap height, dipped below the baseline: the logo's proportion.
- * Only the right 1.14em of its width is the S; the rest is tail, pulled back under FinOp. */
+/* The S is the logo's own artwork (wordmark-s.svg), traced, not a letter.
+ * It is 1.457 cap heights in the logo and a bold system cap is ~0.68em, hence 1.05em.
+ * Only the right 0.8em of the box is the S; the rest is tail, pulled back under FinOp. */
 .wm-s {
   display: inline-block;
-  height: 1.18em;
+  height: 1.05em;
   width: auto;
-  margin: 0 -0.04em 0 -2.28em;
-  vertical-align: -0.16em;
+  margin: 0 -0.02em 0 -1.32em;
+  vertical-align: -0.27em;
+  overflow: visible;
 }
 .wm-pale {
   color: var(--pale);
+}
+.wm-way {
+  color: var(--brand); /* the logo's own two-tone: 6.9:1 on the masthead ink */
 }
 
 .nav {
