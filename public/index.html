@@ -19,18 +19,13 @@
   <header class="masthead">
     <div class="bar">
       <a class="lockup" href="./" aria-label="FinOpsWay home">
-        <!-- The Threshold mark, same geometry as the extension's icon
-               (src/mark.js in the extension repo), scaled from its 128 grid to
-               32. The ring knocks its gap out in var(--ink), which only
-               disappears because the masthead behind it is one flat colour. -->
-        <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M4.5 12H20.96" stroke="#7c868d" stroke-width="2" stroke-linecap="round" fill="none" />
-          <path d="M5 25L14.5 20L25 7" stroke="#eef3f5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-            fill="none" />
-          <circle cx="20.96" cy="12" r="5" fill="var(--ink)" />
-          <circle cx="20.96" cy="12" r="3.63" fill="#e8452c" />
-        </svg>
-        <span class="wordmark"><span class="wm-red">FinOps</span><span class="wm-pale">Way</span></span>
+        <!-- The same file the tab icon uses, shown rather than copied: the mark
+               is generated from the extension's src/mark.js and a second hand-
+               kept copy here is exactly what drifted last time. It carries its
+               own tile and its own colours, so nothing about it depends on the
+               masthead behind it. -->
+        <span class="wordmark"><span class="wm-pale">FinOp</span><img class="wm-s" src="./wordmark-s.svg" alt="S" /><span
+            class="wm-pale">Way</span></span>
       </a>
       <nav class="nav">
         <a href="#see">See it</a>
@@ -250,7 +245,8 @@
   <footer class="footer">
     <div class="bar">
       <div class="footer-id">
-        <span class="wordmark small"><span class="wm-red">FinOps</span><span class="wm-pale">Way</span></span>
+        <span class="wordmark small"><span class="wm-pale">FinOp</span><img class="wm-s" src="./wordmark-s.svg" alt="S" /><span
+            class="wm-pale">Way</span></span>
       </div>
       <nav class="nav">
         <a href="./privacy/">Privacy policy</a>

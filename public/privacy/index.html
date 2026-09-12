@@ -1,241 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Privacy policy - FinOpsWay</title>
-    <meta
-      name="description"
-      content="Privacy policy for the finopsway-costs browser extension. No backend, no telemetry: nothing leaves your browser except the query, which goes to the Databricks workspace you are already signed in to."
-    />
-    <!-- The store listings link here, so the URL has to stay put. A policy URL
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy policy - FinOpsWay</title>
+  <meta name="description"
+    content="Privacy policy for the finopsway-costs browser extension. No backend, no telemetry: nothing leaves your browser except the query, which goes to the Databricks workspace you are already signed in to." />
+  <!-- The store listings link here, so the URL has to stay put. A policy URL
          that starts 404ing is grounds for a listing to be pulled. -->
-    <link rel="canonical" href="https://finopsway.com/privacy/" />
-    <!-- One directory down, so assets are ../ - this page is served at
+  <link rel="canonical" href="https://finopsway.com/privacy/" />
+  <!-- One directory down, so assets are ../ - this page is served at
          /privacy/ by the directory index, which needs no server rewrite. -->
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body>
-    <a class="skip" href="#main">Skip to content</a>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
 
-    <header class="masthead is-compact">
-      <div class="bar">
-        <a class="lockup" href="../" aria-label="FinOpsWay home">
-          <!-- The Threshold mark, same geometry as the extension's icon
-               (src/mark.js in the extension repo), scaled from its 128 grid to
-               32. The ring knocks its gap out in var(--ink), which only
-               disappears because the masthead behind it is one flat colour. -->
-          <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true">
-            <path d="M4.5 12H20.96" stroke="#7c868d" stroke-width="2" stroke-linecap="round" fill="none" />
-            <path
-              d="M5 25L14.5 20L25 7"
-              stroke="#eef3f5"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <circle cx="20.96" cy="12" r="5" fill="var(--ink)" />
-            <circle cx="20.96" cy="12" r="3.63" fill="#e8452c" />
-          </svg>
-          <span class="wordmark"><span class="wm-red">FinOps</span><span class="wm-pale">Way</span></span>
-        </a>
-        <nav class="nav">
-          <a href="../">Home</a>
-        </nav>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="masthead is-compact">
+    <div class="bar">
+      <a class="lockup" href="../" aria-label="FinOpsWay home">
+        <!-- The same file the tab icon uses, shown rather than copied: the
+               mark is generated from the extension's src/mark.js and a second
+               hand-kept copy here is exactly what drifted last time. -->
+        <span class="wordmark"><span class="wm-pale">FinOp</span><img class="wm-s" src="../wordmark-s.svg"
+            alt="S" /><span class="wm-pale">Way</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section prose">
+    <h1 class="prose-title">Privacy policy</h1>
+    <p class="prose-meta">
+      <strong>finopsway-costs</strong> browser extension. Last updated 11 September 2026.
+    </p>
+    <p>
+      This is the privacy policy for the finopsway-costs extension, as
+      published in the
+      <a href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi"
+        rel="noopener">Chrome Web Store</a>
+      and on
+      <a href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" rel="noopener">Firefox Add-ons</a>.
+      It describes what the released extension does.
+    </p>
+
+    <h2>The short version</h2>
+    <p>
+      The extension has no backend. The only network requests it makes go to
+      the Databricks workspace you are signed in to. We run no server, receive
+      no data and cannot see what you query.
+    </p>
+
+    <h2>What the extension handles</h2>
+    <p>
+      <strong>A Databricks personal access token, if you choose token mode.</strong>
+      It is stored with <code>chrome.storage.local</code>, keyed by workspace
+      origin. That store is readable by this extension alone, is never synced to
+      a browser account, and is cleared when you remove the token from the
+      options page or uninstall the extension. In session mode nothing is
+      stored: the extension reuses the workspace session you already have, and
+      the CSRF token it needs is fetched per request and held in memory for the
+      duration of that request.
+    </p>
+    <p>
+      <strong>Databricks billing usage records and SKU prices.</strong> The
+      extension runs read-only SQL queries against the
+      <code>system.billing</code> tables of your own workspace and keeps the
+      rows in IndexedDB, in the workspace origin's own storage. This is a cache:
+      it holds the history you configure on the options page
+      (<strong>Days to keep</strong>, a year by default, which is everything
+      Databricks itself retains, and never more), is pruned to that retention
+      on every sync, and can be dropped at any time from the options page.
+      The most recent five weeks are kept at the hourly grain the table has;
+      anything older is folded to one row per day per SKU and compute
+      resource, so the cache holds less detail about a day the further back
+      it is, never more. Alongside the rows it keeps only its own
+      bookkeeping: which day was last fetched, when, and how many rows landed.
+      It contains only records the signed-in identity is already entitled to
+      read.
+    </p>
+    <p>
+      <strong>Compute machine hours, if you use the cloud cost view.</strong>
+      To estimate what the machines under your clusters cost, the extension
+      also reads <code>system.compute.node_timeline</code> - again read-only,
+      again from your own workspace. It selects only the cluster id, the
+      machine type, whether the node was a driver, the hour, and counts of
+      minutes and instances. It does <em>not</em> read that table's
+      utilisation, network or IP address columns. The result is aggregated to
+      one row per cluster, machine type and hour before it is stored, and is
+      replaced wholesale on each refresh rather than accumulated.
+    </p>
+    <p>
+      <strong>Which cloud and region your workspace runs in.</strong> The
+      extension runs <code>SELECT current_metastore()</code>, which returns a
+      string such as <code>aws:us-east-2:&lt;id&gt;</code>. The cloud and the
+      region select which machine price list to use; the metastore identifier
+      in that string is stored alongside them but is not read by any feature,
+      is never written to the console, and like everything else here never
+      leaves your browser.
+    </p>
+    <p>
+      <strong>Extension settings.</strong> Your warehouse choice, catalog,
+      retention, display preferences and the period the toolbar is showing (a
+      preset such as "month to date", or the dates you chose and what they are
+      compared against), in <code>chrome.storage.local</code>.
+    </p>
+
+    <h2>Where data goes</h2>
+    <p>
+      Every network request the extension makes is to the Databricks workspace
+      host you are visiting, matching <code>*.cloud.databricks.com</code> or
+      <code>*.azuredatabricks.net</code>. There are no other hosts, and the
+      extension declares no permission that would allow any. Your token is sent
+      to that workspace and nowhere else. Credentials are keyed by workspace
+      origin, so a token for one workspace is not reachable from another.
+    </p>
+    <p>
+      <strong>The cloud cost view contacts no cloud provider.</strong> AWS and
+      Azure machine list prices are downloaded by us in advance, from those
+      providers' public price lists, and ship inside the extension package as
+      static files. Estimating what a cluster costs is a lookup in a file
+      already on your disk. Nothing about your clusters, your account or your
+      region is sent to Amazon, Microsoft or anyone else, and the extension has
+      no permission that would let it.
+    </p>
+
+    <h2>What we do not do</h2>
+    <ul>
+      <li>
+        We do not collect, receive, store or transmit any of your data. There is
+        no server to send it to.
+      </li>
+      <li>We do not sell or transfer your data to third parties.</li>
+      <li>
+        We do not use your data for anything unrelated to the extension's single
+        purpose, which is displaying your Databricks spend.
+      </li>
+      <li>We do not use your data to determine creditworthiness or for lending.</li>
+      <li>
+        There is no analytics, telemetry, crash reporting or advertising of any
+        kind.
+      </li>
+      <li>
+        The extension writes nothing to Databricks. Its SQL only reads
+        <code>system.billing</code> and <code>system.compute</code>, and only
+        ever with <code>SELECT</code>.
+      </li>
+      <li>
+        It does not read the content of your work. No notebook, query text,
+        table, result or file is read at any point. The tables it queries
+        describe cost and compute usage, not your data.
+      </li>
+    </ul>
+
+    <h2>Logging</h2>
+    <p>
+      Released builds do not write diagnostic traces to the page console. Even in
+      a development build with tracing enabled, the access token and the CSRF
+      token are never logged; the trace names the authentication mode only, and
+      automated tests enforce that.
+    </p>
+
+    <h2>Removing your data</h2>
+    <p>
+      Uninstalling the extension removes the stored token and settings. The
+      cached billing rows, machine hours and the cloud/region record live in
+      the workspace origin's IndexedDB and are removed together by the
+      <strong>Clear cached usage</strong> action on the options page, or by
+      clearing site data for the workspace in your browser.
+    </p>
+
+    <h2>A note on token scope</h2>
+    <p>
+      A Databricks personal access token has the same permissions as your
+      user account. It cannot be limited to <code>system.billing</code> alone.
+      The extension only uses it for read-only billing queries, but you should
+      treat it like any other workspace credential: prefer a short-lived
+      token and revoke it in Databricks when you no longer need it. Session
+      mode does not store a credential at all.
+    </p>
+
+    <!-- The site footer's trademark line links here, so this id has to stay. -->
+    <h2 id="trademarks">Trademarks</h2>
+    <p>
+      finopsway-costs is an independent extension built by FinOpsWay. It is not
+      affiliated with, endorsed or sponsored by Databricks, Inc.
+    </p>
+    <p>
+      Databricks is a trademark of Databricks, Inc. Google Chrome and the
+      Chrome Web Store are trademarks of Google LLC. Firefox and
+      addons.mozilla.org are trademarks of the Mozilla Foundation. Microsoft
+      Edge and Azure are trademarks of Microsoft Corporation. AWS is a
+      trademark of Amazon.com, Inc. or its affiliates. These names are used only
+      to describe what the extension works with. All trademarks remain the
+      property of their respective owners.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:
+      <a href="mailto:mail@finopsway.com">mail@finopsway.com</a>.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="bar">
+      <div class="footer-id">
+        <span class="wordmark small"><span class="wm-pale">FinOp</span><img class="wm-s" src="../wordmark-s.svg"
+            alt="S" /><span class="wm-pale">Way</span></span>
+        <p class="colophon">Databricks cost, where the spending happens.</p>
       </div>
-    </header>
+      <nav class="nav">
+        <a href="../">Home</a>
+        <a href="mailto:mail@finopsway.com">Contact</a>
+      </nav>
+    </div>
+    <!-- Same line as the home page; here it links up the page, not across. -->
+    <p class="legal">
+      Not affiliated with Databricks, Inc. Trademarks belong to their owners.
+      <a href="#trademarks">Full notice</a>.
+    </p>
+  </footer>
+</body>
 
-    <main id="main" class="section prose">
-      <h1 class="prose-title">Privacy policy</h1>
-      <p class="prose-meta">
-        <strong>finopsway-costs</strong> browser extension. Last updated 11 September 2026.
-      </p>
-      <p>
-        This is the privacy policy for the finopsway-costs extension, as
-        published in the
-        <a href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" rel="noopener">Chrome Web Store</a>
-        and on
-        <a href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" rel="noopener">Firefox Add-ons</a>.
-        It describes what the released extension does.
-      </p>
-
-      <h2>The short version</h2>
-      <p>
-        The extension has no backend. The only network requests it makes go to
-        the Databricks workspace you are signed in to. We run no server, receive
-        no data and cannot see what you query.
-      </p>
-
-      <h2>What the extension handles</h2>
-      <p>
-        <strong>A Databricks personal access token, if you choose token mode.</strong>
-        It is stored with <code>chrome.storage.local</code>, keyed by workspace
-        origin. That store is readable by this extension alone, is never synced to
-        a browser account, and is cleared when you remove the token from the
-        options page or uninstall the extension. In session mode nothing is
-        stored: the extension reuses the workspace session you already have, and
-        the CSRF token it needs is fetched per request and held in memory for the
-        duration of that request.
-      </p>
-      <p>
-        <strong>Databricks billing usage records and SKU prices.</strong> The
-        extension runs read-only SQL queries against the
-        <code>system.billing</code> tables of your own workspace and keeps the
-        rows in IndexedDB, in the workspace origin's own storage. This is a cache:
-        it holds the history you configure on the options page
-        (<strong>Days to keep</strong>, a year by default, which is everything
-        Databricks itself retains, and never more), is pruned to that retention
-        on every sync, and can be dropped at any time from the options page.
-        The most recent five weeks are kept at the hourly grain the table has;
-        anything older is folded to one row per day per SKU and compute
-        resource, so the cache holds less detail about a day the further back
-        it is, never more. Alongside the rows it keeps only its own
-        bookkeeping: which day was last fetched, when, and how many rows landed.
-        It contains only records the signed-in identity is already entitled to
-        read.
-      </p>
-      <p>
-        <strong>Compute machine hours, if you use the cloud cost view.</strong>
-        To estimate what the machines under your clusters cost, the extension
-        also reads <code>system.compute.node_timeline</code> - again read-only,
-        again from your own workspace. It selects only the cluster id, the
-        machine type, whether the node was a driver, the hour, and counts of
-        minutes and instances. It does <em>not</em> read that table's
-        utilisation, network or IP address columns. The result is aggregated to
-        one row per cluster, machine type and hour before it is stored, and is
-        replaced wholesale on each refresh rather than accumulated.
-      </p>
-      <p>
-        <strong>Which cloud and region your workspace runs in.</strong> The
-        extension runs <code>SELECT current_metastore()</code>, which returns a
-        string such as <code>aws:us-east-2:&lt;id&gt;</code>. The cloud and the
-        region select which machine price list to use; the metastore identifier
-        in that string is stored alongside them but is not read by any feature,
-        is never written to the console, and like everything else here never
-        leaves your browser.
-      </p>
-      <p>
-        <strong>Extension settings.</strong> Your warehouse choice, catalog,
-        retention, display preferences and the period the toolbar is showing (a
-        preset such as "month to date", or the dates you chose and what they are
-        compared against), in <code>chrome.storage.local</code>.
-      </p>
-
-      <h2>Where data goes</h2>
-      <p>
-        Every network request the extension makes is to the Databricks workspace
-        host you are visiting, matching <code>*.cloud.databricks.com</code> or
-        <code>*.azuredatabricks.net</code>. There are no other hosts, and the
-        extension declares no permission that would allow any. Your token is sent
-        to that workspace and nowhere else. Credentials are keyed by workspace
-        origin, so a token for one workspace is not reachable from another.
-      </p>
-      <p>
-        <strong>The cloud cost view contacts no cloud provider.</strong> AWS and
-        Azure machine list prices are downloaded by us in advance, from those
-        providers' public price lists, and ship inside the extension package as
-        static files. Estimating what a cluster costs is a lookup in a file
-        already on your disk. Nothing about your clusters, your account or your
-        region is sent to Amazon, Microsoft or anyone else, and the extension has
-        no permission that would let it.
-      </p>
-
-      <h2>What we do not do</h2>
-      <ul>
-        <li>
-          We do not collect, receive, store or transmit any of your data. There is
-          no server to send it to.
-        </li>
-        <li>We do not sell or transfer your data to third parties.</li>
-        <li>
-          We do not use your data for anything unrelated to the extension's single
-          purpose, which is displaying your Databricks spend.
-        </li>
-        <li>We do not use your data to determine creditworthiness or for lending.</li>
-        <li>
-          There is no analytics, telemetry, crash reporting or advertising of any
-          kind.
-        </li>
-        <li>
-          The extension writes nothing to Databricks. Its SQL only reads
-          <code>system.billing</code> and <code>system.compute</code>, and only
-          ever with <code>SELECT</code>.
-        </li>
-        <li>
-          It does not read the content of your work. No notebook, query text,
-          table, result or file is read at any point. The tables it queries
-          describe cost and compute usage, not your data.
-        </li>
-      </ul>
-
-      <h2>Logging</h2>
-      <p>
-        Released builds do not write diagnostic traces to the page console. Even in
-        a development build with tracing enabled, the access token and the CSRF
-        token are never logged; the trace names the authentication mode only, and
-        automated tests enforce that.
-      </p>
-
-      <h2>Removing your data</h2>
-      <p>
-        Uninstalling the extension removes the stored token and settings. The
-        cached billing rows, machine hours and the cloud/region record live in
-        the workspace origin's IndexedDB and are removed together by the
-        <strong>Clear cached usage</strong> action on the options page, or by
-        clearing site data for the workspace in your browser.
-      </p>
-
-      <h2>A note on token scope</h2>
-      <p>
-        A Databricks personal access token has the same permissions as your
-        user account. It cannot be limited to <code>system.billing</code> alone.
-        The extension only uses it for read-only billing queries, but you should
-        treat it like any other workspace credential: prefer a short-lived
-        token and revoke it in Databricks when you no longer need it. Session
-        mode does not store a credential at all.
-      </p>
-
-      <!-- The site footer's trademark line links here, so this id has to stay. -->
-      <h2 id="trademarks">Trademarks</h2>
-      <p>
-        finopsway-costs is an independent extension built by FinOpsWay. It is not
-        affiliated with, endorsed or sponsored by Databricks, Inc.
-      </p>
-      <p>
-        Databricks is a trademark of Databricks, Inc. Google Chrome and the
-        Chrome Web Store are trademarks of Google LLC. Firefox and
-        addons.mozilla.org are trademarks of the Mozilla Foundation. Microsoft
-        Edge and Azure are trademarks of Microsoft Corporation. AWS is a
-        trademark of Amazon.com, Inc. or its affiliates. These names are used only
-        to describe what the extension works with. All trademarks remain the
-        property of their respective owners.
-      </p>
-
-      <h2>Contact</h2>
-      <p>
-        Questions about this policy:
-        <a href="mailto:mail@finopsway.com">mail@finopsway.com</a>.
-      </p>
-    </main>
-
-    <footer class="footer">
-      <div class="bar">
-        <div class="footer-id">
-          <span class="wordmark small"><span class="wm-red">FinOps</span><span class="wm-pale">Way</span></span>
-          <p class="colophon">Databricks cost, where the spending happens.</p>
-        </div>
-        <nav class="nav">
-          <a href="../">Home</a>
-          <a href="mailto:mail@finopsway.com">Contact</a>
-        </nav>
-      </div>
-      <!-- Same line as the home page; here it links up the page, not across. -->
-      <p class="legal">
-        Not affiliated with Databricks, Inc. Trademarks belong to their owners.
-        <a href="#trademarks">Full notice</a>.
-      </p>
-    </footer>
-  </body>
 </html>

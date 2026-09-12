@@ -3,16 +3,26 @@
  * Every colour here is one the extension already uses, so the site and the
  * product cannot drift: #0e1418 is the dark Databricks nav the chip sits in,
  * #eef3f5 the amount, #7c868d the muted ink, #3ddc97 the healthy lamp, and
- * #e8452c the brand red. The one addition is #3f6a7d for the timeline's
- * reported span - deliberately not a lamp colour, because the lamp colours are
- * status and the timeline is not reporting a status. */
+ * #6aaf50 the brand green - the logo's road. The one addition is #3f6a7d for
+ * the timeline's reported span - deliberately not a lamp colour, because the
+ * lamp colours are status and the timeline is not reporting a status.
+ *
+ * The brand is THREE values and not one, for the same reason it is three in
+ * the extension: #6aaf50 is 2.5:1 on this paper, which makes it a mark colour
+ * and never a word. --brand is the logo green, for marks and for anything
+ * sitting on the dark ink; --brand-ink is the same green at reading weight
+ * (5:1 on paper, re-stepped for the dark theme); --brand-solid is the fill
+ * white text sits on (5.2:1), and it does not move between themes because a
+ * fill is its own ground. */
 
 :root {
   --ink: #0e1418;
   --ink-lift: #1d252b;
   --pale: #eef3f5;
   --muted: #7c868d;
-  --red: #e8452c;
+  --brand: #6aaf50;
+  --brand-ink: #3c7a31;
+  --brand-solid: #3c7a31;
   --mint: #3ddc97;
   --span: #3f6a7d;
 
@@ -36,6 +46,7 @@
     --fg: #eef3f5;
     --fg-soft: #a8b8c0;
     --border: #26333a;
+    --brand-ink: #8fcf74; /* 9.6:1 on this paper; #3c7a31 is 2.2:1 */
   }
 }
 
@@ -64,12 +75,12 @@ code {
 }
 
 a {
-  color: var(--red);
+  color: var(--brand-ink);
 }
 
 a:focus-visible,
 .skip:focus-visible {
-  outline: 2px solid var(--red);
+  outline: 2px solid var(--brand-ink);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -115,10 +126,14 @@ a:focus-visible,
   text-decoration: none;
 }
 
+/* An <img> of favicon.svg, not an inline drawing - see the masthead comment in
+   index.html. Sized both ways because the file is authored at 32 and must not
+   be resampled by the row's line-height. */
 .glyph {
   width: 32px;
   height: 32px;
   flex: 0 0 auto;
+  display: block;
 }
 
 .wordmark {
@@ -130,8 +145,20 @@ a:focus-visible,
 .wordmark.small {
   font-size: 17px;
 }
-.wm-red {
-  color: var(--red);
+/* The S is not a letter: it is the mark's own road (wordmark-s.svg), generated
+ * from the same geometry as the tab icon, with the longer tail the logo gives
+ * it. The box is 231.7 x 84.4 units of the mark's own grid and is cropped to
+ * the ink: 1.18em of height puts the S at about 1.3x the cap height and the
+ * `vertical-align` dips it below the baseline, both as the logo does. Of the
+ * 3.24em the aspect then asks for, only the right 1.14em is the S - the rest is
+ * tail, and the negative left margin is what runs it back under FinOp instead
+ * of pushing the word along. */
+.wm-s {
+  display: inline-block;
+  height: 1.18em;
+  width: auto;
+  margin: 0 -0.04em 0 -2.28em;
+  vertical-align: -0.16em;
 }
 .wm-pale {
   color: var(--pale);
@@ -236,10 +263,10 @@ h1 {
 }
 
 .clk-gap .clk-label {
-  color: var(--red);
+  color: var(--brand);
 }
 .clk-gap .clk-time {
-  color: var(--red);
+  color: var(--brand);
   font-size: clamp(26px, 4.6vw, 42px);
 }
 
@@ -391,7 +418,7 @@ h3 {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--brand-solid);
   color: #fff;
   font-size: 14px;
   font-weight: 800;
@@ -430,7 +457,7 @@ h3 {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--brand-solid);
   color: #fff;
   font-size: 14px;
   font-weight: 800;
@@ -550,7 +577,7 @@ h3 {
 
 .cta {
   display: inline-block;
-  background: var(--red);
+  background: var(--brand-solid);
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
@@ -564,12 +591,12 @@ h3 {
 
 .cta.ghost {
   background: transparent;
-  color: var(--red);
-  border: 1px solid var(--red);
+  color: var(--brand-ink);
+  border: 1px solid var(--brand-ink);
 }
 .cta.ghost:hover {
   filter: none;
-  background: color-mix(in srgb, var(--red) 8%, transparent);
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
 }
 
 /* ---------- prose (the privacy policy) ---------------------------------- */
@@ -651,8 +678,8 @@ h3 {
   color: var(--muted);
 }
 
-/* Brand red on the ink footer reads as a call to action; a boilerplate line
- * should not shout. Underlined so it is still visibly a link. */
+/* The brand green on the ink footer reads as a call to action; a boilerplate
+ * line should not shout. Underlined so it is still visibly a link. */
 .legal a {
   color: var(--muted);
   text-decoration-color: var(--span);
