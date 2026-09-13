@@ -62,12 +62,12 @@ code {
 }
 
 a {
-  color: var(--brand-ink);
+  color: #76aa50;
 }
 
 a:focus-visible,
 .skip:focus-visible {
-  outline: 2px solid var(--brand-ink);
+  outline: 2px solid #76aa50;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -91,9 +91,14 @@ a:focus-visible,
 /* Flat, not a gradient: the header glyph knocks its ring out in var(--ink),
  * which only disappears if the background behind it is one colour. */
 .masthead {
-  background: var(--ink);
-  color: var(--pale);
-  padding: 0 var(--pad) clamp(56px, 9vw, 96px);
+  background: #ffffff;
+  color: #141d22;
+  /*padding: 0 var(--pad) clamp(56px, 9vw, 96px);*/
+}
+
+.head {
+  max-width: 100%;
+  background: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
 }
 
 .bar {
@@ -156,7 +161,7 @@ a:focus-visible,
   font-size: 15px;
 }
 .nav a {
-  color: var(--muted);
+  color: #ffffff;
   text-decoration: none;
 }
 .nav a:hover {
@@ -170,6 +175,33 @@ a:focus-visible,
   flex-direction: column;
   gap: 22px;
   padding-top: clamp(28px, 5vw, 52px);
+  padding-bottom: 100px;
+}
+
+.hero-row {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.hero_left,
+.hero_right {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.hero_left h1 .databricks-mark {
+  display: inline-block;
+  height: 0.82em;
+  width: auto;
+  margin: 0 0.08em 0 0.04em;
+  vertical-align: -0.12em;
+}
+
+@media (max-width: 720px) {
+  .hero-row {
+    flex-direction: column;
+  }
 }
 
 h1 {
@@ -344,12 +376,12 @@ h3 {
 }
 
 .lead {
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
 }
 
 .note {
   font-size: 15px;
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
 }
 
 .cards {
@@ -369,7 +401,7 @@ h3 {
 }
 .card p {
   font-size: 15.5px;
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
   max-width: none;
 }
 
@@ -402,7 +434,7 @@ h3 {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: var(--brand-solid);
+  background: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
   color: #fff;
   font-size: 14px;
   font-weight: 800;
@@ -432,7 +464,7 @@ h3 {
   column-gap: 10px;
   row-gap: 2px;
   font-size: 15px;
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
 }
 /* Same disc as .pin, so the eye pairs number to number without being told. */
 .callouts li::before {
@@ -441,7 +473,7 @@ h3 {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: var(--brand-solid);
+  background: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
   color: #fff;
   font-size: 14px;
   font-weight: 800;
@@ -487,7 +519,7 @@ h3 {
 .part dd {
   margin: 0;
   font-size: 15px;
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
 }
 
 .chipbit {
@@ -543,13 +575,13 @@ h3 {
   font-size: 11px;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
 }
 
 .fact dd {
   margin: 0;
   font-size: 15.5px;
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
 }
 
 /* ---------- get it -------------------------------------------------------- */
@@ -561,7 +593,7 @@ h3 {
 
 .cta {
   display: inline-block;
-  background: var(--brand-solid);
+  background: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
@@ -575,8 +607,8 @@ h3 {
 
 .cta.ghost {
   background: transparent;
-  color: var(--brand-ink);
-  border: 1px solid var(--brand-ink);
+  color: #76aa50;
+  border: 1px solid #76aa50;
 }
 .cta.ghost:hover {
   filter: none;
@@ -600,7 +632,7 @@ h3 {
 }
 
 .prose-meta {
-  color: var(--fg-soft);
+  color: linear-gradient(to bottom, #7cb25c 0%, #7cb25c 75%, #7db353 90%, #76aa50 100%);
   font-size: 15.5px;
 }
 

@@ -10,18 +10,19 @@
   <!-- Relative, not root-absolute: this is a project page served from
          /finopsway/, so a leading slash would 404. -->
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=001" />
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="masthead">
+    <div class="head">
     <div class="bar">
       <a class="lockup" href="./" aria-label="FinOpsWay home">
-        <!-- The S is the mark itself (wordmark-s.svg), generated from the extension's src/mark.js. -->
-        <span class="wordmark"><span class="wm-pale">FinOp</span><img class="wm-s" src="./wordmark-s.svg" alt="S" /><span
-            class="wm-way">Way</span></span>
+        <span class="wordmark">
+          <img class="wm-s" src="./FinOpsWay_logo_bl.png" alt="FinOpsWay" />
+        </span>
       </a>
       <nav class="nav">
         <a href="#see">See it</a>
@@ -29,6 +30,7 @@
         <a href="#get">Get it</a>
         <a href="#privacy">Your data</a>
       </nav>
+    </div>
     </div>
 
     <div class="hero">
@@ -62,16 +64,36 @@
           <span class="timelabels-gap">not reported yet</span>
         </div>
       </div>
-
-      <h1>See your Databricks cost, and how recent it is.</h1>
-      <p class="standfirst">
-        Databricks billing data arrives a few hours late, so any "last 24
-        hours" figure is missing its most recent hours. FinOpsWay is a free
-        browser extension that shows the cost of the page you are on in the
-        workspace navigation. It tells you when its data ends and marks the
-        unreported hours clearly instead of showing them as zero.
-      </p>
-
+      <div class="hero-row">
+        <div class="hero_left">
+          <h1>See your <img class="wm-s databricks-mark" src="./databricks_logo.png" alt="Databricks" /> cost, directly within the interface.</h1>
+          <p class="standfirst">
+            Databricks billing data arrives a few hours late, so any "last 24
+            hours" figure is missing its most recent hours. FinOpsWay is a free
+            browser extension that shows the cost of the page you are on in the
+            workspace navigation. It tells you when its data ends and marks the
+            unreported hours clearly instead of showing them as zero.
+          </p>
+        </div>
+        <div class="hero_right">
+          <figure class="shot">
+            <picture>
+              <!-- A phone shows the chip and the popover alone. The wide crop's
+                  popover text would land near 5px at 430 CSS px, which is a
+                  screenshot of nothing. -->
+              <source media="(max-width: 720px)" srcset="./shots/chip-popover-narrow.png" width="454" height="688" />
+              <img src="./shots/workspace-popover.png" width="988" height="700" loading="lazy"
+                alt="A Databricks workspace home page. In the top navigation, a chip reads: workspace $3.13, 24 h to 18:00, 4 h ago. Open below it, a panel with 24 h, 7 d and 14 d tabs, a bar chart whose last hours are hatched, a table of cost per SKU against the previous 24 hours, and a note that the window ends at 18:00 because billing has not reported the four hours since." />
+            </picture>
+            <!-- Percentage pins keyed to THIS crop (988x700). They are hidden below
+                720px, where the narrow crop replaces the image they point at. -->
+            <b class="pin" style="left: 41.5%; top: 4.1%" aria-hidden="true">1</b>
+            <b class="pin" style="left: 45.3%; top: 11.7%" aria-hidden="true">2</b>
+            <b class="pin" style="left: 90.1%; top: 21.4%" aria-hidden="true">3</b>
+            <b class="pin" style="left: 45.3%; top: 51%" aria-hidden="true">4</b>
+          </figure>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -86,23 +108,6 @@
         A small cost chip in the workspace navigation. Click it for the full
         breakdown.
       </p>
-
-      <figure class="shot">
-        <picture>
-          <!-- A phone shows the chip and the popover alone. The wide crop's
-               popover text would land near 5px at 430 CSS px, which is a
-               screenshot of nothing. -->
-          <source media="(max-width: 720px)" srcset="./shots/chip-popover-narrow.png" width="454" height="688" />
-          <img src="./shots/workspace-popover.png" width="988" height="700" loading="lazy"
-            alt="A Databricks workspace home page. In the top navigation, a chip reads: workspace $3.13, 24 h to 18:00, 4 h ago. Open below it, a panel with 24 h, 7 d and 14 d tabs, a bar chart whose last hours are hatched, a table of cost per SKU against the previous 24 hours, and a note that the window ends at 18:00 because billing has not reported the four hours since." />
-        </picture>
-        <!-- Percentage pins keyed to THIS crop (988x700). They are hidden below
-             720px, where the narrow crop replaces the image they point at. -->
-        <b class="pin" style="left: 41.5%; top: 4.1%" aria-hidden="true">1</b>
-        <b class="pin" style="left: 45.3%; top: 11.7%" aria-hidden="true">2</b>
-        <b class="pin" style="left: 90.1%; top: 21.4%" aria-hidden="true">3</b>
-        <b class="pin" style="left: 45.3%; top: 51%" aria-hidden="true">4</b>
-      </figure>
 
       <ol class="callouts">
         <li>
@@ -241,8 +246,9 @@
   <footer class="footer">
     <div class="bar">
       <div class="footer-id">
-        <span class="wordmark small"><span class="wm-pale">FinOp</span><img class="wm-s" src="./wordmark-s.svg" alt="S" /><span
-            class="wm-way">Way</span></span>
+        <span class="wordmark small">
+        <img class="wm-s" src="./FinOpsWay_logo.png" alt="FinOpsWay" />
+        </span>
       </div>
       <nav class="nav">
         <a href="./privacy/">Privacy policy</a>
