@@ -512,6 +512,41 @@ h1 {
   border-bottom: none;
 }
 
+/* A staggered product story: alternating screens and compact captions. */
+.examples-section { padding-top: 64px; padding-bottom: 72px; gap: 16px; }
+.examples-section > p:not(.eyebrow) { max-width: 570px; color: var(--fg-soft); }
+.examples-section > h2 { max-width: 640px; font-size: clamp(30px, 4vw, 44px); letter-spacing: -.04em; }
+.examples-stories { display: grid; gap: 72px; margin-top: 30px; }
+.example-story {
+  --example-accent: var(--brand);
+  --example-tilt: -1.5deg;
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+}
+.example-story:nth-child(even) { grid-template-columns: minmax(0, 1.5fr) minmax(0, .8fr); --example-tilt: 1.5deg; }
+.example-story:nth-child(even) .example-copy { grid-column: 2; grid-row: 1; }
+.example-story:nth-child(even) .example-visual { grid-column: 1; grid-row: 1; }
+.example-story:nth-child(2) { --example-accent: #3f6a7d; }
+.example-story:nth-child(3) { --example-accent: #a67b3e; padding-left: 24px; }
+.example-story:nth-child(4) { --example-accent: #797098; padding-right: 24px; }
+.example-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.example-kicker { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; color: var(--fg-soft); }
+.example-number { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; font-family: var(--mono); font-size: 11px; letter-spacing: 0; }
+.example-copy h3 { font-size: clamp(24px, 2.7vw, 32px); line-height: 1.15; letter-spacing: -.035em; text-wrap: balance; }
+.example-copy > p:not(.example-kicker) { font-size: 15px; line-height: 1.7; color: var(--fg-soft); }
+.example-visual { position: relative; display: block; min-width: 0; padding: 22px; border-radius: 22px; background: color-mix(in srgb, var(--example-accent) 13%, var(--paper)); transform: rotate(var(--example-tilt)); }
+.example-visual img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 9px; box-shadow: 0 12px 28px -12px rgb(14 20 24 / 35%); }
+@media (max-width: 720px) {
+  .examples-section { padding-top: 40px; padding-bottom: 44px; }
+  .examples-stories { gap: 44px; margin-top: 16px; }
+  .example-story, .example-story:nth-child(even) { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 0; }
+  .example-story:nth-child(even) .example-copy, .example-story:nth-child(even) .example-visual { grid-column: auto; grid-row: auto; }
+  .example-copy { gap: 10px; }
+  .example-visual { padding: 14px; border-radius: 16px; transform: none; }
+}
+
 h2 {
   font-size: clamp(22px, 3vw, 27px);
   letter-spacing: -0.02em;
@@ -1049,6 +1084,7 @@ h3 {
  * 2. Without that, a label that wraps ("your bill's clock" is the long one)
  * pushes its own time down and the three times stop lining up. */
 @media (max-width: 720px) {
+
   .clocks {
     grid-auto-flow: column;
     grid-template-rows: auto auto;

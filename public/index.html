@@ -10,7 +10,7 @@
   <!-- Relative, not root-absolute: this is a project page served from
          /finopsway/, so a leading slash would 404. -->
   <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=003" />
+  <link rel="stylesheet" href="./styles.css?v=006" />
 </head>
 
 <body>
@@ -28,7 +28,7 @@
       <nav class="nav desktop-nav">
         <a class="nav-download" href="#download">Download</a>
         <a href="./onboarding/">Setup guide</a>
-        <a href="#where">Where it runs</a>
+        <a href="#whatelse">Features</a>
         <a href="#privacy">Your data</a>
         <a href="./contacts/">Contacts</a>
       </nav>
@@ -37,7 +37,7 @@
         <nav class="mobile-nav" aria-label="Main navigation">
           <a href="#download">Download</a>
           <a href="./onboarding/">Setup guide</a>
-          <a href="#where">Where it runs</a>
+          <a href="#whatelse">Features</a>
           <a href="#privacy">Your data</a>
           <a href="./contacts/">Contacts</a>
         </nav>
@@ -133,6 +133,73 @@
       </p>
     </section>
 
+    <section class="section examples-section" aria-labelledby="examples-title" id="whatelse">
+      <p class="eyebrow">In your workspace</p>
+      <h2 id="examples-title">What else the widget shows</h2>
+      <p>FinOpsWay places cost context next to the Databricks resources you use every day.</p>
+      <div class="examples-stories">
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">01</span> Clusters</p>
+            <h3>Compute, with cost in view</h3>
+            <p>Keep cost context close while you browse the clusters in your workspace.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-clusters.jpg" alt="FinOpsWay cost information on the Databricks clusters page." width="1214" height="571" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">02</span> Job runs</p>
+            <h3>Every run has a story</h3>
+            <p>Bring cost into the picture when you review a job run, right where you already work.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-job-runs.jpg" alt="FinOpsWay cost information on the Databricks job runs page." width="1421" height="740" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">03</span> Jobs and pipelines</p>
+            <h3>Your workflows. Their costs.</h3>
+            <p>See cost information alongside your jobs and pipelines, without leaving Databricks.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-jobs-and-pipelines.jpg" alt="FinOpsWay cost information on the Databricks jobs and pipelines page." width="824" height="472" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">04</span> New cluster setup</p>
+            <h3>Plan your next cluster</h3>
+            <p>Keep cost in mind as you configure a new cluster, before it becomes part of your daily workflow.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-new-cluster.jpg" alt="FinOpsWay cost information on the Databricks new cluster setup page." width="893" height="620" loading="lazy" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+
+    <section class="section" id="privacy">
+      <h2>Your data</h2>
+      <p class="lead">
+        The extension has no backend and no telemetry. The only network
+        requests it makes are the queries themselves, sent to the Databricks
+        workspace you are signed in to. We run no server, receive no data and
+        cannot see what you query.
+      </p>
+      <p>
+        The data the extension reads is used only to display your Databricks
+        spend. None of it is sold, shared with third parties or used for
+        advertising. Cloud machine prices are bundled with the extension, so
+        estimating cluster cost does not contact any cloud provider either.
+        <a href="./privacy/">Read the full privacy policy</a>.
+      </p>
+    </section>
+
     <section class="section" id="where">
       <h2>Where it runs</h2>
       <dl class="facts">
@@ -161,22 +228,6 @@
       </dl>
     </section>
 
-    <section class="section" id="privacy">
-      <h2>Your data</h2>
-      <p class="lead">
-        The extension has no backend and no telemetry. The only network
-        requests it makes are the queries themselves, sent to the Databricks
-        workspace you are signed in to. We run no server, receive no data and
-        cannot see what you query.
-      </p>
-      <p>
-        The data the extension reads is used only to display your Databricks
-        spend. None of it is sold, shared with third parties or used for
-        advertising. Cloud machine prices are bundled with the extension, so
-        estimating cluster cost does not contact any cloud provider either.
-        <a href="./privacy/">Read the full privacy policy</a>.
-      </p>
-    </section>
   </main>
 
   <footer class="footer">
