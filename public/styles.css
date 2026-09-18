@@ -515,9 +515,26 @@ h1 {
 
 /* A staggered product story: alternating screens and compact captions. */
 .examples-section { padding-top: 64px; padding-bottom: 72px; gap: 16px; }
-.examples-section > p:not(.eyebrow) { max-width: 570px; color: var(--fg-soft); }
-.examples-section > h2 { max-width: 640px; font-size: clamp(30px, 4vw, 44px); letter-spacing: -.04em; }
+.examples-route { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 16px; }
+.examples-intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid color-mix(in srgb, var(--brand) 32%, var(--border));
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 0 12px 30px -22px rgb(14 20 24 / 25%);
+}
+.examples-intro > p { max-width: 570px; color: var(--fg-soft); }
+.examples-intro > h2 { max-width: 640px; font-size: clamp(30px, 4vw, 44px); letter-spacing: -.04em; }
 .examples-stories { display: grid; gap: 72px; margin-top: 30px; }
+.examples-road { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
+.examples-road use { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.examples-road-edge { stroke: color-mix(in srgb, var(--brand) 24%, var(--paper)); stroke-width: 68; }
+.examples-road-surface { stroke: color-mix(in srgb, var(--brand) 10%, var(--paper)); stroke-width: 62; }
+.examples-road-markings { stroke: color-mix(in srgb, var(--brand) 48%, var(--paper)); stroke-width: 3; stroke-dasharray: 12 16; }
 .example-story {
   --example-accent: var(--brand);
   --example-tilt: -1.5deg;
@@ -532,7 +549,7 @@ h1 {
 .example-story:nth-child(2) { --example-accent: #3f6a7d; }
 .example-story:nth-child(3) { --example-accent: #a67b3e; padding-left: 24px; }
 .example-story:nth-child(4) { --example-accent: #797098; padding-right: 24px; }
-.example-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.example-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; background: var(--paper); box-shadow: 0 0 24px 16px var(--paper); }
 .example-kicker { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; color: var(--fg-soft); }
 .example-number { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; font-family: var(--mono); font-size: 11px; letter-spacing: 0; }
 .example-copy h3 { font-size: clamp(24px, 2.7vw, 32px); line-height: 1.15; letter-spacing: -.035em; text-wrap: balance; }
@@ -542,6 +559,7 @@ h1 {
 @media (max-width: 720px) {
   .examples-section { padding-top: 40px; padding-bottom: 44px; }
   .examples-stories { gap: 44px; margin-top: 16px; }
+  .examples-road { left: 20%; width: 60%; }
   .example-story, .example-story:nth-child(even) { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 0; }
   .example-story:nth-child(even) .example-copy, .example-story:nth-child(even) .example-visual { grid-column: auto; grid-row: auto; }
   .example-copy { gap: 10px; }
