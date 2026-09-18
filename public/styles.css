@@ -518,17 +518,17 @@ h1 {
 .examples-route { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 16px; }
 .examples-intro {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: clamp(24px, 4vw, 40px);
-  border: 1px solid color-mix(in srgb, var(--brand) 32%, var(--border));
-  border-radius: 24px;
-  background: var(--paper);
-  box-shadow: 0 12px 30px -22px rgb(14 20 24 / 25%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: clamp(24px, 4vw, 40px);
+    border: 3px solid color-mix(in srgb, #9fbca5 32%, var(--border));
+    border-radius: 24px;
+    background: #e2e9e5;
+    box-shadow: 0 12px 30px -22px rgb(159 188 165);
 }
-.examples-intro > p { max-width: 570px; color: var(--fg-soft); }
-.examples-intro > h2 { max-width: 640px; font-size: clamp(30px, 4vw, 44px); letter-spacing: -.04em; }
+.examples-intro > p { color: var(--fg-soft); }
+.examples-intro > h2 { font-size: clamp(30px, 4vw, 44px); letter-spacing: -.04em; }
 .examples-stories { display: grid; gap: 72px; margin-top: 30px; }
 .examples-road { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
 .examples-road use { fill: none; stroke-linecap: round; stroke-linejoin: round; }
