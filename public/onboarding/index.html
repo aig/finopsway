@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Set up FinOpsWay - cluster onboarding guide</title>
+  <meta name="description" content="Install FinOpsWay, configure access and create a Databricks cluster with cost visibility." />
+  <link rel="canonical" href="https://finopsway.com/onboarding/" />
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css?v=001" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="masthead is-compact">
+    <div class="head">
+      <div class="bar">
+        <a class="lockup" href="../" aria-label="FinOpsWay home">
+          <span class="wordmark"><img class="wm-s" src="../img/FinOpsWay_logo_bl.png" alt="FinOpsWay" /></span>
+        </a>
+        <nav class="nav">
+          <a href="../#download">Download</a>
+          <a href="./">Setup guide</a>
+          <a href="../#where">Where it runs</a>
+          <a href="../#privacy">Your data</a>
+          <a href="../contacts/">Contacts</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="guide-hero">
+      <p class="eyebrow">Getting started</p>
+      <h1>Set up FinOpsWay and your first cluster</h1>
+      <p class="standfirst">A short path from installing the extension to seeing the cost of a Databricks cluster in its own page navigation.</p>
+      <ol class="guide-progress" aria-label="Four setup steps">
+        <li>Install</li>
+        <li>Connect</li>
+        <li>Create cluster</li>
+        <li>Check costs</li>
+      </ol>
+    </section>
+
+    <section class="section guide-section">
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <div><p class="eyebrow">Install</p><h2>Add FinOpsWay to your browser</h2></div>
+      </div>
+      <p>Install the extension from your browser’s store. No FinOpsWay account is required.</p>
+      <div class="download-grid">
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" rel="noopener">
+          <span class="browser-icon"><img src="../img/google_chrome.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Google Chrome</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" rel="noopener">
+          <span class="browser-icon"><img src="../img/edge.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Microsoft Edge</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+        <a class="download-card" href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" rel="noopener">
+          <span class="browser-icon"><img src="../img/firefox.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Mozilla Firefox</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+      </div>
+      <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
+    </section>
+
+    <section class="section guide-section">
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <div><p class="eyebrow">Connect</p><h2>Connect your Databricks workspace</h2></div>
+      </div>
+      <ol class="guide-list">
+        <li>Open any page in your Databricks workspace, then open the FinOpsWay extension options.</li>
+        <li>Select the workspace you are using.</li>
+        <li>Paste a personal access token for that workspace. Browser session mode is also available for testing.</li>
+        <li>Select a SQL warehouse that can query <code>system.billing</code> and <code>system.compute</code>.</li>
+      </ol>
+      <aside class="guide-warning" role="note">
+        <strong>Browser session mode: use at your own risk</strong>
+        Session mode reuses the active Databricks session in your browser. It can be convenient for testing, but is not recommended for production use. Use a personal access token for a clearer, more predictable production setup.
+      </aside>
+      <p class="note">The extension only makes read-only queries to your workspace. Your token is stored locally in the browser and is sent only to that workspace.</p>
+    </section>
+
+    <section class="section guide-section">
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <div><p class="eyebrow">Create</p><h2>Create and configure a cluster</h2></div>
+      </div>
+      <ol class="guide-list">
+        <li>In Databricks, go to <strong>Compute</strong> and select <strong>Create compute</strong>.</li>
+        <li>Give the cluster a clear name, choose its access mode and select the Databricks Runtime your workload needs.</li>
+        <li>Choose an instance type and worker range that fits the job. Enable autoscaling when the workload varies.</li>
+        <li>Set an auto-termination period so idle compute is stopped automatically, then create the cluster.</li>
+      </ol>
+      <aside class="guide-tip">
+        <strong>Cost tip</strong>
+        Start with the smallest practical worker range and a short auto-termination period. You can adjust both after observing the workload.
+      </aside>
+    </section>
+
+    <section class="section guide-section">
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <div><p class="eyebrow">Verify</p><h2>Check the cluster cost</h2></div>
+      </div>
+      <p>Open the new cluster’s page. The FinOpsWay cost chip appears in the top navigation; select it to see the cluster’s cost, SKU breakdown and the coverage period.</p>
+      <p class="note">Billing data is not instant. FinOpsWay marks hours that Databricks has not reported yet, so they are never mistaken for zero cost.</p>
+      <div class="getrow"><a class="cta" href="../#download">Download FinOpsWay</a><a class="cta ghost" href="../">Back to home</a></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="bar">
+      <div class="footer-id"><span class="wordmark small"><img class="wm-s" src="../img/FinOpsWay_logo.png" alt="FinOpsWay" /></span></div>
+      <nav class="nav"><a href="../privacy/">Privacy policy</a><a class="footer-support" href="https://github.com/sponsors/aig" rel="noopener">Support project <span aria-hidden="true">♥</span></a></nav>
+    </div>
+    <p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners. <a href="../privacy/#trademarks">Full notice</a>.</p>
+  </footer>
+</body>
+
+</html>
