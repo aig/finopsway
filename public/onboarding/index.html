@@ -8,7 +8,9 @@
   <meta name="description" content="Install FinOpsWay, configure access and create a Databricks cluster with cost visibility." />
   <link rel="canonical" href="https://finopsway.com/onboarding/" />
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../styles.css?v=001" />
+  <link rel="stylesheet" href="../styles.css?v=003" />
+  <link rel="stylesheet" href="./onboarding.css?v=003"" />
+  <script src="./onboarding.js" defer></script>
 </head>
 
 <body>
@@ -42,22 +44,17 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="guide-layout">
+    <div class="guide-content">
     <section class="guide-hero">
       <p class="eyebrow">Getting started</p>
       <h1>Set up FinOpsWay and your first cluster</h1>
       <p class="standfirst">A short path from installing the extension to seeing the cost of a Databricks cluster in its own page navigation.</p>
-      <ol class="guide-progress" aria-label="Four setup steps">
-        <li>Install</li>
-        <li>Connect</li>
-        <li>Create cluster</li>
-        <li>Check costs</li>
-      </ol>
     </section>
 
-    <section class="section guide-section">
+    <section id="install" class="section guide-section">
       <div class="step-heading">
-        <span class="step-number">1</span>
+        <a class="step-number" href="#install" aria-label="Step 1">1</a>
         <div><p class="eyebrow">Install</p><h2>Add FinOpsWay to your browser</h2></div>
       </div>
       <p>Install the extension from your browser’s store. No FinOpsWay account is required.</p>
@@ -90,50 +87,53 @@
       <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
     </section>
 
-    <section class="section guide-section">
+    <section id="create-cluster" class="section guide-section">
       <div class="step-heading">
-        <span class="step-number">2</span>
-        <div><p class="eyebrow">Connect</p><h2>Connect your Databricks workspace</h2></div>
-      </div>
-      <ol class="guide-list">
-        <li>Open any page in your Databricks workspace, then open the FinOpsWay extension options.</li>
-        <li>Select the workspace you are using.</li>
-        <li>Paste a personal access token for that workspace. Browser session mode is also available for testing.</li>
-        <li>Select a SQL warehouse that can query <code>system.billing</code> and <code>system.compute</code>.</li>
-      </ol>
-      <aside class="guide-warning" role="note">
-        <strong>Browser session mode: use at your own risk</strong>
-        Session mode reuses the active Databricks session in your browser. It can be convenient for testing, but is not recommended for production use. Use a personal access token for a clearer, more predictable production setup.
-      </aside>
-      <p class="note">The extension only makes read-only queries to your workspace. Your token is stored locally in the browser and is sent only to that workspace.</p>
-    </section>
-
-    <section class="section guide-section">
-      <div class="step-heading">
-        <span class="step-number">3</span>
+        <a class="step-number" href="#create-cluster" aria-label="Step 3">3</a>
         <div><p class="eyebrow">Create</p><h2>Create and configure a cluster</h2></div>
       </div>
       <ol class="guide-list">
-        <li>In Databricks, go to <strong>Compute</strong> and select <strong>Create compute</strong>.</li>
-        <li>Give the cluster a clear name, choose its access mode and select the Databricks Runtime your workload needs.</li>
-        <li>Choose an instance type and worker range that fits the job. Enable autoscaling when the workload varies.</li>
-        <li>Set an auto-termination period so idle compute is stopped automatically, then create the cluster.</li>
+        <li>In Databricks, go to <strong>Compute -> SQL warehouses</strong> and select <strong>Create SQL warehouse (2X-Small)</strong>.</li>
+        <li>Give the cluster a clear name, choose its access mode.</li>
+        <li>Set an auto-termination period 5 minutes, then create the cluster.</li>
       </ol>
-      <aside class="guide-tip">
-        <strong>Cost tip</strong>
-        Start with the smallest practical worker range and a short auto-termination period. You can adjust both after observing the workload.
-      </aside>
     </section>
 
-    <section class="section guide-section">
+    <section id="connect" class="section guide-section">
       <div class="step-heading">
-        <span class="step-number">4</span>
-        <div><p class="eyebrow">Verify</p><h2>Check the cluster cost</h2></div>
+        <a class="step-number" href="#connect" aria-label="Step 2">2</a>
+        <div><p class="eyebrow">Connect</p><h2>Connect your Databricks workspace</h2></div>
       </div>
-      <p>Open the new cluster’s page. The FinOpsWay cost chip appears in the top navigation; select it to see the cluster’s cost, SKU breakdown and the coverage period.</p>
-      <p class="note">Billing data is not instant. FinOpsWay marks hours that Databricks has not reported yet, so they are never mistaken for zero cost.</p>
-      <div class="getrow"><a class="cta" href="../#download">Download FinOpsWay</a><a class="cta ghost" href="../">Back to home</a></div>
+      <ol class="guide-list">
+        <li>Open any page in the Databricks workspace, and then activate the FinOpsWay extension.</li>
+        <a class="guide-screenshot" href="../img/onboarding/onb_step_2_1.jpg" target="_blank" rel="noopener" aria-label="View the FinOpsWay setup screenshot at full size (opens in a new tab)">
+          <img src="../img/onboarding/onb_step_2_1.jpg" alt="FinOpsWay extension popup in a Databricks workspace, showing the activation switch, SQL warehouse selector and Configure toolbar link." width="2866" height="644" loading="lazy" />
+        </a>
+
+        <li>Select the workspace connection type: Access token (recommended) or Browser session (internal API)</li>
+        <aside class="guide-warning" role="note">
+          <strong>Browser session mode: use at your own risk</strong>
+          No token needed, but undocumented and blocked by some workspaces. Use only if you cannot create a token.
+        </aside>
+
+        <li>Create a personal access token <strong>Settings -> User -> Developer -> Access Tokens -> Manage</strong>.<br/>
+        And choose <code>sql</code> in API scopes.</li>
+        <a class="guide-screenshot guide-screenshot--half" href="../img/onboarding/onb_step_2_3.png" target="_blank" rel="noopener" aria-label="View the personal access token setup screenshot at full size (opens in a new tab)">
+          <img src="../img/onboarding/onb_step_2_3.png" alt="Personal access token setup in Databricks." width="654" height="460" loading="lazy" />
+        </a>
+
+        <li>Paste a personal access token for that workspace.</li>
+
+        <li>Select a SQL warehouse that can query <code>system.billing</code> and <code>system.compute</code>.</li>
+        <aside class="guide-tip">
+          The extension only makes read-only queries to your workspace. Your token is stored locally in the browser and is sent only to that workspace.
+        </aside>
+      </ol>
     </section>
+
+    
+
+    </div>
   </main>
 
   <footer class="footer">

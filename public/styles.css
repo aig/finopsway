@@ -61,6 +61,9 @@ p {
 code {
   font-family: var(--mono);
   font-size: 0.87em;
+  background-color: #eef3ef;
+  padding: 2px 6px;
+  margin: 0 5px;
 }
 
 a {
@@ -153,9 +156,7 @@ a:focus-visible,
   letter-spacing: .01em;
   line-height: 1.2;
 }
-/* The S is the logo's own artwork (wordmark-s.svg), traced, not a letter.
- * It is 1.457 cap heights in the logo and a bold system cap is ~0.68em, hence 1.05em.
- * Only the right 0.8em of the box is the S; the rest is tail, pulled back under FinOp. */
+
 .wm-s {
   display: inline-block;
   height: 1.05em;
@@ -896,14 +897,14 @@ h3 {
 .guide-hero {
   max-width: calc(960px + var(--pad) * 2);
   margin: 0 auto;
-  padding: clamp(44px, 7vw, 76px) var(--pad) clamp(30px, 5vw, 52px);
+  padding: clamp(44px, 7vw, 76px) 0 clamp(30px, 5vw, 52px);
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.guide-hero h1 { margin: 0; max-width: 21ch; }
-.guide-hero .standfirst { color: var(--fg-soft); max-width: 56ch; }
+.guide-hero h1 { margin: 0; max-width: 100%; }
+.guide-hero .standfirst { color: var(--fg-soft); max-width: 100%; }
 
 .eyebrow {
   color: var(--brand-ink);
@@ -936,10 +937,11 @@ h3 {
 .step-heading { display: flex; align-items: center; gap: 14px; }
 .step-heading > div { display: flex; flex-direction: column; gap: 3px; }
 .step-number { width: 38px; height: 38px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: var(--brand-solid); color: #fff; font-family: var(--mono); font-weight: 700; }
-.guide-list { margin: 0; padding-left: 24px; max-width: var(--measure); display: flex; flex-direction: column; gap: 9px; }
-.guide-tip { max-width: var(--measure); border-left: 3px solid var(--brand); background: color-mix(in srgb, var(--brand) 9%, var(--surface)); padding: 15px 18px; font-size: 15px; }
+.guide-list { margin: 0; padding-left: 24px; display: flex; flex-direction: column; gap: 9px; }
+.guide-list li { margin-top: 15px; }
+.guide-tip { border-left: 3px solid var(--brand); background: color-mix(in srgb, var(--brand) 9%, var(--surface)); padding: 15px 18px; font-size: 15px; }
 .guide-tip strong { display: block; color: var(--brand-ink); margin-bottom: 3px; }
-.guide-warning { max-width: var(--measure); border-left: 3px solid #d28b2c; background: color-mix(in srgb, #d28b2c 10%, var(--surface)); padding: 15px 18px; font-size: 15px; }
+.guide-warning { border-left: 3px solid #d28b2c; background: color-mix(in srgb, #d28b2c 10%, var(--surface)); padding: 15px 18px; font-size: 15px; }
 .guide-warning strong { display: block; color: var(--fg); margin-bottom: 3px; }
 
 /* ---------- contacts ----------------------------------------------------- */
