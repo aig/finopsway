@@ -298,7 +298,8 @@ a:focus-visible,
     padding-right: var(--pad);
     padding-left: var(--pad);
   }
-  .masthead .wm-s { margin-left: 0; }
+  .masthead .wm-s,
+  .footer .wm-s { margin-left: 0; }
   .masthead .tagline { display: none; }
 
   .masthead .desktop-nav { display: none; }
@@ -980,19 +981,61 @@ h3 {
 .guide-warning strong { display: block; color: var(--fg); margin-bottom: 3px; }
 
 /* ---------- contacts ----------------------------------------------------- */
-.contacts-hero { padding-bottom: clamp(20px, 3vw, 34px); }
+.contacts-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.contacts-page main { flex: 1 0 auto; }
+.contacts-hero {
+  padding-right: var(--pad);
+  padding-bottom: clamp(20px, 3vw, 34px);
+  padding-left: var(--pad);
+}
 .contacts-section { padding-top: clamp(20px, 3vw, 34px); }
 .contacts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .contacts-intro { display: flex; align-items: center; gap: 18px; max-width: 760px; }
 .contacts-intro .standfirst { flex: 1 1 auto; }
 .contact-card { min-height: 210px; gap: 10px; }
 .contact-card h2 { font-size: 23px; }
+.contact-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.contact-details { display: flex; flex-direction: column; gap: 10px; }
+.contact-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.contact-badges img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 80px;
+  object-fit: contain;
+}
 .contact-link { margin-top: auto; color: var(--brand-ink); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+@media (min-width: 900px) {
+  .contacts-hero {
+    padding-top: clamp(76px, 9vh, 120px);
+    padding-bottom: 44px;
+    gap: 24px;
+  }
+  .contacts-section { padding-top: 36px; padding-bottom: 56px; gap: 28px; }
+  .contact-card { min-height: 260px; padding: 28px 28px 30px; }
+}
 
 @media (max-width: 560px) {
   .guide-progress { grid-template-columns: repeat(2, 1fr); }
   .contacts-grid { grid-template-columns: 1fr; }
-  .contacts-intro { align-items: flex-start; gap: 12px; }
+  .contacts-intro { flex-direction: column; align-items: flex-start; gap: 12px; }
   .contacts-intro .support-cta { padding: 9px 12px; font-size: 13px; }
 }
 
