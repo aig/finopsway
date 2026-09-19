@@ -136,12 +136,15 @@
         <a class="guide-screenshot guide-screenshot--half" href="../img/onboarding/onb_step_2_3.png" target="_blank" rel="noopener" aria-label="View the personal access token setup screenshot at full size (opens in a new tab)">
           <img src="../img/onboarding/onb_step_2_3.png" alt="Personal access token setup in Databricks." width="654" height="460" loading="lazy" />
         </a>
+        <aside class="guide-tip">
+          The extension only makes read-only queries to your workspace. Your token is stored locally in the browser and is sent only to that workspace.
+        </aside>
 
         <li>Paste a personal access token for that workspace.</li>
 
         <li>The user must have read access to the tables <code>system.billing</code> and <code>system.compute</code>.</li>
         <aside class="guide-tip">
-          The extension only makes read-only queries to your workspace. Your token is stored locally in the browser and is sent only to that workspace.
+          If the tables have been copied to a different catalog, you can change the catalog in the extension settings.
         </aside>
       </ol>
     </section>
