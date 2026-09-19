@@ -9,8 +9,8 @@
   <meta name="description" content="Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace." />
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../styles.css?v=012" />
-  <link rel="stylesheet" href="./onboarding.css?v=006" />
-  <script src="./onboarding.js" defer></script>
+  <link rel="stylesheet" href="./onboarding.css?v=007" />
+  <script src="./onboarding.js?v=002" defer></script>
   <link rel="canonical" href="https://finopsway.com/onboarding/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="website" />
@@ -104,7 +104,7 @@
 
     <section id="create-cluster" class="section guide-section">
       <div class="step-heading">
-        <a class="step-number" href="#create-cluster" aria-label="Step 3">3</a>
+        <a class="step-number" href="#create-cluster" aria-label="Step 2">2</a>
         <div><p class="eyebrow">Create</p><h2>Create and configure a cluster</h2></div>
       </div>
       <ol class="guide-list">
@@ -116,7 +116,7 @@
 
     <section id="connect" class="section guide-section">
       <div class="step-heading">
-        <a class="step-number" href="#connect" aria-label="Step 2">2</a>
+        <a class="step-number" href="#connect" aria-label="Step 3">3</a>
         <div><p class="eyebrow">Connect</p><h2>Connect your Databricks workspace</h2></div>
       </div>
       <ol class="guide-list">
@@ -139,7 +139,7 @@
 
         <li>Paste a personal access token for that workspace.</li>
 
-        <li>Select a SQL warehouse that can query <code>system.billing</code> and <code>system.compute</code>.</li>
+        <li>The user must have read access to the tables <code>system.billing</code> and <code>system.compute</code>.</li>
         <aside class="guide-tip">
           The extension only makes read-only queries to your workspace. Your token is stored locally in the browser and is sent only to that workspace.
         </aside>

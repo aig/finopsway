@@ -22,11 +22,14 @@
     const compact = window.matchMedia('(max-width: 720px)').matches;
     const stackGap = compact ? 46 : 64;
     const markerSize = compact ? 32 : 50;
+    if (compact) {
+      content.style.setProperty('--marker-left', `${content.getBoundingClientRect().left}px`);
+    }
     // Keep the collected steps inside the guide as the footer enters view.
     const stackHeight = (sections.length - 1) * stackGap + markerSize;
     const stackStart = Math.min(stackTop, content.getBoundingClientRect().bottom - stackHeight - 24);
     const naturalTops = markers.map((marker, index) =>
-      positions[index] + sections[index].clientTop + marker.offsetTop);
+      positions[index] + sections[index].clientTop + (compact ? 25 : marker.offsetTop));
     const stackBottom = window.innerHeight - 24 - markerSize;
     const markerTops = naturalTops.map((top, index) => {
       const upperSlot = stackStart + index * stackGap;
@@ -40,6 +43,8 @@
       section.style.setProperty('--line-top', `${markerTops[index] - positions[index] - section.clientTop + markerSize / 2}px`);
       section.style.setProperty('--line-height', `${Math.max(0, (markerTops[index + 1] ?? markerTops[index]) - markerTops[index])}px`);
       marker.style.setProperty('--sticky-shift', `${shift}px`);
+      marker.style.setProperty('--marker-top', `${markerTops[index]}px`);
+      section.style.setProperty('--marker-line-top', `${markerTops[index] + markerSize / 2}px`);
       marker.classList.toggle('is-collected', Math.abs(shift) > 0.5);
       section.classList.toggle('is-active', index === current);
       section.classList.toggle('is-complete', index < current);

@@ -49,8 +49,8 @@ html { scroll-padding-top: var(--guide-scroll-offset, 110px); }
   .guide-content { --rail: 16px; --inset: 48px; --step-gap: 18px; }
   .guide-content .guide-hero { padding-left: 0; }
   .guide-content .guide-section { padding: 22px 18px; border-radius: 16px; }
-  .guide-section .step-number { width: 32px; height: 32px; left: calc(var(--rail) - var(--inset) - 17px); top: 25px; font-size: 12px; box-shadow: 0 0 0 5px var(--paper); }
-  .guide-section::before, .guide-section::after { top: var(--line-top, 40px); }
+  .guide-section .step-number { position: fixed; width: 32px; height: 32px; left: var(--marker-left, 16px); top: 0; translate: 0 var(--marker-top, 0px); font-size: 12px; box-shadow: 0 0 0 5px var(--paper); }
+  .guide-section::before, .guide-section::after { position: fixed; left: calc(var(--marker-left, 16px) + 15px); top: var(--marker-line-top, 0px); }
   .guide-content .download-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
