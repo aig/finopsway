@@ -1,0 +1,32 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - dev  # Trigger on push to the dev branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: dev  # <--- Tells GitHub to use secrets from the 'dev' environment
+
+    steps:
+      - name: Configure SSH and Deploy
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_USER_SSH_PRIVATE_KEY: ${{ secrets.SERVER_USER_SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          # Add server to known hosts
+          ssh-keyscan -H "$SERVER_HOST" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+          # Save private key
+          echo "$SERVER_USER_SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          # Trigger the deploy
+          ssh -i ~/.ssh/deploy_key "$SERVER_USER@$SERVER_HOST" pull
