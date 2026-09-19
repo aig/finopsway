@@ -1,0 +1,38 @@
+name: Deploy Application
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    # Automatically matches:
+    # branch 'dev'  -> environment 'dev'
+    # branch 'main' -> environment 'main'
+    environment: ${{ github.ref_name }}
+
+    steps:
+      - name: Configure SSH and Deploy
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_USER_SSH_PRIVATE_KEY: ${{ secrets.SERVER_USER_SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          # Scan server host keys cleanly
+          ssh-keyscan -t ed25519,rsa -H "$SERVER_HOST" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+          # Save the environment-specific private key
+          echo "$SERVER_USER_SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          # Trigger deploy
+          echo "Deploying to ${{ github.ref_name }} environment..."
+          ssh -i ~/.ssh/deploy_key "$SERVER_USER@$SERVER_HOST" pull
