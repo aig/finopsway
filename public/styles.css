@@ -1,6 +1,3 @@
-/* FinOpsWay site styles. #3f7949 is the single brand green; #3f6a7d is used
- * only for the timeline's reported-data span. */
-
 :root {
   color-scheme: only light;
   --ink: #0e1418;
@@ -12,16 +9,13 @@
   --brand-solid: #3f7949;
   --mint: #3f7949;
   --span: #3f6a7d;
-
   --paper: #f7f9fa;
   --surface: #ffffff;
   --fg: #1b3139;
   --fg-soft: #4d626c;
   --border: #e2e8eb;
-
   --measure: 64ch;
   --pad: clamp(20px, 5vw, 48px);
-
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: Consolas, "SF Mono", ui-monospace, "Cascadia Mono", monospace;
 }
@@ -67,7 +61,6 @@ a:focus-visible,
   border-radius: 2px;
 }
 
-/* Keyboard users get to the content without walking the nav. */
 .skip {
   position: absolute;
   left: -9999px;
@@ -82,9 +75,6 @@ a:focus-visible,
   border-radius: 3px;
 }
 
-/* ---------- masthead ------------------------------------------------------ */
-/* Flat, not a gradient: the header glyph knocks its ring out in var(--ink),
- * which only disappears if the background behind it is one colour. */
 .masthead {
   position: sticky;
   top: 0;
@@ -92,7 +82,7 @@ a:focus-visible,
   background: #ffffff;
   color: #141d22;
   box-shadow: 0 1px 0 rgb(14 20 24 / 12%);
-  /*padding: 0 var(--pad) clamp(56px, 9vw, 96px);*/
+
 }
 
 .head {
@@ -120,7 +110,6 @@ a:focus-visible,
   text-decoration: none;
 }
 
-/* An <img> of favicon.svg, sized both ways so the row's line-height cannot resample it. */
 .glyph {
   width: 32px;
   height: 32px;
@@ -159,7 +148,7 @@ a:focus-visible,
   color: var(--pale);
 }
 .wm-way {
-  color: var(--brand); /* the logo's own two-tone: 6.9:1 on the masthead ink */
+  color: var(--brand);
 }
 
 .nav {
@@ -177,8 +166,6 @@ a:focus-visible,
   color: var(--pale);
 }
 
-/* Header links form a quiet editorial rail. Structure comes from hairline
- * dividers and the active underline, never from large rounded controls. */
 .masthead .nav {
   min-width: 0;
   flex-wrap: nowrap;
@@ -354,16 +341,6 @@ h1 {
   font-style: italic;
 }
 
-/* ---------- the two clocks ------------------------------------------------ */
-/* The gap is the argument, so the clocks render before the headline. "Your
- * clock" is deliberately hollow - the present is the part with no data in it
- * yet - and the stroke fallback keeps it legible where text-stroke is not
- * supported.
- *
- * The composition is the store promo tile's: three equal columns over one
- * bar, with the hatch starting at the third column (see .timebar-known and
- * .timelabels-known - the fractions must agree), so the difference clock
- * sits exactly over the hours nobody has data for. */
 .clocks {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -416,11 +393,6 @@ h1 {
   font-size: clamp(26px, 4.6vw, 42px);
 }
 
-/* ---------- the timeline -------------------------------------------------- */
-/* One bar, two textures: solid for the hours billing has reported, hatched
- * for the hours since. The hatch is the extension's own overhang idiom. */
-/* Full hero width, not a capped one: the clocks grid above shares the 78%
- * split, and the two only line up if they are the same width. */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -436,8 +408,7 @@ h1 {
 }
 
 .timebar-known {
-  /* Two clock columns of the three above, so the hatch starts under the
-   * difference clock. The gap between columns keeps this exact enough. */
+
   flex: 0 0 66.666%;
   background: var(--span);
 }
@@ -485,7 +456,6 @@ h1 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-
 .section {
   max-width: calc(960px + var(--pad) * 2);
   margin: 0 auto;
@@ -499,7 +469,6 @@ h1 {
   border-bottom: none;
 }
 
-/* A staggered product story: alternating screens and compact captions. */
 .examples-section { padding-top: 64px; padding-bottom: 72px; gap: 16px; }
 .examples-route { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 16px; }
 .examples-intro {
@@ -575,7 +544,6 @@ h3 {
   font-size: 15px;
 }
 
-/* ---------- download ------------------------------------------------------ */
 .download-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -707,10 +675,6 @@ h3 {
   max-width: none;
 }
 
-/* ---------- the screenshot and its callouts ------------------------------- */
-/* The shot is dark workspace UI, so on the light theme it needs a frame to read
- * as a screen rather than a hole in the page: ink ground, hairline, radius. The
- * figure is the positioning context for the pins. */
 .shot {
   position: relative;
   margin: 0;
@@ -718,7 +682,7 @@ h3 {
   border-radius: 8px;
   overflow: hidden;
   background: var(--ink);
-  line-height: 0; /* kills the inline-image descender gap under the frame */
+  line-height: 0;
 }
 .shot img {
   display: block;
@@ -726,10 +690,6 @@ h3 {
   height: auto;
 }
 
-/* Numbered pins, placed in percentages against the crop they were measured on
- * (988x700). Replacing the image means re-measuring them - there is no way to
- * make a pin track a picture. The ring is the page ground, not a colour, so the
- * pin reads on either theme and over any part of the shot. */
 .pin {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -745,9 +705,6 @@ h3 {
   box-shadow: 0 0 0 3px rgba(14, 20, 24, 0.7);
 }
 
-/* The legend under the shot, not beside it: a side column would squeeze the
- * image to about 600px, and the popover's own type would stop being readable -
- * which defeats showing a screenshot at all. */
 .callouts {
   list-style: none;
   counter-reset: callout;
@@ -757,8 +714,7 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px 24px;
 }
-/* The row gap is tiny on purpose: it separates a heading from its own sentence,
- * not one callout from the next - that is the parent grid's 20px. */
+
 .callouts li {
   counter-increment: callout;
   display: grid;
@@ -767,7 +723,7 @@ h3 {
   row-gap: 2px;
   font-size: 15px;
 }
-/* Same disc as .pin, so the eye pairs number to number without being told. */
+
 .callouts li::before {
   content: counter(callout);
   grid-row: 1 / 3;
@@ -786,12 +742,6 @@ h3 {
   font-weight: 700;
 }
 
-/* ---------- chip anatomy -------------------------------------------------- */
-/* Each term opens with the fragment of the chip it names, rendered in the
- * chip's own colours. The pills are literal product colours on both themes,
- * because they depict the product rather than the page. */
-/* minmax(300px), not the cards' 240px: four parts at 240 break 3+1 inside the
- * 960px measure and orphan the horizon on its own row; 300 makes it a 2x2. */
 .anatomy {
   margin: 0;
   display: grid;
@@ -846,7 +796,6 @@ h3 {
   color: var(--muted);
 }
 
-/* ---------- facts ------------------------------------------------------- */
 .facts {
   margin: 0;
   display: flex;
@@ -867,9 +816,6 @@ h3 {
   align-items: baseline;
 }
 
-/* --fg-soft, not --muted: #7c868d is 4.81:1 on the dark masthead but only
- * 3.75:1 on a white card, which fails AA for 11px text. --fg-soft is 6.31:1
- * light and 7.97:1 dark. */
 .fact dt {
   font-family: var(--mono);
   font-size: 11px;
@@ -882,7 +828,6 @@ h3 {
   font-size: 15.5px;
 }
 
-/* ---------- get it -------------------------------------------------------- */
 .getrow {
   display: flex;
   gap: 12px;
@@ -913,10 +858,6 @@ h3 {
   background: color-mix(in srgb, var(--brand) 8%, transparent);
 }
 
-/* ---------- prose (the privacy policy) ---------------------------------- */
-/* Used as `class="section prose"`, so it inherits the section's centred
- * measure and flex-column gap. It must undo the section's rule: .prose is
- * declared after .section at equal specificity, so it wins. */
 .prose {
   border-bottom: none;
 }
@@ -933,7 +874,6 @@ h3 {
   font-size: 15.5px;
 }
 
-/* ---------- onboarding --------------------------------------------------- */
 .guide-hero {
   max-width: calc(960px + var(--pad) * 2);
   margin: 0 auto;
@@ -984,7 +924,6 @@ h3 {
 .guide-warning { border-left: 3px solid #d28b2c; background: color-mix(in srgb, #d28b2c 10%, var(--surface)); padding: 15px 18px; font-size: 15px; }
 .guide-warning strong { display: block; color: var(--fg); margin-bottom: 3px; }
 
-/* ---------- contacts ----------------------------------------------------- */
 .contacts-page {
   min-height: 100vh;
   min-height: 100svh;
@@ -1043,8 +982,6 @@ h3 {
   .contacts-intro .support-cta { padding: 9px 12px; font-size: 13px; }
 }
 
-/* Extra air above a heading than the section's flex gap alone gives, so the
- * policy reads as sections rather than one undifferentiated column. */
 .prose h2 {
   margin-top: 18px;
 }
@@ -1064,12 +1001,10 @@ h3 {
   padding: 1px 5px;
 }
 
-/* No hero underneath, so the masthead does not need the hero's bottom room. */
 .masthead.is-compact {
   padding-bottom: 0;
 }
 
-/* ---------- footer ------------------------------------------------------ */
 .footer {
   background: #1b2b24;
   border-top: 3px solid var(--brand);
@@ -1083,17 +1018,11 @@ h3 {
   gap: 3px;
 }
 
-/* No margin-left:auto here - .nav already claims the free space, and two
- * competing autos would split it and pull the tagline off the wordmark. */
 .colophon {
   font-size: 14.5px;
   color: var(--muted);
 }
 
-/* Its own row under the footer bar rather than a third item inside it, which
- * would fight the nav for the same line. It sits OUTSIDE .bar, so it has to
- * repeat that column itself - and it overrides the 64ch measure every other
- * `p` carries, or a one-line notice wraps for no reason. */
 .legal {
   max-width: 960px;
   margin: 0 auto;
@@ -1102,7 +1031,6 @@ h3 {
   color: var(--muted);
 }
 
-/* Muted, not brand: a boilerplate line should not read as a call to action. */
 .legal a {
   color: var(--muted);
   text-decoration-color: var(--span);
@@ -1122,14 +1050,6 @@ h3 {
 .footer .nav a.footer-support:hover { color: #fff; background: rgb(255 255 255 / 12%); }
 .support-cta { white-space: nowrap; }
 
-/* The three clocks hold ONE row all the way down: your clock, the bill's clock,
- * the difference, left to right over the bar the difference sits above. What
- * gives way is the type scale, never the row - wrapping it puts the difference
- * under a clock instead of over the hatch, and the composition is the argument.
- *
- * `.clk` goes display:contents so the labels share grid row 1 and the times row
- * 2. Without that, a label that wraps ("your bill's clock" is the long one)
- * pushes its own time down and the three times stop lining up. */
 @media (max-width: 720px) {
 
   .clocks {
@@ -1152,14 +1072,10 @@ h3 {
     font-size: clamp(17px, 5vw, 30px);
   }
 
-  /* The narrow crop takes over here (see the <picture> in index.html), and the
-   * pins were measured against the wide one. Hiding them is the honest move:
-   * placed on a different crop they would point at the wrong thing. */
   .pin {
     display: none;
   }
-  /* One column: the legend now reads as a list, since it no longer has pins to
-   * pair with, and four 200px columns would shrink the text to fit. */
+
   .point_section .callouts {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1172,17 +1088,10 @@ h3 {
     gap: 4px;
   }
 
-  /* The lockup fills the row on its own, so `margin-left: auto` strands the
-   * links against the right edge one line below it - a header split down the
-   * middle with nothing between. Dropping it lines the nav up with the lockup,
-   * the hero text and everything else on the left edge. Both bars, header and
-   * footer, wrap the same way and want the same fix. */
   .nav {
     margin-left: 0;
   }
 
-  /* The 78% basis plus a nowrap label overflows a phone; let the reported
-   * label shrink and the hatched label wrap instead. */
   .timelabels-known {
     flex: 1 1 auto;
   }

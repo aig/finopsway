@@ -57,7 +57,6 @@ html { scroll-padding-top: var(--guide-scroll-offset, 110px); }
   .guide-content .guide-section, .guide-section::after, .guide-section .step-number { transition: none; }
 }
 
-/* Move the original markers into a stack, preserving their section links. */
 .guide-section .step-number.is-collected {
   box-shadow: 0 0 0 6px var(--paper), 0 6px 16px -6px rgb(0 0 0 / 20%);
 }
