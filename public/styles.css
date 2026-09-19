@@ -333,7 +333,7 @@ h1 {
 
 .standfirst {
   font-size: clamp(17px, 2.2vw, 20px);
-  color: #b6c2c9;
+  color: #5c5c5c;
   max-width: 58ch;
 }
 .standfirst em {
