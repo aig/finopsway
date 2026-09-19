@@ -107,7 +107,6 @@ a:focus-visible,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
   text-decoration: none;
 }
 
@@ -138,7 +137,7 @@ a:focus-visible,
 
 .wm-s {
   display: inline-block;
-  height: 1.05em;
+  height: 1.7em;
   width: auto;
   vertical-align: -0.27em;
   overflow: visible;
@@ -983,7 +982,7 @@ h3 {
 }
 
 @media (max-width: 768px) {
-  .contacts-grid { grid-template-columns: 1fr; }
+  .contacts-grid { grid-template-columns: 1fr; grid-template-columns: repeat(1, minmax(0, 1fr));}
 }
 
 @media (max-width: 560px) {
