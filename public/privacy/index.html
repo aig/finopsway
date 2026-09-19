@@ -3,32 +3,63 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy policy - FinOpsWay</title>
-  <meta name="description"
-    content="Privacy policy for the finopsway-costs browser extension. No backend, no telemetry: nothing leaves your browser except the query, which goes to the Databricks workspace you are already signed in to." />
+  <title>Privacy Policy | FinOpsWay</title>
+  <meta name="description" content="Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry." />
   <!-- The store listings link here, so the URL has to stay put. A policy URL
          that starts 404ing is grounds for a listing to be pulled. -->
-  <link rel="canonical" href="https://finopsway.com/privacy/" />
   <!-- One directory down, so assets are ../ - this page is served at
          /privacy/ by the directory index, which needs no server rewrite. -->
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css?v=013" />
+  <link rel="canonical" href="https://finopsway.com/privacy/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FinOpsWay" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://finopsway.com/privacy/" />
+  <meta property="og:title" content="Privacy Policy | FinOpsWay" />
+  <meta property="og:description" content="Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry." />
+  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-popover1.jpg" />
+  <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy | FinOpsWay" />
+  <meta name="twitter:description" content="Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry." />
+  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-popover1.jpg" />
+  <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="masthead is-compact">
+    <div class="head">
     <div class="bar">
       <a class="lockup" href="../" aria-label="FinOpsWay home">
-        <!-- The S is the mark itself (wordmark-s.svg), generated from the extension's src/mark.js. -->
-        <span class="wordmark"><span class="wm-pale">FinOp</span><img class="wm-s" src="../wordmark-s.svg"
-            alt="S" /><span class="wm-way">Way</span></span>
+        <span class="wordmark">
+          <img class="wm-s" src="../img/FinOpsWay_logo_bl.png" alt="FinOpsWay" />
+        </span>
+        <span class="tagline">Databricks costs, in context</span>
       </a>
-      <nav class="nav">
-        <a href="../">Home</a>
+      <nav class="nav desktop-nav">
+        <a class="nav-download" href="../#download">Download</a>
+        <a href="../onboarding/">Setup guide</a>
+        <a href="../#whatelse">Features</a>
+        <a href="../#privacy">Your data</a>
+        <a href="../contacts/">Contacts</a>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu <span aria-hidden="true">☰</span></summary>
+        <nav class="mobile-nav" aria-label="Main navigation">
+          <a href="../#download">Download</a>
+          <a href="../onboarding/">Setup guide</a>
+          <a href="../#whatelse">Features</a>
+          <a href="../#privacy">Your data</a>
+          <a href="../contacts/">Contacts</a>
+        </nav>
+      </details>
+    </div>
     </div>
   </header>
 
@@ -209,13 +240,13 @@
   <footer class="footer">
     <div class="bar">
       <div class="footer-id">
-        <span class="wordmark small"><span class="wm-pale">FinOp</span><img class="wm-s" src="../wordmark-s.svg"
-            alt="S" /><span class="wm-way">Way</span></span>
-        <p class="colophon">Databricks cost, where the spending happens.</p>
+        <span class="wordmark small">
+        <img class="wm-s" src="../img/FinOpsWay_logo.png" alt="FinOpsWay" />
+        </span>
       </div>
       <nav class="nav">
         <a href="../">Home</a>
-        <a href="mailto:mail@finopsway.com">Contact</a>
+        <a class="footer-support" href="https://github.com/sponsors/aig" rel="noopener">Support project <span aria-hidden="true">♥</span></a>
       </nav>
     </div>
     <!-- Same line as the home page; here it links up the page, not across. -->

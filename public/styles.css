@@ -1,40 +1,27 @@
-/* FinOpsWay site styles. Every colour here is one the extension already uses.
- * #3f6a7d is the one addition: the timeline's span, deliberately not a lamp colour.
- * The brand is three values, because #6aaf50 is 2.5:1 on paper - a mark, never a word. */
-
 :root {
+  color-scheme: only light;
   --ink: #0e1418;
   --ink-lift: #1d252b;
   --pale: #eef3f5;
   --muted: #7c868d;
-  --brand: #6aaf50; /* marks and borders, and anything on the dark ink */
-  --brand-ink: #3c7a31; /* words: 5:1 on paper, re-stepped below for the dark theme */
-  --brand-solid: #3c7a31; /* fills white text sits on, 5.2:1, the same in both themes */
-  --mint: #3ddc97;
+  --brand: #3f7949;
+  --brand-ink: #3f7949;
+  --brand-solid: #3f7949;
+  --mint: #3f7949;
   --span: #3f6a7d;
-
   --paper: #f7f9fa;
   --surface: #ffffff;
   --fg: #1b3139;
   --fg-soft: #4d626c;
   --border: #e2e8eb;
-
   --measure: 64ch;
   --pad: clamp(20px, 5vw, 48px);
-
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: Consolas, "SF Mono", ui-monospace, "Cascadia Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #12191d;
-    --surface: #182227;
-    --fg: #eef3f5;
-    --fg-soft: #a8b8c0;
-    --border: #26333a;
-    --brand-ink: #8fcf74; /* 9.6:1 on this paper; the light one is 2.2:1 */
-  }
+html {
+  scroll-padding-top: clamp(72px, 12vw, 110px);
 }
 
 * {
@@ -53,12 +40,14 @@ body {
 
 p {
   margin: 0;
-  max-width: var(--measure);
 }
 
 code {
   font-family: var(--mono);
   font-size: 0.87em;
+  background-color: #eef3ef;
+  padding: 2px 6px;
+  margin: 0 5px;
 }
 
 a {
@@ -67,12 +56,11 @@ a {
 
 a:focus-visible,
 .skip:focus-visible {
-  outline: 2px solid var(--brand-ink);
+  outline: 2px solid var(--brand);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* Keyboard users get to the content without walking the nav. */
 .skip {
   position: absolute;
   left: -9999px;
@@ -87,18 +75,27 @@ a:focus-visible,
   border-radius: 3px;
 }
 
-/* ---------- masthead ------------------------------------------------------ */
-/* Flat, not a gradient: the header glyph knocks its ring out in var(--ink),
- * which only disappears if the background behind it is one colour. */
 .masthead {
-  background: var(--ink);
-  color: var(--pale);
-  padding: 0 var(--pad) clamp(56px, 9vw, 96px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffff;
+  color: #141d22;
+  box-shadow: 0 1px 0 rgb(14 20 24 / 12%);
+
+}
+
+.head {
+  max-width: 100%;
+  padding-inline: var(--pad);
+  background: #3f7949;
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
 }
 
 .bar {
   max-width: 960px;
   margin: 0 auto;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -113,7 +110,6 @@ a:focus-visible,
   text-decoration: none;
 }
 
-/* An <img> of favicon.svg, sized both ways so the row's line-height cannot resample it. */
 .glyph {
   width: 32px;
   height: 32px;
@@ -130,14 +126,21 @@ a:focus-visible,
 .wordmark.small {
   font-size: 17px;
 }
-/* The S is the logo's own artwork (wordmark-s.svg), traced, not a letter.
- * It is 1.457 cap heights in the logo and a bold system cap is ~0.68em, hence 1.05em.
- * Only the right 0.8em of the box is the S; the rest is tail, pulled back under FinOp. */
+
+.tagline {
+  padding-left: 12px;
+  border-left: 1px solid rgb(255 255 255 / 30%);
+  color: rgb(255 255 255 / 76%);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1.2;
+}
+
 .wm-s {
   display: inline-block;
   height: 1.05em;
   width: auto;
-  margin: 0 -0.02em 0 -1.32em;
   vertical-align: -0.27em;
   overflow: visible;
 }
@@ -145,7 +148,7 @@ a:focus-visible,
   color: var(--pale);
 }
 .wm-way {
-  color: var(--brand); /* the logo's own two-tone: 6.9:1 on the masthead ink */
+  color: var(--brand);
 }
 
 .nav {
@@ -156,35 +159,181 @@ a:focus-visible,
   font-size: 15px;
 }
 .nav a {
-  color: var(--muted);
+  color: #ffffff;
   text-decoration: none;
 }
 .nav a:hover {
   color: var(--pale);
 }
 
+.masthead .nav {
+  min-width: 0;
+  flex-wrap: nowrap;
+  gap: 0;
+  padding: 0;
+  border-left: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.masthead .nav a {
+  position: relative;
+  padding: 10px 14px;
+  border-right: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 0;
+  color: rgb(255 255 255 / 88%);
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.masthead .nav a:hover,
+.masthead .nav a[aria-current="page"] {
+  color: #fff;
+  background: transparent;
+}
+
+.masthead .nav a:not(.nav-download)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 160ms ease;
+}
+
+.masthead .nav a:not(.nav-download):hover::after,
+.masthead .nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.masthead .nav .nav-download {
+  background: transparent;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+.masthead .nav .nav-download:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 8%);
+}
+
+.mobile-menu { display: none; }
+
+.mobile-menu summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid rgb(255 255 255 / 34%);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  list-style: none;
+}
+.mobile-menu summary::-webkit-details-marker { display: none; }
+.mobile-menu[open] summary { background: rgb(255 255 255 / 12%); }
+
+.mobile-nav {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 20;
+  width: min(280px, calc(100vw - 40px));
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: 0 14px 32px rgb(14 20 24 / 20%);
+}
+.mobile-nav a {
+  padding: 10px 12px;
+  border-radius: 3px;
+  color: var(--fg);
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+}
+.mobile-nav a:hover { background: color-mix(in srgb, var(--brand) 10%, transparent); color: var(--brand-ink); }
+
+@media (max-width: 720px) {
+  .masthead .wm-s,
+  .footer .wm-s { margin-left: 0; }
+  .masthead .tagline { display: none; }
+
+  .masthead .desktop-nav { display: none; }
+  .masthead .mobile-menu { display: block; margin-left: auto; }
+}
+
 .hero {
-  max-width: 960px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 22px;
+  width: 100%;
+  background: #fff;
   padding-top: clamp(28px, 5vw, 52px);
+  padding-bottom: 50px;
+}
+
+.hero-row {
+  width: min(960px, calc(100% - var(--pad) * 2));
+  margin: 0 auto;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.hero_left,
+.hero_right {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.hero_left h1 .databricks-mark {
+  display: inline-block;
+  height: 0.82em;
+  width: auto;
+  margin: 0 0.08em 0 0.04em;
+  vertical-align: -0.12em;
+}
+
+@media (max-width: 720px) {
+  .hero-row {
+    flex-direction: column;
+  }
 }
 
 h1 {
-  font-size: clamp(30px, 5.4vw, 46px);
+  font-size: clamp(28px, 4.8vw, 42px);
   line-height: 1.08;
   letter-spacing: -0.025em;
-  font-weight: 800;
+  font-weight: 600;
   text-wrap: balance;
-  margin: 0;
+  margin: 20px 0;
   max-width: 24ch;
+}
+
+.finopsway-title {
+  color: var(--brand-ink);
 }
 
 .standfirst {
   font-size: clamp(17px, 2.2vw, 20px);
-  color: #b6c2c9;
+  color: #5c5c5c;
   max-width: 58ch;
 }
 .standfirst em {
@@ -192,16 +341,6 @@ h1 {
   font-style: italic;
 }
 
-/* ---------- the two clocks ------------------------------------------------ */
-/* The gap is the argument, so the clocks render before the headline. "Your
- * clock" is deliberately hollow - the present is the part with no data in it
- * yet - and the stroke fallback keeps it legible where text-stroke is not
- * supported.
- *
- * The composition is the store promo tile's: three equal columns over one
- * bar, with the hatch starting at the third column (see .timebar-known and
- * .timelabels-known - the fractions must agree), so the difference clock
- * sits exactly over the hours nobody has data for. */
 .clocks {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -254,11 +393,6 @@ h1 {
   font-size: clamp(26px, 4.6vw, 42px);
 }
 
-/* ---------- the timeline -------------------------------------------------- */
-/* One bar, two textures: solid for the hours billing has reported, hatched
- * for the hours since. The hatch is the extension's own overhang idiom. */
-/* Full hero width, not a capped one: the clocks grid above shares the 78%
- * split, and the two only line up if they are the same width. */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -274,8 +408,7 @@ h1 {
 }
 
 .timebar-known {
-  /* Two clock columns of the three above, so the hatch starts under the
-   * difference clock. The gap between columns keeps this exact enough. */
+
   flex: 0 0 66.666%;
   background: var(--span);
 }
@@ -310,15 +443,23 @@ h1 {
   max-width: 56ch;
 }
 
-/* ---------- sections ----------------------------------------------------- */
-/* The +2*--pad keeps the CONTENT box at 960px, so section text lines up with
- * the masthead's .bar and .hero, which are 960px inside the masthead's own
- * horizontal padding. A flat max-width:960px here would inset them by --pad
- * relative to the header and read as a wobble down the left edge. */
+.point_section {
+  max-width: calc(960px + var(--pad) * 2);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.point_section .callouts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .section {
   max-width: calc(960px + var(--pad) * 2);
   margin: 0 auto;
-  padding: clamp(44px, 7vw, 76px) var(--pad);
+  padding: clamp(22px, 3.5vw, 38px) var(--pad);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -326,6 +467,58 @@ h1 {
 }
 .section:last-child {
   border-bottom: none;
+}
+
+.examples-section { padding-top: 64px; padding-bottom: 72px; gap: 16px; }
+.examples-route { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 16px; }
+.examples-intro {
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: clamp(24px, 4vw, 40px);
+    border: 3px solid color-mix(in srgb, #9fbca5 32%, var(--border));
+    border-radius: 24px;
+    background: #e2e9e5;
+    box-shadow: 0 12px 30px -22px rgb(159 188 165);
+}
+.examples-intro > p { color: var(--fg-soft); }
+.examples-intro > h2 { font-size: clamp(30px, 4vw, 44px); letter-spacing: -.04em; }
+.examples-stories { display: grid; gap: 72px; margin-top: 30px; }
+.examples-road { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
+.examples-road use { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.examples-road-edge { stroke: color-mix(in srgb, var(--brand) 24%, var(--paper)); stroke-width: 68; }
+.examples-road-surface { stroke: color-mix(in srgb, var(--brand) 10%, var(--paper)); stroke-width: 62; }
+.examples-road-markings { stroke: color-mix(in srgb, var(--brand) 48%, var(--paper)); stroke-width: 3; stroke-dasharray: 12 16; }
+.example-story {
+  --example-accent: var(--brand);
+  --example-tilt: -1.5deg;
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 2.2fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+}
+.example-story:nth-child(even) { grid-template-columns: minmax(0, 2.2fr) minmax(0, .8fr); --example-tilt: 1.5deg; }
+.example-story:nth-child(even) .example-copy { grid-column: 2; grid-row: 1; }
+.example-story:nth-child(even) .example-visual { grid-column: 1; grid-row: 1; }
+.example-story:nth-child(2) { --example-accent: #3f6a7d; }
+.example-story:nth-child(3) { --example-accent: #a67b3e; padding-left: 24px; }
+.example-story:nth-child(4) { --example-accent: #797098; padding-right: 24px; }
+.example-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; background: var(--paper); box-shadow: 0 0 24px 16px var(--paper); }
+.example-kicker { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; color: var(--fg-soft); }
+.example-number { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; font-family: var(--mono); font-size: 11px; letter-spacing: 0; }
+.example-copy h3 { font-size: clamp(24px, 2.7vw, 32px); line-height: 1.15; letter-spacing: -.035em; text-wrap: balance; }
+.example-copy > p:not(.example-kicker) { font-size: 15px; line-height: 1.7; color: var(--fg-soft); }
+.example-visual { position: relative; display: block; min-width: 0; padding: 3px; border-radius: 12px; background: color-mix(in srgb, var(--example-accent) 13%, var(--paper)); transform: rotate(var(--example-tilt)); }
+.example-visual img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 9px; box-shadow: 0 12px 28px -12px rgb(14 20 24 / 35%); }
+@media (max-width: 720px) {
+  .examples-section { padding-top: 40px; padding-bottom: 44px; }
+  .examples-stories { gap: 44px; margin-top: 16px; }
+  .examples-road { left: 20%; width: 60%; }
+  .example-story, .example-story:nth-child(even) { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 0; }
+  .example-story:nth-child(even) .example-copy, .example-story:nth-child(even) .example-visual { grid-column: auto; grid-row: auto; }
+  .example-copy { gap: 10px; }
+  .example-visual { transform: none; }
 }
 
 h2 {
@@ -344,12 +537,122 @@ h3 {
 }
 
 .lead {
-  color: var(--fg-soft);
+
 }
 
 .note {
   font-size: 15px;
-  color: var(--fg-soft);
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.download-card {
+  position: relative;
+  min-height: 134px;
+  padding: 22px 18px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--fg);
+  text-decoration: none;
+  box-shadow: 0 1px 1px rgb(14 20 24 / 3%);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.download-card::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  bottom: -46px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  transition: transform 180ms ease;
+}
+
+.download-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand);
+  box-shadow: 0 10px 24px rgb(14 20 24 / 10%);
+}
+
+.download-card:hover::after {
+  transform: scale(1.25);
+}
+
+.browser-icon {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 9px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--brand) 10%, var(--paper));
+}
+
+.browser-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.download-card-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.25;
+}
+
+.download-card-label {
+  margin: 2px 0 5px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.download-card strong {
+  font-size: 17px;
+  letter-spacing: -.02em;
+}
+
+.download-card-action {
+  margin-top: 23px;
+  color: var(--brand-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .download-card {
+    min-height: 118px;
+    align-items: center;
+  }
+
+  .download-card-action {
+    margin-top: 12px;
+  }
 }
 
 .cards {
@@ -369,14 +672,9 @@ h3 {
 }
 .card p {
   font-size: 15.5px;
-  color: var(--fg-soft);
   max-width: none;
 }
 
-/* ---------- the screenshot and its callouts ------------------------------- */
-/* The shot is dark workspace UI, so on the light theme it needs a frame to read
- * as a screen rather than a hole in the page: ink ground, hairline, radius. The
- * figure is the positioning context for the pins. */
 .shot {
   position: relative;
   margin: 0;
@@ -384,7 +682,7 @@ h3 {
   border-radius: 8px;
   overflow: hidden;
   background: var(--ink);
-  line-height: 0; /* kills the inline-image descender gap under the frame */
+  line-height: 0;
 }
 .shot img {
   display: block;
@@ -392,10 +690,6 @@ h3 {
   height: auto;
 }
 
-/* Numbered pins, placed in percentages against the crop they were measured on
- * (988x700). Replacing the image means re-measuring them - there is no way to
- * make a pin track a picture. The ring is the page ground, not a colour, so the
- * pin reads on either theme and over any part of the shot. */
 .pin {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -411,9 +705,6 @@ h3 {
   box-shadow: 0 0 0 3px rgba(14, 20, 24, 0.7);
 }
 
-/* The legend under the shot, not beside it: a side column would squeeze the
- * image to about 600px, and the popover's own type would stop being readable -
- * which defeats showing a screenshot at all. */
 .callouts {
   list-style: none;
   counter-reset: callout;
@@ -423,8 +714,7 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px 24px;
 }
-/* The row gap is tiny on purpose: it separates a heading from its own sentence,
- * not one callout from the next - that is the parent grid's 20px. */
+
 .callouts li {
   counter-increment: callout;
   display: grid;
@@ -432,9 +722,8 @@ h3 {
   column-gap: 10px;
   row-gap: 2px;
   font-size: 15px;
-  color: var(--fg-soft);
 }
-/* Same disc as .pin, so the eye pairs number to number without being told. */
+
 .callouts li::before {
   content: counter(callout);
   grid-row: 1 / 3;
@@ -453,12 +742,6 @@ h3 {
   font-weight: 700;
 }
 
-/* ---------- chip anatomy -------------------------------------------------- */
-/* Each term opens with the fragment of the chip it names, rendered in the
- * chip's own colours. The pills are literal product colours on both themes,
- * because they depict the product rather than the page. */
-/* minmax(300px), not the cards' 240px: four parts at 240 break 3+1 inside the
- * 960px measure and orphan the horizon on its own row; 300 makes it a 2x2. */
 .anatomy {
   margin: 0;
   display: grid;
@@ -487,7 +770,6 @@ h3 {
 .part dd {
   margin: 0;
   font-size: 15px;
-  color: var(--fg-soft);
 }
 
 .chipbit {
@@ -514,7 +796,6 @@ h3 {
   color: var(--muted);
 }
 
-/* ---------- facts ------------------------------------------------------- */
 .facts {
   margin: 0;
   display: flex;
@@ -535,24 +816,18 @@ h3 {
   align-items: baseline;
 }
 
-/* --fg-soft, not --muted: #7c868d is 4.81:1 on the dark masthead but only
- * 3.75:1 on a white card, which fails AA for 11px text. --fg-soft is 6.31:1
- * light and 7.97:1 dark. */
 .fact dt {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: var(--fg-soft);
 }
 
 .fact dd {
   margin: 0;
   font-size: 15.5px;
-  color: var(--fg-soft);
 }
 
-/* ---------- get it -------------------------------------------------------- */
 .getrow {
   display: flex;
   gap: 12px;
@@ -576,17 +851,13 @@ h3 {
 .cta.ghost {
   background: transparent;
   color: var(--brand-ink);
-  border: 1px solid var(--brand-ink);
+  border: 1px solid var(--brand);
 }
 .cta.ghost:hover {
   filter: none;
   background: color-mix(in srgb, var(--brand) 8%, transparent);
 }
 
-/* ---------- prose (the privacy policy) ---------------------------------- */
-/* Used as `class="section prose"`, so it inherits the section's centred
- * measure and flex-column gap. It must undo the section's rule: .prose is
- * declared after .section at equal specificity, so it wins. */
 .prose {
   border-bottom: none;
 }
@@ -600,12 +871,117 @@ h3 {
 }
 
 .prose-meta {
-  color: var(--fg-soft);
   font-size: 15.5px;
 }
 
-/* Extra air above a heading than the section's flex gap alone gives, so the
- * policy reads as sections rather than one undifferentiated column. */
+.guide-hero {
+  max-width: calc(960px + var(--pad) * 2);
+  margin: 0 auto;
+  padding: clamp(44px, 7vw, 76px) 0 clamp(30px, 5vw, 52px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.guide-hero h1 { margin: 0; max-width: 100%; }
+.guide-hero .standfirst { color: var(--fg-soft); max-width: 100%; }
+
+.eyebrow {
+  color: var(--brand-ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.guide-progress {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  counter-reset: guide-progress;
+}
+
+.guide-progress li {
+  counter-increment: guide-progress;
+  border-top: 3px solid var(--brand);
+  padding-top: 8px;
+  color: var(--fg-soft);
+  font-size: 14px;
+}
+.guide-progress li::before { content: "0" counter(guide-progress) "  "; color: var(--brand-ink); font-family: var(--mono); font-weight: 700; }
+
+.step-heading { display: flex; align-items: center; gap: 14px; }
+.step-heading > div { display: flex; flex-direction: column; gap: 3px; }
+.step-number { width: 38px; height: 38px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: var(--brand-solid); color: #fff; font-family: var(--mono); font-weight: 700; }
+.guide-list { margin: 0; padding-left: 24px; display: flex; flex-direction: column; gap: 9px; }
+.guide-list li { margin-top: 15px; }
+.guide-tip { border-left: 3px solid var(--brand); background: color-mix(in srgb, var(--brand) 9%, var(--surface)); padding: 15px 18px; font-size: 15px; }
+.guide-tip strong { display: block; color: var(--brand-ink); margin-bottom: 3px; }
+.guide-warning { border-left: 3px solid #d28b2c; background: color-mix(in srgb, #d28b2c 10%, var(--surface)); padding: 15px 18px; font-size: 15px; }
+.guide-warning strong { display: block; color: var(--fg); margin-bottom: 3px; }
+
+.contacts-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.contacts-page main { flex: 1 0 auto; }
+.contacts-hero {
+  padding-right: var(--pad);
+  padding-bottom: clamp(20px, 3vw, 34px);
+  padding-left: var(--pad);
+}
+.contacts-section { padding-top: clamp(20px, 3vw, 34px); }
+.contacts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.contacts-intro { display: flex; align-items: center; gap: 18px; max-width: 760px; }
+.contacts-intro .standfirst { flex: 1 1 auto; }
+.contact-card { min-height: 210px; gap: 10px; }
+.contact-card h2 { font-size: 23px; }
+.contact-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.contact-details { display: flex; flex-direction: column; gap: 10px; }
+.contact-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.contact-badges img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 80px;
+  object-fit: contain;
+}
+.contact-link { margin-top: auto; color: var(--brand-ink); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+@media (min-width: 900px) {
+  .contacts-hero {
+    padding-top: clamp(76px, 9vh, 120px);
+    padding-bottom: 44px;
+    gap: 24px;
+  }
+  .contacts-section { padding-top: 36px; padding-bottom: 56px; gap: 28px; }
+  .contact-card { min-height: 260px; padding: 28px 28px 30px; }
+}
+
+@media (max-width: 560px) {
+  .guide-progress { grid-template-columns: repeat(2, 1fr); }
+  .contacts-grid { grid-template-columns: 1fr; }
+  .contacts-intro { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .contacts-intro .support-cta { padding: 9px 12px; font-size: 13px; }
+}
+
 .prose h2 {
   margin-top: 18px;
 }
@@ -625,14 +1001,13 @@ h3 {
   padding: 1px 5px;
 }
 
-/* No hero underneath, so the masthead does not need the hero's bottom room. */
 .masthead.is-compact {
   padding-bottom: 0;
 }
 
-/* ---------- footer ------------------------------------------------------ */
 .footer {
-  background: var(--ink);
+  background: #1b2b24;
+  border-top: 3px solid var(--brand);
   color: var(--muted);
   padding: 0 var(--pad);
   margin-top: clamp(24px, 5vw, 48px);
@@ -643,17 +1018,11 @@ h3 {
   gap: 3px;
 }
 
-/* No margin-left:auto here - .nav already claims the free space, and two
- * competing autos would split it and pull the tagline off the wordmark. */
 .colophon {
   font-size: 14.5px;
   color: var(--muted);
 }
 
-/* Its own row under the footer bar rather than a third item inside it, which
- * would fight the nav for the same line. It sits OUTSIDE .bar, so it has to
- * repeat that column itself - and it overrides the 64ch measure every other
- * `p` carries, or a one-line notice wraps for no reason. */
 .legal {
   max-width: 960px;
   margin: 0 auto;
@@ -662,7 +1031,6 @@ h3 {
   color: var(--muted);
 }
 
-/* Muted, not brand: a boilerplate line should not read as a call to action. */
 .legal a {
   color: var(--muted);
   text-decoration-color: var(--span);
@@ -671,15 +1039,19 @@ h3 {
   color: var(--pale);
 }
 
-/* The three clocks hold ONE row all the way down: your clock, the bill's clock,
- * the difference, left to right over the bar the difference sits above. What
- * gives way is the type scale, never the row - wrapping it puts the difference
- * under a clock instead of over the hatch, and the composition is the argument.
- *
- * `.clk` goes display:contents so the labels share grid row 1 and the times row
- * 2. Without that, a label that wraps ("your bill's clock" is the long one)
- * pushes its own time down and the three times stop lining up. */
+.footer .nav a.footer-support {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, #fff 55%, transparent);
+  border-radius: 4px;
+  color: #fff;
+}
+.footer .nav a.footer-support:hover { color: #fff; background: rgb(255 255 255 / 12%); }
+.support-cta { white-space: nowrap; }
+
 @media (max-width: 720px) {
+
   .clocks {
     grid-auto-flow: column;
     grid-template-rows: auto auto;
@@ -700,15 +1072,11 @@ h3 {
     font-size: clamp(17px, 5vw, 30px);
   }
 
-  /* The narrow crop takes over here (see the <picture> in index.html), and the
-   * pins were measured against the wide one. Hiding them is the honest move:
-   * placed on a different crop they would point at the wrong thing. */
   .pin {
     display: none;
   }
-  /* One column: the legend now reads as a list, since it no longer has pins to
-   * pair with, and four 200px columns would shrink the text to fit. */
-  .callouts {
+
+  .point_section .callouts {
     grid-template-columns: 1fr;
     gap: 14px;
   }
@@ -720,17 +1088,10 @@ h3 {
     gap: 4px;
   }
 
-  /* The lockup fills the row on its own, so `margin-left: auto` strands the
-   * links against the right edge one line below it - a header split down the
-   * middle with nothing between. Dropping it lines the nav up with the lockup,
-   * the hero text and everything else on the left edge. Both bars, header and
-   * footer, wrap the same way and want the same fix. */
   .nav {
     margin-left: 0;
   }
 
-  /* The 78% basis plus a nowrap label overflows a phone; let the reported
-   * label shrink and the hatched label wrap instead. */
   .timelabels-known {
     flex: 1 1 auto;
   }

@@ -1,0 +1,69 @@
+html { scroll-padding-top: var(--guide-scroll-offset, 110px); }
+.guide-layout { max-width: 1120px; margin: 0 auto; padding: 0 var(--pad); }
+.guide-content { --rail: 28px; --inset: 84px; --step-gap: 24px; }
+.guide-content .guide-hero { padding-right: 0; }
+.guide-content .guide-section {
+  position: relative;
+  max-width: none;
+  margin: 0 0 var(--step-gap) var(--inset);
+  padding: clamp(24px, 3.5vw, 40px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  transition: border-color 400ms ease, box-shadow 400ms ease, background 400ms ease;
+}
+.guide-section::before, .guide-section::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--rail) - var(--inset) - 1px);
+  top: var(--line-top, 48px);
+  height: var(--line-height, calc(100% + var(--step-gap) + 2px));
+  width: 2px;
+  background: var(--border);
+  pointer-events: none;
+}
+.guide-section::after { background: var(--brand); transform: scaleY(var(--step-progress, 0)); transform-origin: top; transition: transform 180ms linear; }
+.guide-section:last-child::before, .guide-section:last-child::after { display: none; }
+.guide-section .step-number {
+  position: absolute;
+  z-index: 3;
+  translate: 0 var(--sticky-shift, 0px);
+  left: calc(var(--rail) - var(--inset) - 25px);
+  top: 24px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--border);
+  background: var(--paper);
+  color: var(--fg-soft);
+  text-decoration: none;
+  box-shadow: 0 0 0 7px var(--paper);
+  transition: background 350ms ease, color 350ms ease, border-color 350ms ease, box-shadow 350ms ease, transform 350ms ease;
+}
+.guide-section.is-active { border-color: color-mix(in srgb, var(--brand) 55%, var(--border)); box-shadow: 0 12px 40px -20px color-mix(in srgb, var(--brand) 30%, transparent); background: color-mix(in srgb, var(--brand) 3%, var(--surface)); }
+.guide-section.is-active .step-number { background: var(--brand); color: #fff; border-color: var(--brand); transform: scale(1.08); box-shadow: 0 0 0 7px var(--paper), 0 0 0 9px color-mix(in srgb, var(--brand) 22%, transparent); }
+.guide-section.is-complete .step-number { border-color: var(--brand); background: var(--brand); color: white; }
+.guide-section .step-number:hover { border-color: var(--brand); transform: scale(1.08); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (max-width: 720px) {
+  .guide-layout { padding: 0 16px; }
+  .guide-content { --rail: 16px; --inset: 48px; --step-gap: 18px; }
+  .guide-content .guide-hero { padding-left: 0; }
+  .guide-content .guide-section { padding: 22px 18px; border-radius: 16px; }
+  .guide-section .step-number { position: fixed; width: 32px; height: 32px; left: var(--marker-left, 16px); top: 0; translate: 0 var(--marker-top, 0px); font-size: 12px; box-shadow: 0 0 0 5px var(--paper); }
+  .guide-section::before, .guide-section::after { position: fixed; left: calc(var(--marker-left, 16px) + 15px); top: var(--marker-line-top, 0px); }
+  .guide-content .download-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-content .guide-section, .guide-section::after, .guide-section .step-number { transition: none; }
+}
+
+.guide-section .step-number.is-collected {
+  box-shadow: 0 0 0 6px var(--paper), 0 6px 16px -6px rgb(0 0 0 / 20%);
+}
+.guide-section.is-active .step-number.is-collected {
+  box-shadow: 0 0 0 6px var(--paper), 0 0 0 8px color-mix(in srgb, var(--brand) 25%, transparent);
+}
+
+.guide-screenshot { display: block; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; cursor: zoom-in; }
+.guide-screenshot--half { width: 50%; }
+.guide-screenshot img { display: block; width: 100%; height: auto; }

@@ -3,170 +3,263 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FinOpsWay - Databricks cost in your workspace navigation</title>
-  <meta name="description"
-    content="A free browser extension that shows Databricks cost in the workspace top navigation, for the page you are on. Billing data arrives with a delay, so FinOpsWay shows how recent its numbers are and marks the hours that are not reported yet." />
-  <!-- Relative, not root-absolute: this is a project page served from
-         /finopsway/, so a leading slash would 404. -->
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <title>FinOpsWay | FinOps for Databricks &amp; Databricks Costs</title>
+  <meta name="description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
+  <!-- Keep assets relative so local and subdirectory previews also work. -->
+  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=016" />
+  <link rel="canonical" href="https://finopsway.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FinOpsWay" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://finopsway.com/" />
+  <meta property="og:title" content="FinOpsWay | FinOps for Databricks &amp; Databricks Costs" />
+  <meta property="og:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
+  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-popover1.jpg" />
+  <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FinOpsWay | FinOps for Databricks &amp; Databricks Costs" />
+  <meta name="twitter:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
+  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-popover1.jpg" />
+  <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://finopsway.com/#website",
+      "url": "https://finopsway.com/",
+      "name": "FinOpsWay",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://finopsway.com/#application",
+      "name": "FinOpsWay",
+      "url": "https://finopsway.com/",
+      "description": "Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "softwareRequirements": "Google Chrome, Microsoft Edge or Mozilla Firefox; a Databricks workspace",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "screenshot": "https://finopsway.com/img/examples/workspace-popover1.jpg",
+      "featureList": [
+        "Databricks cost visibility in workspace navigation",
+        "Cost context for jobs, clusters and pipelines",
+        "Cost breakdown by SKU",
+        "Billing data freshness indicators"
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="masthead">
+    <div class="head">
     <div class="bar">
       <a class="lockup" href="./" aria-label="FinOpsWay home">
-        <!-- The S is the mark itself (wordmark-s.svg), generated from the extension's src/mark.js. -->
-        <span class="wordmark"><span class="wm-pale">FinOp</span><img class="wm-s" src="./wordmark-s.svg" alt="S" /><span
-            class="wm-way">Way</span></span>
+        <span class="wordmark">
+          <img class="wm-s" src="./img/FinOpsWay_logo_bl.png" alt="FinOpsWay" />
+        </span>
+        <span class="tagline">Databricks costs, in context</span>
       </a>
-      <nav class="nav">
-        <a href="#see">See it</a>
-        <a href="#what">What it does</a>
-        <a href="#get">Get it</a>
+      <nav class="nav desktop-nav">
+        <a class="nav-download" href="#download">Download</a>
+        <a href="./onboarding/">Setup guide</a>
+        <a href="#whatelse">Features</a>
         <a href="#privacy">Your data</a>
+        <a href="./contacts/">Contacts</a>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu <span aria-hidden="true">☰</span></summary>
+        <nav class="mobile-nav" aria-label="Main navigation">
+          <a href="#download">Download</a>
+          <a href="./onboarding/">Setup guide</a>
+          <a href="#whatelse">Features</a>
+          <a href="#privacy">Your data</a>
+          <a href="./contacts/">Contacts</a>
+        </nav>
+      </details>
     </div>
-
-    <div class="hero">
-      <!-- The clocks come before the headline on purpose: the gap is the
-             argument, and the visitor should meet it before any product claim.
-             The static times below are a fallback; script replaces them with
-             the visitor's real clock and an illustrative two-hour lag. -->
-      <div class="clocks">
-        <div class="clk clk-now">
-          <span class="clk-label">Your clock</span>
-          <span class="clk-time" id="clk-now">13:42</span>
-        </div>
-        <div class="clk clk-known">
-          <span class="clk-label">Latest billing data</span>
-          <span class="clk-time" id="clk-known">11:00</span>
-        </div>
-        <div class="clk clk-gap">
-          <span class="clk-label">The difference</span>
-          <span class="clk-time" id="clk-gap">2 h 42 m</span>
-        </div>
-      </div>
-
-      <div class="timeline" role="img"
-        aria-label="A timeline of the last day: most of it covered by billing data, the last couple of hours hatched because billing has not reported them yet">
-        <div class="timebar">
-          <span class="timebar-known"></span>
-          <span class="timebar-gap"></span>
-        </div>
-        <div class="timelabels">
-          <span class="timelabels-known">reported by billing</span>
-          <span class="timelabels-gap">not reported yet</span>
-        </div>
-      </div>
-
-      <h1>See your Databricks cost, and how recent it is.</h1>
-      <p class="standfirst">
-        Databricks billing data arrives a few hours late, so any "last 24
-        hours" figure is missing its most recent hours. FinOpsWay is a free
-        browser extension that shows the cost of the page you are on in the
-        workspace navigation. It tells you when its data ends and marks the
-        unreported hours clearly instead of showing them as zero.
-      </p>
-
     </div>
   </header>
 
+
   <main id="main">
-    <!-- The product itself, before any claim about it. The shot is a crop of a
-         real workspace (assets/screenshot.20260813.1.png in the extension repo),
-         never a mockup: everything the callouts point at is the extension's own
-         rendering, including the sentence about its own staleness. -->
-    <section class="section" id="see">
-      <h2>See it</h2>
+
+    <div class="hero">
+      <div class="hero-row">
+        <div class="hero_left">
+          <h1><span class="finopsway-title">FinOpsWay</span>: Track Databricks costs in the <img class="wm-s databricks-mark" src="./img/databricks_logo.png" alt="Databricks" /> interface</h1>
+          <p class="standfirst">
+            FinOpsWay is a free FinOps browser extension for Databricks. Track Databricks costs directly in your workspace, alongside your jobs, clusters, and pipelines.
+          </p>
+        </div>
+        <div class="hero_right">
+          <figure class="shot">
+            <picture>
+              <source media="(max-width: 720px)" srcset="./img/examples/chip-popover-narrow.jpg" width="454" height="688" />
+              <img src="./img/examples/workspace-popover1.jpg" width="988" height="700" loading="lazy"
+                alt="A Databricks workspace home page. In the top navigation, a chip reads: workspace $3.13, 24 h to 18:00, 4 h ago. Open below it, a panel with 24 h, 7 d and 14 d tabs, a bar chart whose last hours are hatched, a table of cost per SKU against the previous 24 hours, and a note that the window ends at 18:00 because billing has not reported the four hours since." />
+            </picture>
+            <b class="pin" style="left: 22.5%; top: 4.1%" aria-hidden="true">1</b>
+            <b class="pin" style="left: 67.3%; top: 5.7%" aria-hidden="true">2</b>
+            <b class="pin" style="left: 90.1%; top: 11.4%" aria-hidden="true">3</b>
+            <b class="pin" style="left: 65.3%; top: 61%" aria-hidden="true">4</b>
+          </figure>
+        </div>
+      </div>
+      <section class="point_section" id="see">
+        <ol class="callouts">
+          <li>
+            <b>Widget on every page</b>
+            Cost display within your workspace
+          </li>
+          <li>
+            <b>Filter by period</b>
+            Data coverage: 24 h, 7 d, months, custom period
+          </li>
+          <li>
+            <b>Diagram</b>
+            Visual graph for the selected period
+          </li>
+          <li>
+            <b>Division into SKUs</b>
+            Detailed SKU information
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <section class="section" id="download">
+      <h2>Download</h2>
       <p class="lead">
-        A small cost chip in the workspace navigation. Click it for the full
-        breakdown.
+        FinOpsWay is available in the Chrome Web Store and on Firefox Add-ons. It is free and does not need an account.
+        <a href="./onboarding/">Read the setup guide for creating and configuring a cluster</a>.
       </p>
-
-      <figure class="shot">
-        <picture>
-          <!-- A phone shows the chip and the popover alone. The wide crop's
-               popover text would land near 5px at 430 CSS px, which is a
-               screenshot of nothing. -->
-          <source media="(max-width: 720px)" srcset="./shots/chip-popover-narrow.png" width="454" height="688" />
-          <img src="./shots/workspace-popover.png" width="988" height="700" loading="lazy"
-            alt="A Databricks workspace home page. In the top navigation, a chip reads: workspace $3.13, 24 h to 18:00, 4 h ago. Open below it, a panel with 24 h, 7 d and 14 d tabs, a bar chart whose last hours are hatched, a table of cost per SKU against the previous 24 hours, and a note that the window ends at 18:00 because billing has not reported the four hours since." />
-        </picture>
-        <!-- Percentage pins keyed to THIS crop (988x700). They are hidden below
-             720px, where the narrow crop replaces the image they point at. -->
-        <b class="pin" style="left: 41.5%; top: 4.1%" aria-hidden="true">1</b>
-        <b class="pin" style="left: 45.3%; top: 11.7%" aria-hidden="true">2</b>
-        <b class="pin" style="left: 90.1%; top: 21.4%" aria-hidden="true">3</b>
-        <b class="pin" style="left: 45.3%; top: 51%" aria-hidden="true">4</b>
-      </figure>
-
-      <ol class="callouts">
-        <li>
-          <b>The chip in the navigation</b>
-          $3.13 for the workspace over the 24 hours to 18:00, and how old that
-          figure is. A cost number is only useful if you know when it is from.
-        </li>
-        <li>
-          <b>Click for the breakdown</b>
-          The same scope over 24 hours, 7 days and 14 days. The heading says
-          what you are looking at: the workspace, by SKU.
-        </li>
-        <li>
-          <b>Hatched bars are unreported hours</b>
-          Billing data ends at 18:00, so the hours after that are drawn hatched
-          instead of being shown as zero.
-        </li>
-        <li>
-          <b>Every SKU, with a comparison</b>
-          Each line is compared with the same period before it, so you can see
-          whether cost is going up or down.
-        </li>
-      </ol>
-
-      <!-- A <p>, not a <figcaption>: it comments on the callouts as much as on
-           the image, and a figcaption has to live inside the figure. -->
-      <p class="caption">
-        The last line of the panel explains the gap: <em>the window ends at
-          18:00, billing has not reported the 4 h since</em>. The screenshot is
-        from a real workspace, not a mockup.
+      <div class="download-grid">
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi"
+          rel="noopener">
+          <span class="browser-icon"><img src="./img/google_chrome.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Google Chrome</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi"
+          rel="noopener">
+          <span class="browser-icon"><img src="./img/edge.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Microsoft Edge</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+        <a class="download-card" href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" rel="noopener">
+          <span class="browser-icon"><img src="./img/firefox.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Mozilla Firefox</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+      </div>
+      <p class="note">
+        Edge users install from the Chrome Web Store. After installing, open the extension's options page, choose your workspace and paste a personal access token. Browser session mode is available for testing, but use it at your own risk: it is not recommended for production. Then open any Databricks page and the cost chip will appear in the top navigation.
+        Questions? <a href="mailto:mail@finopsway.com">Email us</a>.
       </p>
     </section>
 
-    <section class="section" id="what">
-      <h2>What it does</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Cost for the page you are on</h3>
-          <p>
-            On a cluster, SQL warehouse, job, job run, pipeline or pipeline
-            update page the chip shows the cost of that resource next to the
-            cost of the whole workspace. On the home page, and on any page it
-            does not recognise, it shows the workspace total.
-          </p>
+    <section class="section examples-section" aria-labelledby="examples-title" id="whatelse">
+      <div class="examples-route">
+      <div class="examples-intro">
+        <h2 id="examples-title">What else the widget shows</h2>
+        <p>FinOpsWay places cost context next to the Databricks resources you use every day.</p>
+      </div>
+      <div class="examples-stories">
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">01</span> Clusters</p>
+            <h3>Compute, with cost in view</h3>
+            <p>Keep cost context close while you browse the clusters in your workspace.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-clusters.jpg" alt="FinOpsWay cost information on the Databricks clusters page." width="1214" height="571" loading="lazy" />
+          </div>
         </article>
-        <article class="card">
-          <h3>Runs entirely in your browser</h3>
-          <p>
-            It runs read-only SQL queries against the <code>system.billing</code>
-            and <code>system.compute</code> tables directly from the browser.
-            There is no backend, no OAuth flow and nothing to deploy. It
-            authenticates with a personal access token you paste into the
-            options page, or with the browser session you are already signed
-            in with.
-          </p>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">02</span> Job runs</p>
+            <h3>Every run has a story</h3>
+            <p>Bring cost into the picture when you review a job run, right where you already work.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-job-runs.jpg" alt="FinOpsWay cost information on the Databricks job runs page." width="1421" height="740" loading="lazy" />
+          </div>
         </article>
-        <article class="card">
-          <h3>Free</h3>
-          <p>
-            There are no servers to pay for, so there is nothing to charge
-            for. No account, no trial, no paid tier and no telemetry.
-          </p>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">03</span> Jobs and pipelines</p>
+            <h3>Your workflows. Their costs.</h3>
+            <p>See cost information alongside your jobs and pipelines, without leaving Databricks.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-jobs-and-pipelines.jpg" alt="FinOpsWay cost information on the Databricks jobs and pipelines page." width="824" height="472" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">04</span> New cluster setup</p>
+            <h3>Plan your next cluster</h3>
+            <p>Keep cost in mind as you configure a new cluster, before it becomes part of your daily workflow.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/workspace-new-cluster.jpg" alt="FinOpsWay cost information on the Databricks new cluster setup page." width="893" height="620" loading="lazy" />
+          </div>
         </article>
       </div>
+        <svg class="examples-road" viewBox="0 0 1000 1760" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs>
+            <path id="examples-road-path" d="M 400,0 C 400,100 670,70 740,160 C 960,420 40,420 260,740 S 960,940 740,1210 S 40,1420 260,1760" />
+          </defs>
+          <use class="examples-road-edge" href="#examples-road-path" />
+          <use class="examples-road-surface" href="#examples-road-path" />
+          <use class="examples-road-markings" href="#examples-road-path" />
+        </svg>
+      </div>
+    </section>
+
+    
+
+    <section class="section" id="privacy">
+      <h2>Your data</h2>
+      <p class="lead">
+        The extension has no backend and no telemetry. The only network
+        requests it makes are the queries themselves, sent to the Databricks
+        workspace you are signed in to. We run no server, receive no data and
+        cannot see what you query.
+      </p>
+      <p>
+        The data the extension reads is used only to display your Databricks
+        spend. None of it is sold, shared with third parties or used for
+        advertising. Cloud machine prices are bundled with the extension, so
+        estimating cluster cost does not contact any cloud provider either.
+        <a href="./privacy/">Read the full privacy policy</a>.
+      </p>
     </section>
 
     <section class="section" id="where">
@@ -197,56 +290,18 @@
       </dl>
     </section>
 
-    <section class="section" id="get">
-      <h2>Get it</h2>
-      <p class="lead">
-        FinOpsWay is available in the Chrome Web Store and on Firefox Add-ons.
-        It is free and does not need an account.
-      </p>
-      <div class="getrow">
-        <a class="cta" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi"
-          rel="noopener">Add to Chrome</a>
-        <a class="cta" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi"
-          rel="noopener">Add to Edge</a>
-        <a class="cta" href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" rel="noopener">Add to
-          Firefox</a>
-      </div>
-      <p class="note">
-        Edge users install from the Chrome Web Store. After installing, open the
-        extension's options page, choose your workspace and paste a personal
-        access token (or use your existing browser session). Then open any
-        Databricks page and the cost chip will appear in the top navigation.
-        Questions? <a href="mailto:mail@finopsway.com">Email us</a>.
-      </p>
-    </section>
-
-    <section class="section" id="privacy">
-      <h2>Your data</h2>
-      <p class="lead">
-        The extension has no backend and no telemetry. The only network
-        requests it makes are the queries themselves, sent to the Databricks
-        workspace you are signed in to. We run no server, receive no data and
-        cannot see what you query.
-      </p>
-      <p>
-        The data the extension reads is used only to display your Databricks
-        spend. None of it is sold, shared with third parties or used for
-        advertising. Cloud machine prices are bundled with the extension, so
-        estimating cluster cost does not contact any cloud provider either.
-        <a href="./privacy/">Read the full privacy policy</a>.
-      </p>
-    </section>
   </main>
 
   <footer class="footer">
     <div class="bar">
       <div class="footer-id">
-        <span class="wordmark small"><span class="wm-pale">FinOp</span><img class="wm-s" src="./wordmark-s.svg" alt="S" /><span
-            class="wm-way">Way</span></span>
+        <span class="wordmark small">
+        <img class="wm-s" src="./img/FinOpsWay_logo.png" alt="FinOpsWay" />
+        </span>
       </div>
       <nav class="nav">
         <a href="./privacy/">Privacy policy</a>
-        <a href="mailto:mail@finopsway.com">Contact</a>
+        <a class="footer-support" href="https://github.com/sponsors/aig" rel="noopener">Support project <span aria-hidden="true">♥</span></a>
       </nav>
     </div>
     <!-- One line, because the full notice is one click away. -->
