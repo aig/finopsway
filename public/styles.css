@@ -469,7 +469,7 @@ h1 {
   border-bottom: none;
 }
 
-.examples-section { max-width: calc(1248px + var(--pad) * 2); padding-top: 64px; padding-bottom: 72px; gap: 16px; }
+.examples-section { padding-top: 64px; padding-bottom: 72px; gap: 16px; }
 .examples-route { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 16px; }
 .examples-intro {
   position: relative;
