@@ -2,6 +2,7 @@
  * only for the timeline's reported-data span. */
 
 :root {
+  color-scheme: only light;
   --ink: #0e1418;
   --ink-lift: #1d252b;
   --pale: #eef3f5;
@@ -27,17 +28,6 @@
 
 html {
   scroll-padding-top: clamp(72px, 12vw, 110px);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #12191d;
-    --surface: #182227;
-    --fg: #eef3f5;
-    --fg-soft: #a8b8c0;
-    --border: #26333a;
-    --brand-ink: #3f7949;
-  }
 }
 
 * {
@@ -107,6 +97,7 @@ a:focus-visible,
 
 .head {
   max-width: 100%;
+  padding-inline: var(--pad);
   background: #3f7949;
   border-bottom: 1px solid rgb(255 255 255 / 18%);
 }
@@ -161,7 +152,6 @@ a:focus-visible,
   display: inline-block;
   height: 1.05em;
   width: auto;
-  margin: 0 -0.02em 0 -1.32em;
   vertical-align: -0.27em;
   overflow: visible;
 }
@@ -294,10 +284,6 @@ a:focus-visible,
 .mobile-nav a:hover { background: color-mix(in srgb, var(--brand) 10%, transparent); color: var(--brand-ink); }
 
 @media (max-width: 720px) {
-  .masthead .bar {
-    padding-right: var(--pad);
-    padding-left: var(--pad);
-  }
   .masthead .wm-s,
   .footer .wm-s { margin-left: 0; }
   .masthead .tagline { display: none; }
