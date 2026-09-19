@@ -982,9 +982,12 @@ h3 {
   .contact-card { min-height: 260px; padding: 28px 28px 30px; }
 }
 
+@media (max-width: 768px) {
+  .contacts-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 560px) {
   .guide-progress { grid-template-columns: repeat(2, 1fr); }
-  .contacts-grid { grid-template-columns: 1fr; }
   .contacts-intro { flex-direction: column; align-items: flex-start; gap: 12px; }
   .contacts-intro .support-cta { padding: 9px 12px; font-size: 13px; }
 }
