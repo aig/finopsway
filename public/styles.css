@@ -929,38 +929,70 @@ h3 {
 .guide-warning { border-left: 3px solid #d28b2c; background: color-mix(in srgb, #d28b2c 10%, var(--surface)); padding: 15px 18px; font-size: 15px; }
 .guide-warning strong { display: block; color: var(--fg); margin-bottom: 3px; }
 
-.contacts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.contact-card { min-height: 210px; gap: 10px; }
-.contact-card h3 { font-size: 23px; }
-.contact-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 16px;
-  margin-bottom: 14px;
+.contacts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.contact-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 350px;
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--brand) 50%, var(--border));
+  border-radius: 22px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 13%, var(--surface)), var(--surface) 68%);
+  box-shadow: 0 8px 20px rgb(14 20 24 / 6%);
 }
-.contact-details { display: flex; flex-direction: column; gap: 10px; }
-.contact-badges {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+.contact-card::before,
+.contact-card::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--brand) 18%, transparent);
 }
-.contact-badges img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: 80px;
-  object-fit: contain;
+.contact-card::before { width: 300px; height: 300px; right: -94px; bottom: -116px; }
+.contact-card::after { width: 110px; height: 110px; right: 112px; top: -50px; background: color-mix(in srgb, var(--brand) 10%, transparent); }
+.contact-card h3 { max-width: 8ch; font-size: clamp(25px, 2.4vw, 33px); line-height: 1.05; letter-spacing: -.045em; }
+.contact-copy { position: relative; z-index: 1; display: flex; flex-direction: column; width: min(60%, 260px); }
+.contact-details { display: flex; flex-direction: column; gap: 11px; }
+.contact-details > p:last-child { font-size: 16px; line-height: 1.42; color: var(--fg-soft); }
+.contact-badges { display: flex; align-items: end; gap: 8px; margin-top: 18px; }
+.contact-badges img { display: block; width: auto; max-width: 72px; height: 64px; object-fit: contain; }
+.contact-portrait { position: absolute; z-index: 0; right: -4px; bottom: -1px; width: 53%; height: 91%; display: flex; align-items: end; justify-content: end; }
+.contact-portrait img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; object-position: bottom right; filter: drop-shadow(-8px 12px 13px rgb(14 20 24 / 15%)); }
+.contact-link {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: var(--brand-solid);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgb(14 20 24 / 13%);
+  transition: transform 160ms ease, background-color 160ms ease;
 }
-.contact-link { margin-top: auto; color: var(--brand-ink); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.contact-link:hover { background: var(--brand-ink); transform: translateY(-2px); }
 
-@media (min-width: 900px) {
-  .contact-card { min-height: 260px; padding: 28px 28px 30px; }
+@media (max-width: 900px) {
+  .contact-card { min-height: 330px; padding: 25px; }
+  .contact-portrait { width: 50%; }
 }
 
 @media (max-width: 768px) {
-  .contacts-grid { grid-template-columns: 1fr; grid-template-columns: repeat(1, minmax(0, 1fr));}
+  .contacts-grid { grid-template-columns: 1fr; }
+  .contact-card { min-height: 320px; }
+}
+
+@media (max-width: 420px) {
+  .contact-card { min-height: 385px; padding: 24px; }
+  .contact-copy { width: 100%; }
+  .contact-portrait { width: 56%; height: 53%; }
+  .contact-card h3 { max-width: 10ch; }
+  .contact-card::before { width: 250px; height: 250px; right: -74px; bottom: -98px; }
 }
 
 @media (max-width: 560px) {
