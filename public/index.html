@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FinOpsWay | FinOps for Databricks &amp; Databricks Costs</title>
   <meta name="description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <!-- Keep assets relative so local and subdirectory previews also work. -->
   <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css?v=021" />
   <link rel="canonical" href="https://finopsway.com/" />
@@ -334,10 +333,10 @@
       </div>
       <nav class="nav">
         <a href="./privacy/">Privacy policy</a>
+        <a href="https://www.linkedin.com/company/finopsway/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="footer-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><span aria-hidden="true">♥</span> Support project</a>
       </nav>
     </div>
-    <!-- One line, because the full notice is one click away. -->
     <p class="legal">
       Not affiliated with Databricks, Inc. Trademarks belong to their owners.
       <a href="./privacy/#trademarks">Full notice</a>.
@@ -345,18 +344,12 @@
   </footer>
 
   <script>
-    // The two clocks. "Your clock" is the visitor's real time; "your bill's
-    // clock" trails it by an illustrative two hours, floored to the hour the
-    // way an ingestion horizon lands on hour boundaries. The static HTML times
-    // are the no-JS fallback.
     (function () {
       var nowEl = document.getElementById("clk-now");
       var knownEl = document.getElementById("clk-known");
       var gapEl = document.getElementById("clk-gap");
       if (!nowEl || !knownEl || !gapEl) return;
 
-      // 24-hour, zero-padded: the format the chip itself prints ("-> 11:00"),
-      // so the site's clocks and the product's horizon read as one voice.
       function fmt(d) {
         var pad = function (n) {
           return ("0" + n).slice(-2);
