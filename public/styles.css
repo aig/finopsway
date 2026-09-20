@@ -1010,22 +1010,19 @@ h3 {
 }
 .contact-link:hover { background: var(--brand-ink); transform: translateY(-2px); }
 
-@media (max-width: 900px) {
-  .contact-card { min-height: 330px; padding: 25px; }
-  .contact-portrait { width: 50%; }
-}
-
 @media (max-width: 768px) {
   .contacts-grid { grid-template-columns: 1fr; }
-  .contact-card { min-height: 320px; }
 }
 
 @media (max-width: 420px) {
-  .contact-card { min-height: 385px; padding: 24px; }
-  .contact-copy { width: 100%; }
-  .contact-portrait { width: 56%; height: 53%; }
-  .contact-card h3 { max-width: 10ch; }
-  .contact-card::before { width: 250px; height: 250px; right: -74px; bottom: -98px; }
+  .contact-card { min-height: 310px; padding: 23px; }
+  .creator-card .contact-portrait { right: -30px; width: 84%; height: 92%; }
+  .coauthor-card .contact-portrait { right: 0; width: 60%; height: 94%; }
+  .contact-card h3 { font-size: 22px; }
+  .contact-details > p:last-child { font-size: 13px; line-height: 1.35; }
+  .contact-badges { margin-top: 12px; }
+  .contact-badges img { max-width: 62px; height: 54px; }
+  .contact-link { margin-top: 8px; padding: 9px 12px; font-size: 12px; }
 }
 
 @media (max-width: 560px) {
