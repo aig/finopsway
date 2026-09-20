@@ -930,6 +930,26 @@ h3 {
 .guide-warning strong { display: block; color: var(--fg); margin-bottom: 3px; }
 
 .contacts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.authors-section > h2 {
+  align-self: center;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 750;
+  letter-spacing: -.045em;
+  line-height: 1.06;
+  text-align: center;
+  text-wrap: balance;
+}
+.authors-section > h2::after {
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 17px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand-solid), color-mix(in srgb, var(--brand) 35%, var(--surface)));
+  content: "";
+}
 .contact-card {
   position: relative;
   isolation: isolate;
@@ -941,8 +961,7 @@ h3 {
   background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 13%, var(--surface)), var(--surface) 68%);
   box-shadow: 0 8px 20px rgb(14 20 24 / 6%);
 }
-.contact-card::before,
-.contact-card::after {
+.contact-card::before {
   position: absolute;
   z-index: -1;
   content: "";
@@ -950,11 +969,25 @@ h3 {
   background: color-mix(in srgb, var(--brand) 18%, transparent);
 }
 .contact-card::before { width: 300px; height: 300px; right: -94px; bottom: -116px; }
-.contact-card::after { width: 110px; height: 110px; right: 112px; top: -50px; background: color-mix(in srgb, var(--brand) 10%, transparent); }
 .contact-card h3 { max-width: 8ch; font-size: clamp(25px, 2.4vw, 33px); line-height: 1.05; letter-spacing: -.045em; }
 .contact-copy { position: relative; z-index: 1; display: flex; flex-direction: column; width: min(60%, 260px); }
 .contact-details { display: flex; flex-direction: column; gap: 11px; }
 .contact-details > p:last-child { font-size: 16px; line-height: 1.42; color: var(--fg-soft); }
+.creator-card { background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 17%, var(--surface)), var(--surface) 68%); }
+.creator-card .eyebrow {
+  align-self: flex-start;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand) 17%, var(--surface));
+  color: var(--brand-ink);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.creator-card::before { width: 350px; height: 350px; right: -110px; bottom: -116px; background: color-mix(in srgb, var(--brand) 24%, transparent); }
+.coauthor-card { background: linear-gradient(135deg, color-mix(in srgb, var(--span) 10%, var(--surface)), var(--surface) 70%); }
+.coauthor-card::before { width: 285px; height: 285px; right: -88px; bottom: -102px; background: color-mix(in srgb, var(--span) 20%, transparent); }
+.coauthor-card .contact-portrait { right: 5px; width: 48%; height: 95%; }
 .contact-badges { display: flex; align-items: end; gap: 8px; margin-top: 18px; }
 .contact-badges img { display: block; width: auto; max-width: 72px; height: 64px; object-fit: contain; }
 .contact-portrait { position: absolute; z-index: 0; right: -4px; bottom: -1px; width: 53%; height: 91%; display: flex; align-items: end; justify-content: end; }
