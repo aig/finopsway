@@ -8,7 +8,8 @@
   <title>Databricks Cost Monitoring Setup Guide | FinOpsWay</title>
   <meta name="description" content="Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace." />
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../styles.css?v=013" />
+  <link rel="stylesheet" href="../styles.css?v=024" />
+  <script src="../menu.js?v=001" defer></script>
   <link rel="stylesheet" href="./onboarding.css?v=007" />
   <script src="./onboarding.js?v=002" defer></script>
   <link rel="canonical" href="https://finopsway.com/onboarding/" />
@@ -19,12 +20,12 @@
   <meta property="og:url" content="https://finopsway.com/onboarding/" />
   <meta property="og:title" content="Databricks Cost Monitoring Setup Guide | FinOpsWay" />
   <meta property="og:description" content="Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-popover1.jpg" />
+  <meta property="og:image" content="https://finopsway.com/img/examples/workspace_popover.jpg" />
   <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Databricks Cost Monitoring Setup Guide | FinOpsWay" />
   <meta name="twitter:description" content="Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-popover1.jpg" />
+  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace_popover.jpg" />
   <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
 </head>
 
@@ -43,7 +44,8 @@
           <a href="./" aria-current="page">Setup guide</a>
           <a href="../#whatelse">Features</a>
           <a href="../#privacy">Your data</a>
-          <a href="../contacts/">Contacts</a>
+          <a href="../#authors">Contacts</a>
+          <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Support" title="Support"><span aria-hidden="true">♥</span></a>
         </nav>
         <details class="mobile-menu">
           <summary>Menu <span aria-hidden="true">☰</span></summary>
@@ -52,7 +54,8 @@
             <a href="./">Setup guide</a>
             <a href="../#whatelse">Features</a>
             <a href="../#privacy">Your data</a>
-            <a href="../contacts/">Contacts</a>
+            <a href="../#authors">Contacts</a>
+            <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><span aria-hidden="true">♥</span> Support</a>
           </nav>
         </details>
       </div>
@@ -74,7 +77,7 @@
       </div>
       <p>Install the extension from your browser’s store. No FinOpsWay account is required.</p>
       <div class="download-grid">
-        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" rel="noopener">
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" target="_blank" rel="noopener">
           <span class="browser-icon"><img src="../img/google_chrome.svg" alt="" /></span>
           <span class="download-card-copy">
             <span class="download-card-label">Available for</span>
@@ -82,7 +85,7 @@
             <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
           </span>
         </a>
-        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" rel="noopener">
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" target="_blank" rel="noopener">
           <span class="browser-icon"><img src="../img/edge.svg" alt="" /></span>
           <span class="download-card-copy">
             <span class="download-card-label">Available for</span>
@@ -90,7 +93,7 @@
             <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
           </span>
         </a>
-        <a class="download-card" href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" rel="noopener">
+        <a class="download-card" href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" target="_blank" rel="noopener">
           <span class="browser-icon"><img src="../img/firefox.svg" alt="" /></span>
           <span class="download-card-copy">
             <span class="download-card-label">Available for</span>
@@ -156,10 +159,21 @@
 
   <footer class="footer">
     <div class="bar">
-      <div class="footer-id"><span class="wordmark small"><img class="wm-s" src="../img/FinOpsWay_logo.png" alt="FinOpsWay" /></span></div>
-      <nav class="nav"><a href="../privacy/">Privacy policy</a><a class="footer-support" href="https://github.com/sponsors/aig" rel="noopener">Support project <span aria-hidden="true">♥</span></a></nav>
+      <div class="footer-id">
+        <span class="wordmark small">
+        <img class="wm-s" src="../img/FinOpsWay_logo.png" alt="FinOpsWay" />
+        </span>
+      </div>
+      <nav class="nav">
+        <a href="../privacy/">Privacy policy</a>
+        <a href="https://www.linkedin.com/company/finopsway/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><span aria-hidden="true">♥</span> Support project</a>
+      </nav>
     </div>
-    <p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners. <a href="../privacy/#trademarks">Full notice</a>.</p>
+    <p class="legal">
+      Not affiliated with Databricks, Inc. Trademarks belong to their owners.
+      <a href="../privacy/#trademarks">Full notice</a>.
+    </p>
   </footer>
 </body>
 

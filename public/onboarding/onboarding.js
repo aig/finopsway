@@ -15,7 +15,6 @@
     positions.forEach((top, index) => {
       if (top <= readingLine) current = index;
     });
-    // Short final sections may never reach the reading line.
     if (window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
       current = sections.length - 1;
     }
@@ -25,7 +24,6 @@
     if (compact) {
       content.style.setProperty('--marker-left', `${content.getBoundingClientRect().left}px`);
     }
-    // Keep the collected steps inside the guide as the footer enters view.
     const stackHeight = (sections.length - 1) * stackGap + markerSize;
     const stackStart = Math.min(stackTop, content.getBoundingClientRect().bottom - stackHeight - 24);
     const naturalTops = markers.map((marker, index) =>
@@ -39,7 +37,6 @@
     sections.forEach((section, index) => {
       const marker = markers[index];
       const shift = markerTops[index] - naturalTops[index];
-      // Connect the visible marker centers, including when they collect into a stack.
       section.style.setProperty('--line-top', `${markerTops[index] - positions[index] - section.clientTop + markerSize / 2}px`);
       section.style.setProperty('--line-height', `${Math.max(0, (markerTops[index + 1] ?? markerTops[index]) - markerTops[index])}px`);
       marker.style.setProperty('--sticky-shift', `${shift}px`);
