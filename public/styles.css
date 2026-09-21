@@ -494,6 +494,105 @@ h1 {
   .example-visual { transform: none; }
 }
 
+.why-section {
+  gap: 28px;
+  padding-top: clamp(32px, 5vw, 56px);
+  padding-bottom: clamp(32px, 5vw, 56px);
+}
+.why-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.why-kicker {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+.why-section h2 {
+  font-size: clamp(26px, 3.6vw, 38px);
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.why-lead {
+  color: var(--fg-soft);
+  font-size: 18px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+.why-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.why-step {
+  --why-accent: var(--brand);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 24px 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--why-accent);
+  border-radius: 4px;
+}
+.why-step:nth-child(2) { --why-accent: #3f6a7d; }
+.why-step:nth-child(3) { --why-accent: #a67b3e; }
+.why-step-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+}
+.why-step-number {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--why-accent);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.why-step h3 {
+  font-size: 19px;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.why-step > p:not(.why-step-kicker) {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--fg-soft);
+  text-wrap: pretty;
+}
+.why-close {
+  max-width: 52ch;
+  padding-left: 18px;
+  border-left: 3px solid color-mix(in srgb, var(--brand) 45%, var(--paper));
+  font-size: 18px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+@media (max-width: 720px) {
+  .why-section { gap: 22px; }
+  .why-steps { gap: 14px; }
+  .why-step { padding: 18px 18px 20px; }
+}
+
 h2 {
   font-size: clamp(22px, 3vw, 27px);
   letter-spacing: -0.02em;
