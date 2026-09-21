@@ -350,38 +350,6 @@
     </p>
   </footer>
 
-  <script>
-    (function () {
-      var nowEl = document.getElementById("clk-now");
-      var knownEl = document.getElementById("clk-known");
-      var gapEl = document.getElementById("clk-gap");
-      if (!nowEl || !knownEl || !gapEl) return;
-
-      function fmt(d) {
-        var pad = function (n) {
-          return ("0" + n).slice(-2);
-        };
-        return pad(d.getHours()) + ":" + pad(d.getMinutes());
-      }
-
-      function tick() {
-        var now = new Date();
-        var known = new Date(now.getTime());
-        known.setMinutes(0, 0, 0);
-        known.setHours(known.getHours() - 2);
-
-        var mins = Math.round((now.getTime() - known.getTime()) / 60000);
-        var text = Math.floor(mins / 60) + " h " + ("0" + (mins % 60)).slice(-2) + " m";
-
-        nowEl.textContent = fmt(now);
-        knownEl.textContent = fmt(known);
-        gapEl.textContent = text;
-      }
-
-      tick();
-      setInterval(tick, 30000);
-    })();
-  </script>
 </body>
 
 </html>

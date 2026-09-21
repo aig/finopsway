@@ -366,58 +366,6 @@ h1 {
   font-style: italic;
 }
 
-.clocks {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: start;
-  gap: 20px;
-}
-
-.clk {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.clk-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.clk-time {
-  font-size: clamp(40px, 8vw, 72px);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 0.95;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
-.clk-now .clk-time {
-  color: #55636b;
-}
-@supports (-webkit-text-stroke: 1px black) {
-  .clk-now .clk-time {
-    color: transparent;
-    -webkit-text-stroke: 1.5px #55636b;
-  }
-}
-
-.clk-known .clk-time {
-  color: var(--pale);
-}
-
-.clk-gap .clk-label {
-  color: var(--brand);
-}
-.clk-gap .clk-time {
-  color: var(--brand);
-  font-size: clamp(26px, 4.6vw, 42px);
-}
-
 .timeline {
   display: flex;
   flex-direction: column;
@@ -1134,26 +1082,6 @@ h3 {
 .support-cta { white-space: nowrap; }
 
 @media (max-width: 720px) {
-
-  .clocks {
-    grid-auto-flow: column;
-    grid-template-rows: auto auto;
-    align-items: end;
-    gap: 6px 12px;
-  }
-  .clk {
-    display: contents;
-  }
-  .clk-label {
-    font-size: 9.5px;
-    letter-spacing: 0.08em;
-  }
-  .clk-time {
-    font-size: clamp(24px, 7.6vw, 44px);
-  }
-  .clk-gap .clk-time {
-    font-size: clamp(17px, 5vw, 30px);
-  }
 
   .pin {
     display: none;
