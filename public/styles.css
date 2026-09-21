@@ -232,6 +232,17 @@ a:focus-visible,
   line-height: 14px;
 }
 
+.nav-support span,
+.footer-support span {
+  color: #ff5f52;
+  transition: color 160ms ease;
+}
+
+.nav-support:hover span,
+.footer-support:hover span {
+  color: #ff8078;
+}
+
 .mobile-menu { display: none; }
 
 .mobile-menu summary {
@@ -1073,7 +1084,8 @@ h3 {
 .legal {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 0 20px;
+  padding: 14px 0 22px;
+  border-top: 1px solid rgb(255 255 255 / 9%);
   font-size: 13px;
   color: var(--muted);
 }
@@ -1086,15 +1098,30 @@ h3 {
   color: var(--pale);
 }
 
+.footer .bar {
+  padding: 26px 0 18px;
+}
+
+.footer .nav {
+  align-items: center;
+  gap: 10px 20px;
+}
+
 .footer .nav a.footer-support {
   display: inline-flex;
   align-items: center;
-  padding: 5px 10px;
-  border: 1px solid color-mix(in srgb, #fff 55%, transparent);
-  border-radius: 4px;
+  gap: 7px;
+  padding: 7px 14px;
+  border: 1px solid rgb(255 255 255 / 26%);
+  border-radius: 999px;
   color: #fff;
+  transition: border-color 160ms ease, background 160ms ease;
 }
-.footer .nav a.footer-support:hover { color: #fff; background: rgb(255 255 255 / 12%); }
+.footer .nav a.footer-support:hover {
+  color: #fff;
+  border-color: rgb(255 255 255 / 52%);
+  background: rgb(255 255 255 / 9%);
+}
 .support-cta { white-space: nowrap; }
 
 @media (max-width: 720px) {
