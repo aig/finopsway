@@ -228,18 +228,27 @@ a:focus-visible,
 .masthead .nav .nav-support {
   display: inline-flex;
   align-items: center;
-  font-size: 18px;
-  line-height: 14px;
+  line-height: 1;
 }
 
-.nav-support span,
-.footer-support span {
+.nav-support,
+.footer-support {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-support .heart,
+.footer-support .heart {
+  flex: none;
+  width: 16px;
+  height: 16px;
   color: #ff5f52;
   transition: color 160ms ease;
 }
 
-.nav-support:hover span,
-.footer-support:hover span {
+.nav-support:hover .heart,
+.footer-support:hover .heart {
   color: #ff8078;
 }
 
