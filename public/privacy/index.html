@@ -69,7 +69,7 @@
   <main id="main" class="section prose">
     <h1 class="prose-title">Privacy policy</h1>
     <p class="prose-meta">
-      <strong>finopsway-costs</strong> browser extension. Last updated 11 September 2026.
+      <strong>finopsway-costs</strong> browser extension. Last updated 21 September 2026.
     </p>
     <p>
       This is the privacy policy for the finopsway-costs extension, as
@@ -94,10 +94,21 @@
       It is stored with <code>chrome.storage.local</code>, keyed by workspace
       origin. That store is readable by this extension alone, is never synced to
       a browser account, and is cleared when you remove the token from the
-      options page or uninstall the extension. In session mode nothing is
+      options page or uninstall the extension. In session mode no credential is
       stored: the extension reuses the workspace session you already have, and
       the CSRF token it needs is fetched per request and held in memory for the
       duration of that request.
+    </p>
+    <p>
+      <strong>Your workspace account name, in session mode only.</strong> So
+      that a query runs as you rather than as nobody, the extension asks the
+      workspace who you are: it reads <code>/auth/session/info</code> and, where
+      that answers with a numeric id alone,
+      <code>/api/2.0/preview/scim/v2/Me</code>. The name it gets back (an email
+      address) is sent to your own workspace as the identity the statement runs
+      as. It is held in memory for that request, is never stored, and is never
+      sent anywhere but the workspace it came from. Token mode looks nothing up:
+      a personal access token is already an identity.
     </p>
     <p>
       <strong>Databricks billing usage records and SKU prices.</strong> The
@@ -111,8 +122,13 @@
       The most recent five weeks are kept at the hourly grain the table has;
       anything older is folded to one row per day per SKU and compute
       resource, so the cache holds less detail about a day the further back
-      it is, never more. Alongside the rows it keeps only its own
-      bookkeeping: which day was last fetched, when, and how many rows landed.
+      it is, never more. A row carries the cost figures and the ids of whatever
+      ran up the cost - workspace, cluster, warehouse, job and run, pipeline,
+      app, serverless compute - and, for a job or a Databricks App, the name
+      Databricks records for it, which is what lets the toolbar name what you
+      are looking at instead of printing an id. Alongside the rows it keeps only
+      its own bookkeeping: which day was last fetched, when, and how many rows
+      landed.
       It contains only records the signed-in identity is already entitled to
       read.
     </p>
@@ -138,9 +154,33 @@
     </p>
     <p>
       <strong>Extension settings.</strong> Your warehouse choice, catalog,
-      retention, display preferences and the period the toolbar is showing (a
-      preset such as "month to date", or the dates you chose and what they are
-      compared against), in <code>chrome.storage.local</code>.
+      retention, display preferences, which cost figure the toolbar shows,
+      whether each page integration is on, whether debug logging is on, and the
+      period the toolbar is showing (a preset such as "month to date", or the
+      dates you chose and what they are compared against), in
+      <code>chrome.storage.local</code>.
+    </p>
+    <p>
+      <strong>A little per-workspace bookkeeping</strong>, on the same store and
+      keyed by the same origin: the workspace's warehouse list as the options
+      page last read it (each one's id, name and running state), a record of the
+      query currently in flight so another tab can pick it up instead of asking
+      the warehouse twice, when the last sync finished and how many rows it
+      returned, and a flag saying the extension is active on this workspace.
+      Removing the workspace on the options page, or uninstalling, removes all
+      of it.
+    </p>
+    <p>
+      <strong>What the console page in front of you shows, where you switch a
+      page integration on.</strong> The cost badges and the SQL warehouse hourly
+      price are drawn inside Databricks' own pages, so they read those pages:
+      the links a list row carries (which is where the cluster, job, pipeline,
+      app or warehouse id comes from), the size and type a warehouse's row or
+      form is set to, and the "N DBU / h" rate the console prints. That reading
+      happens in your browser and goes nowhere; the badges are added to the page
+      and nothing of the console's own content is edited. Each integration has
+      its own switch on the options page, and there is a master switch for all
+      of them.
     </p>
 
     <h2>Where data goes</h2>
@@ -186,21 +226,30 @@
       <li>
         It does not read the content of your work. No notebook, query text,
         table, result or file is read at any point. The tables it queries
-        describe cost and compute usage, not your data.
+        describe cost and compute usage, not your data, and what the page
+        integrations read off the page is the console's own labels and links,
+        never anything of yours.
       </li>
     </ul>
 
     <h2>Logging</h2>
     <p>
-      Released builds do not write diagnostic traces to the page console. Even in
-      a development build with tracing enabled, the access token and the CSRF
-      token are never logged; the trace names the authentication mode only, and
-      automated tests enforce that.
+      Debug logging is off by default, in released builds as in any other, and
+      while it is off the extension writes no diagnostic traces at all. You can
+      turn it on from the options page (<strong>Debug logging</strong>) when
+      something needs diagnosing; leave it off otherwise, because the extension
+      logs to the <em>page</em> console, which the workspace app can read and
+      anyone looking over your shoulder can see. Even with it on, the access
+      token and the CSRF token are never printed, and automated tests enforce
+      that. What the trace does name is the authentication mode, your settings,
+      the workspace id and, in session mode, the account the query runs as.
     </p>
 
     <h2>Removing your data</h2>
     <p>
-      Uninstalling the extension removes the stored token and settings. The
+      Uninstalling the extension removes the stored token, the settings and the
+      bookkeeping above; <strong>Remove this workspace</strong> on the options
+      page does the same for one workspace. The
       cached billing rows, machine hours and the cloud/region record live in
       the workspace origin's IndexedDB and are removed together by the
       <strong>Clear cached usage</strong> action on the options page, or by
