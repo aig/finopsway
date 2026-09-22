@@ -5,10 +5,12 @@
   <meta charset="utf-8" />
   <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FinOpsWay | FinOps for Databricks &amp; Databricks Costs</title>
+  <title>FinOpsWay - FinOps for Databricks | Track Databricks Costs</title>
   <meta name="description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=024" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="./styles.css?v=031" />
   <script src="./menu.js?v=001" defer></script>
   <link rel="canonical" href="https://finopsway.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -16,14 +18,14 @@
   <meta property="og:site_name" content="FinOpsWay" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://finopsway.com/" />
-  <meta property="og:title" content="FinOpsWay | FinOps for Databricks &amp; Databricks Costs" />
+  <meta property="og:title" content="FinOpsWay - FinOps for Databricks | Track Databricks Costs" />
   <meta property="og:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/workspace_popover.jpg" />
+  <meta property="og:image" content="https://finopsway.com/img/examples/workspace_popover.png" />
   <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FinOpsWay | FinOps for Databricks &amp; Databricks Costs" />
+  <meta name="twitter:title" content="FinOpsWay - FinOps for Databricks | Track Databricks Costs" />
   <meta name="twitter:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace_popover.jpg" />
+  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace_popover.png" />
   <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
   <script type="application/ld+json">
 {
@@ -51,7 +53,7 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "screenshot": "https://finopsway.com/img/examples/workspace_popover.jpg",
+      "screenshot": "https://finopsway.com/img/examples/workspace_popover.png",
       "featureList": [
         "Databricks cost visibility in workspace navigation",
         "Cost context for jobs, clusters and pipelines",
@@ -80,9 +82,10 @@
         <a class="nav-download" href="#download">Download</a>
         <a href="./onboarding/">Setup guide</a>
         <a href="#whatelse">Features</a>
-        <a href="#privacy">Your data</a>
+        <a href="#why">Why</a>
         <a href="#authors">Contacts</a>
-        <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Support" title="Support"><span aria-hidden="true">♥</span></a>
+        <a href="./security/">Security</a>
+        <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Sponsor on GitHub" title="Sponsor on GitHub"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg></a>
       </nav>
       <details class="mobile-menu">
         <summary>Menu <span aria-hidden="true">☰</span></summary>
@@ -90,9 +93,10 @@
           <a href="#download">Download</a>
           <a href="./onboarding/">Setup guide</a>
           <a href="#whatelse">Features</a>
-          <a href="#privacy">Your data</a>
+          <a href="#why">Why</a>
           <a href="#authors">Contacts</a>
-          <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><span aria-hidden="true">♥</span> Support</a>
+          <a href="./security/">Security</a>
+          <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg> Sponsor on GitHub</a>
         </nav>
       </details>
     </div>
@@ -113,8 +117,8 @@
         <div class="hero_right">
           <figure class="shot">
             <picture>
-              <source media="(max-width: 720px)" srcset="./img/examples/workspace_popover.jpg" width="454" height="688" />
-              <img src="./img/examples/workspace_popover.jpg" width="988" height="700" loading="lazy"
+              <source media="(max-width: 720px)" srcset="./img/examples/workspace_popover.png" width="454" height="688" />
+              <img src="./img/examples/workspace_popover.png" width="988" height="700" loading="lazy"
                 alt="A Databricks workspace home page. In the top navigation, a chip reads: workspace $3.13, 24 h to 18:00, 4 h ago. Open below it, a panel with 24 h, 7 d and 14 d tabs, a bar chart whose last hours are hatched, a table of cost per SKU against the previous 24 hours, and a note that the window ends at 18:00 because billing has not reported the four hours since." />
             </picture>
             <b class="pin" style="left: 22.5%; top: 4.1%" aria-hidden="true">1</b>
@@ -131,8 +135,8 @@
             Cost display within your workspace
           </li>
           <li>
-            <b>Filter by period</b>
-            Data coverage: 24 h, 7 d, months, custom period
+            <b>Aggregate by period</b>
+            Data coverage: 24 h, 7 d, months, custom
           </li>
           <li>
             <b>Diagram</b>
@@ -147,7 +151,7 @@
     </div>
 
     <section class="section" id="download">
-      <h2>Download</h2>
+      <h2>Download the FinOps extension for Databricks</h2>
       <p class="lead">
         FinOpsWay is available in the Chrome Web Store and on Firefox Add-ons. It is free and does not need an account.
         <a href="./onboarding/">Read the setup guide for creating and configuring a cluster</a>.
@@ -181,7 +185,7 @@
         </a>
       </div>
       <p class="note">
-        Edge users install from the Chrome Web Store. After installing, open the extension's options page, choose your workspace and paste a personal access token. Browser session mode is available for testing, but use it at your own risk: it is not recommended for production. Then open any Databricks page and the cost chip will appear in the top navigation.
+        Edge users install from the Chrome Web Store. After installing, open the extension's options page, choose your workspace and paste a personal access token. Browser session mode is available for testing, but use it at your own risk: it is not recommended for production. Open any Databricks page and the cost chip will appear in the top navigation.
         Questions? <a href="mailto:mail@finopsway.com">Email us</a>.
       </p>
     </section>
@@ -189,7 +193,7 @@
     <section class="section examples-section" aria-labelledby="examples-title" id="whatelse">
       <div class="examples-route">
       <div class="examples-intro">
-        <h2 id="examples-title">What else the widget shows</h2>
+        <h2 id="examples-title">What else the Databricks cost widget shows</h2>
         <p>FinOpsWay places cost context next to the Databricks resources you use every day.</p>
       </div>
       <div class="examples-stories">
@@ -245,6 +249,51 @@
       </div>
     </section>
 
+    <section class="section why-section" id="why" aria-labelledby="why-title">
+      <div class="why-intro">
+        <p class="why-kicker">Why we built it</p>
+        <h2 id="why-title">The best time to see your Databricks cost is before you spend it.</h2>
+        <p class="why-lead">
+          Databricks gives you plenty of ways to understand what you spent. But
+          by the time the bill reaches a dashboard, the engineering decisions
+          behind it are already history.
+        </p>
+        <p class="why-lead">
+          FinOpsWay puts cost where the work happens - so engineers can see
+          the trade-off while they can still change it.
+        </p>
+      </div>
+
+      <ol class="why-steps">
+        <li class="why-step">
+          <p class="why-step-kicker"><span class="why-step-number">01</span> See cost where work happens</p>
+          <h3>No finance report. A decision-time signal.</h3>
+          <p>
+            The engineer sizing a cluster, the analyst running a query, and the
+            team reviewing a pipeline can see what their work costs without
+            waiting for a monthly roll-up.
+          </p>
+        </li>
+        <li class="why-step">
+          <p class="why-step-kicker"><span class="why-step-number">02</span> Cost becomes a design input</p>
+          <h3>Make the trade-off visible before committing.</h3>
+          <p>
+            A smaller cluster. A different SKU. A less frequent schedule. When
+            cost is visible alongside the engineering choice, optimization
+            becomes part of the work - not a postmortem.
+          </p>
+        </li>
+        <li class="why-step">
+          <p class="why-step-kicker"><span class="why-step-number">03</span> Turn waste into work</p>
+          <h3>Find spend that isn&rsquo;t earning its place.</h3>
+          <p>
+            Idle compute, forgotten jobs and oversized resources become visible
+            to the people who can actually change them.
+          </p>
+        </li>
+      </ol>
+    </section>
+
     <section class="section authors-section" id="authors" aria-labelledby="authors-title">
       <h2 id="authors-title">Built by Databricks community experts</h2>
       <div class="cards contacts-grid">
@@ -282,49 +331,11 @@
       </div>
     </section>
 
-    <section class="section" id="privacy">
-      <h2>Your data</h2>
-      <p class="lead">
-        The extension has no backend and no telemetry. The only network
-        requests it makes are the queries themselves, sent to the Databricks
-        workspace you are signed in to. We run no server, receive no data and
-        cannot see what you query.
-      </p>
-      <p>
-        The data the extension reads is used only to display your Databricks
-        spend. None of it is sold, shared with third parties or used for
-        advertising. Cloud machine prices are bundled with the extension, so
-        estimating cluster cost does not contact any cloud provider either.
-        <a href="./privacy/">Read the full privacy policy</a>.
-      </p>
-    </section>
-
-    <section class="section" id="where">
-      <h2>Where it runs</h2>
-      <dl class="facts">
-        <div class="fact">
-          <dt>Clouds</dt>
-          <dd>
-            Databricks on AWS (<code>*.cloud.databricks.com</code>) and Azure
-            (<code>*.azuredatabricks.net</code>). The extension works the same
-            way on both.
-          </dd>
-        </div>
-        <div class="fact">
-          <dt>Browsers</dt>
-          <dd>
-            Chrome, Edge and Firefox, as a Manifest V3 extension. Available in the
-            Chrome Web Store (Chrome and Edge) and on Firefox Add-ons.
-          </dd>
-        </div>
-        <div class="fact">
-          <dt>Credential</dt>
-          <dd>
-            A workspace personal access token, pasted into the extension's
-            options page. It is only ever sent to that workspace.
-          </dd>
-        </div>
-      </dl>
+    <section class="section trust-block" aria-labelledby="trust-title">
+      <h2 id="trust-title">Your Databricks data stays between your browser and your workspace.</h2>
+      <p class="lead">FinOpsWay has no backend and no telemetry. We do not receive your credentials, billing data, job information or workspace data.</p>
+      <p class="trust-route">Browser <span aria-hidden="true">→</span> Databricks. That's it.</p>
+      <p class="trust-links"><a href="./security/">Security &amp; Privacy <span aria-hidden="true">→</span></a><a href="./cost-methodology/">How costs are calculated <span aria-hidden="true">→</span></a></p>
     </section>
 
   </main>
@@ -337,9 +348,11 @@
         </span>
       </div>
       <nav class="nav">
+        <a href="./security/">Security</a>
+        <a href="./cost-methodology/">Cost methodology</a>
         <a href="./privacy/">Privacy policy</a>
         <a href="https://www.linkedin.com/company/finopsway/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="footer-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><span aria-hidden="true">♥</span> Support project</a>
+        <a class="footer-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg> Sponsor on GitHub</a>
       </nav>
     </div>
     <p class="legal">
@@ -348,38 +361,6 @@
     </p>
   </footer>
 
-  <script>
-    (function () {
-      var nowEl = document.getElementById("clk-now");
-      var knownEl = document.getElementById("clk-known");
-      var gapEl = document.getElementById("clk-gap");
-      if (!nowEl || !knownEl || !gapEl) return;
-
-      function fmt(d) {
-        var pad = function (n) {
-          return ("0" + n).slice(-2);
-        };
-        return pad(d.getHours()) + ":" + pad(d.getMinutes());
-      }
-
-      function tick() {
-        var now = new Date();
-        var known = new Date(now.getTime());
-        known.setMinutes(0, 0, 0);
-        known.setHours(known.getHours() - 2);
-
-        var mins = Math.round((now.getTime() - known.getTime()) / 60000);
-        var text = Math.floor(mins / 60) + " h " + ("0" + (mins % 60)).slice(-2) + " m";
-
-        nowEl.textContent = fmt(now);
-        knownEl.textContent = fmt(known);
-        gapEl.textContent = text;
-      }
-
-      tick();
-      setInterval(tick, 30000);
-    })();
-  </script>
 </body>
 
 </html>

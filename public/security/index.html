@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security &amp; Privacy | FinOpsWay</title>
+  <meta name="description" content="Understand FinOpsWay's browser-to-Databricks architecture, local credential handling and least-privilege approach." />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../styles.css?v=031" />
+  <script src="../menu.js?v=001" defer></script>
+  <link rel="canonical" href="https://finopsway.com/security/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead is-compact"><div class="head"><div class="bar">
+    <a class="lockup" href="../" aria-label="FinOpsWay home"><span class="wordmark"><img class="wm-s" src="../img/FinOpsWay_logo_bl.png" alt="FinOpsWay" /></span><span class="tagline">Databricks costs, in context</span></a>
+    <nav class="nav desktop-nav" aria-label="Main navigation"><a class="nav-download" href="../#download">Download</a><a href="../onboarding/">Setup guide</a><a href="../#whatelse">Features</a><a href="../#why">Why</a><a href="../#authors">Contacts</a><a href="./" aria-current="page">Security</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Sponsor on GitHub" title="Sponsor on GitHub"><span class="heart" aria-hidden="true">♥</span></a></nav>
+    <details class="mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav class="mobile-nav" aria-label="Main navigation"><a href="../#download">Download</a><a href="../onboarding/">Setup guide</a><a href="../#whatelse">Features</a><a href="../#why">Why</a><a href="../#authors">Contacts</a><a href="./" aria-current="page">Security</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener">Sponsor on GitHub</a></nav></details>
+  </div></div></header>
+  <main id="main" class="section prose security-page">
+    <p class="eyebrow">Private by design</p>
+    <h1 class="prose-title">Security &amp; Privacy</h1>
+    <p class="security-lead">Your Databricks data stays between your browser and your workspace.</p>
+    <p>FinOpsWay was designed without a backend. The extension communicates directly with the Databricks workspace you configure. We do not operate a server that receives your credentials, billing information, job metadata, query results or workspace data.</p>
+    <div class="architecture" role="img" aria-label="Databricks workspace connects directly to your browser running FinOpsWay. There is no FinOpsWay backend."><strong>Databricks workspace</strong><span aria-hidden="true">↕</span><strong>Your browser + FinOpsWay</strong><small>No FinOpsWay backend</small></div>
+    <h2>What leaves your browser?</h2>
+    <p>FinOpsWay sends requests only to the Databricks workspace needed to show the extension. It does not send Databricks data to FinOpsWay servers, because there are no FinOpsWay servers processing that data.</p>
+    <p>We do not collect billing data, job or run information, cluster or SQL warehouse information, pipeline information, query results, workspace metadata or extension telemetry. We cannot inspect your company's Databricks environment remotely.</p>
+    <h2>What about my Databricks credential?</h2>
+    <p>Your credential is used locally by the extension to communicate with your workspace. It is not sent to FinOpsWay. In token mode, it is stored locally by the extension and is never synced to a browser account. In session mode, the extension uses your existing Databricks session.</p>
+    <p>For enterprise environments, use a dedicated credential with only the permissions needed for the cost data you choose to expose. FinOpsWay does not require Account Admin or Metastore Admin access for normal cost visibility.</p>
+    <h2>You control the security boundary</h2>
+    <p>Organizations can expose approved cost data through restricted views or a dedicated catalog, rather than grant unrestricted access to the System Catalog. FinOpsWay can be configured to use that cost-data catalog.</p>
+    <p>Give FinOpsWay access only to the cost information you want the user to see.</p>
+    <h2>Least privilege by design</h2>
+    <ul>
+      <li>Use a dedicated identity or restricted user where appropriate.</li>
+      <li>Grant only the permissions needed to read approved cost data.</li>
+      <li>Use restricted views or a dedicated catalog where direct system table access is not allowed.</li>
+      <li>Use a dedicated SQL warehouse where required by your governance model.</li>
+      <li>Review permissions before organization-wide deployment.</li>
+    </ul>
+    <h2>Does FinOpsWay modify Databricks?</h2>
+    <p>FinOpsWay is designed for cost visibility, not workload administration. It does not need to change jobs, clusters, SQL warehouses, pipelines, notebooks or data to calculate and display cost information. The extension runs read-only SQL queries against the cost and compute information it is permitted to read.</p>
+    <h2>No telemetry from the extension</h2>
+    <p>FinOpsWay does not operate telemetry that tracks the Databricks jobs, clusters, warehouses, pipelines or pages you use. Your cost data is there to help you understand your infrastructure, not to become our product analytics dataset.</p>
+    <h2>Enterprise security reviews</h2>
+    <p>FinOpsWay is distributed through official browser extension stores and can be evaluated by your security team before deployment. Managed-browser administrators can decide whether it is permitted under their existing extension policies.</p>
+    <aside class="transparency-note" aria-labelledby="source-title">
+      <p class="eyebrow">A fair question</p>
+      <h2 id="source-title">Why isn't the code public?</h2>
+      <p>FinOpsWay is currently proprietary software. We are still considering how and when to make more of the implementation available.</p>
+      <p>Security should not depend on taking our word for it. We are making the extension's architecture, permissions, Databricks API usage and data flows easier to independently review, whether or not the full product becomes open source.</p>
+    </aside>
+    <p>For a detailed account of local storage and workspace endpoints, read the <a href="../privacy/">privacy policy</a>. For a security review, <a href="mailto:mail@finopsway.com">contact us</a>.</p>
+  </main>
+  <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="../img/FinOpsWay_logo.png" alt="FinOpsWay" /></span></div><nav class="nav"><a href="./">Security</a><a href="../cost-methodology/">Cost methodology</a><a href="../privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
+</body>
+</html>
