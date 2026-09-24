@@ -113,6 +113,9 @@
           <p class="standfirst">
             FinOpsWay is a free FinOps browser extension for Databricks. Track Databricks costs directly in your workspace, alongside your jobs, clusters, and pipelines.
           </p>
+          <p class="standfirst">
+            Costs are not real time. Databricks publishes billing data with a delay of at least a few hours, so the most recent usage appears later.
+          </p>
         </div>
         <div class="hero_right">
           <figure class="shot">
@@ -371,6 +374,15 @@
           <dd>
             A workspace personal access token, pasted into the extension's
             options page. It is only ever sent to that workspace.
+          </dd>
+        </div>
+        <div class="fact">
+          <dt>Data delay</dt>
+          <dd>
+            Costs come from Databricks billing data, which Databricks publishes
+            at least a few hours after the usage. The widget shows where the
+            reported data ends and how old it is, and the latest hours fill in
+            as Databricks catches up.
           </dd>
         </div>
       </dl>
