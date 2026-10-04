@@ -10,7 +10,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=037" />
+  <link rel="stylesheet" href="./styles.css?v=039" />
   <script src="./menu.js?v=001" defer></script>
   <script data-goatcounter="https://s.finopsway.com/count"
           async src="//s.finopsway.com/count.js"></script>
@@ -334,73 +334,45 @@
 
     <section class="section why-section" id="why" aria-labelledby="why-title">
       <div class="why-intro">
-        <p class="why-kicker">Why we built it</p>
-        <h2 id="why-title">The best time to see your Databricks cost is before you spend it.</h2>
+        <p class="why-kicker">Why FinOpsWay</p>
+        <h2 id="why-title">Databricks shows admins where the money went. FinOpsWay shows engineers what it costs while they decide.</h2>
         <p class="why-lead">
-          Databricks gives you plenty of ways to understand what you spent. But
-          by the time the bill reaches a dashboard, the engineering decisions
-          behind it are already history.
+          Databricks Governance Hub (Beta) gives account and workspace admins one place to
+          review spend by product, workspace and tag. That answers the question
+          after the bill. But the cluster was sized, the job was scheduled and
+          the query shipped by people who never opened that page.
         </p>
         <p class="why-lead">
-          FinOpsWay puts cost where the work happens - so engineers can see
-          the trade-off while they can still change it.
+          FinOpsWay takes the same billing data to them, on the page where they
+          are already working.
         </p>
       </div>
 
-      <ol class="why-steps">
-        <li class="why-step">
-          <p class="why-step-kicker"><span class="why-step-number">01</span> See cost where work happens</p>
-          <h3>No finance report. A decision-time signal.</h3>
-          <p>
-            Engineers and analysts see what clusters, jobs, pipelines and
-            SQL warehouses cost, right in the workspace, without waiting for
-            a monthly roll-up.
-          </p>
-        </li>
-        <li class="why-step">
-          <p class="why-step-kicker"><span class="why-step-number">02</span> Cost becomes a design input</p>
-          <h3>Make the trade-off visible before committing.</h3>
-          <p>
-            A smaller cluster. A different SKU. A less frequent schedule. When
-            cost is visible alongside the engineering choice, optimization
-            becomes part of the work - not a postmortem.
-          </p>
-        </li>
-        <li class="why-step">
-          <p class="why-step-kicker"><span class="why-step-number">03</span> Turn waste into work</p>
-          <h3>Find spend that isn&rsquo;t earning its place.</h3>
-          <p>
-            Idle compute, forgotten jobs and oversized resources become visible
-            to the people who can actually change them.
-          </p>
-        </li>
-      </ol>
-      <section class="governance-hub" id="governance-hub" aria-labelledby="governance-hub-title">
-        <h2 id="governance-hub-title">Databricks Governance Hub gives the overview. FinOpsWay brings cost into the work.</h2>
-        <p class="lead">
-          Databricks Governance Hub includes a Cost page for a centralized view of spend and cost drivers. Account and workspace admins can set the scope to an individual workspace and explore spend by product, resource, workspace, or tag. Databricks currently labels this feature Beta.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <h3>Governance Hub</h3>
-            <picture>
-              <source type="image/webp" srcset="./img/examples/databricks_gov_hub_costs.webp" />
-              <img class="governance-hub-card-image" src="./img/examples/databricks_gov_hub_costs.png" width="1996" height="1144" loading="lazy" alt="Databricks Governance Hub Cost page showing spend metrics, a spend trend, top spending groups, tagged spend, budgets, and cost recommendations." />
-            </picture>
-            <p>Review spend, budgets, tags, recommendations, and the resources driving cost from Databricks&rsquo; governance view.</p>
-            <p><a href="https://docs.databricks.com/aws/en/admin/governance-hub/cost" target="_blank" rel="noopener">Read the Databricks documentation for Governance Hub Cost overview <span aria-hidden="true">↗</span></a>.</p>
-          </article>
-          <article class="card">
-            <h3>FinOpsWay</h3>
-            <picture>
-              <source type="image/webp" srcset="./img/examples/databricks_finopsway.webp" />
-              <img class="governance-hub-card-image" src="./img/examples/databricks_finopsway.png" width="1996" height="1144" loading="lazy" alt="FinOpsWay cost information displayed inside a Databricks workspace." />
-            </picture>
-            <p>See detailed cost context inside that workspace, next to the clusters, jobs, pipelines, notebooks, and other resources where engineers make decisions.</p>
-            <p><a href="#whatelse">Explore FinOpsWay features <span aria-hidden="true">↓</span></a></p>
-          </article>
-        </div>
-      </section>
+      <div class="cards" id="governance-hub">
+        <figure class="card why-compare">
+          <picture>
+            <source type="image/webp" srcset="./img/examples/databricks_gov_hub_costs.webp" />
+            <img class="governance-hub-card-image" src="./img/examples/databricks_gov_hub_costs.png" width="1996" height="1144" loading="lazy" alt="Databricks Governance Hub Cost page showing spend metrics, a spend trend, top spending groups, tagged spend, budgets, and cost recommendations." />
+          </picture>
+          <figcaption>
+            <p class="why-compare-label">Governance Hub</p>
+            <h3>Where did the money go?</h3>
+            <p>One view for admins. <a href="https://docs.databricks.com/aws/en/admin/governance-hub/cost" target="_blank" rel="noopener">Read the Databricks docs <span aria-hidden="true">↗</span></a></p>
+          </figcaption>
+        </figure>
+        <figure class="card why-compare">
+          <picture>
+            <source type="image/webp" srcset="./img/examples/databricks_finopsway.webp" />
+            <img class="governance-hub-card-image" src="./img/examples/databricks_finopsway.png" width="1996" height="1144" loading="lazy" alt="FinOpsWay cost information displayed inside a Databricks workspace." />
+          </picture>
+          <figcaption>
+            <p class="why-compare-label">FinOpsWay</p>
+            <h3>What does this cost?</h3>
+            <p>On every page, for whoever is building. <a href="#whatelse">See every page it covers <span aria-hidden="true">↑</span></a></p>
+          </figcaption>
+        </figure>
+      </div>
+
     </section>
 
     <section class="section authors-section" id="authors" aria-labelledby="authors-title">
