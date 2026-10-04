@@ -10,7 +10,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../styles.css?v=035" />
+  <link rel="stylesheet" href="../styles.css?v=036" />
   <script src="../menu.js?v=001" defer></script>
   <script data-goatcounter="https://s.finopsway.com/count"
           async src="//s.finopsway.com/count.js"></script>
@@ -40,7 +40,7 @@
     <div class="head">
       <div class="bar">
         <a class="lockup" href="../" aria-label="FinOpsWay home">
-          <span class="wordmark"><img class="wm-s" src="../img/FinOpsWay_logo_bl.png" alt="FinOpsWay" /></span>
+          <span class="wordmark"><img class="wm-s" src="../img/FinOpsWay_logo_bl.png" width="574" height="120" alt="FinOpsWay" /></span>
           <span class="tagline">Databricks costs, in context</span>
         </a>
         <nav class="nav desktop-nav">
@@ -131,7 +131,10 @@
       <ol class="guide-list">
         <li>Open any page in the Databricks workspace, and then activate the FinOpsWay extension.</li>
         <a class="guide-screenshot" href="../img/onboarding/onb_step_2_1.jpg" target="_blank" rel="noopener" aria-label="View the FinOpsWay setup screenshot at full size (opens in a new tab)">
-          <img src="../img/onboarding/onb_step_2_1.jpg" alt="FinOpsWay extension popup in a Databricks workspace, showing the activation switch, SQL warehouse selector and Configure toolbar link." width="2866" height="644" loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset="../img/onboarding/onb_step_2_1.webp" />
+            <img src="../img/onboarding/onb_step_2_1.jpg" width="2866" height="644" alt="FinOpsWay extension popup in a Databricks workspace, showing the activation switch, SQL warehouse selector and Configure toolbar link." loading="lazy" />
+          </picture>
         </a>
 
         <li>Select the workspace connection type: Access token (recommended) or Browser session (internal API)</li>
@@ -143,7 +146,10 @@
         <li>Create a personal access token <strong>Settings -> User -> Developer -> Access Tokens -> Manage</strong>.<br/>
         And choose <code>sql</code> in API scopes.</li>
         <a class="guide-screenshot guide-screenshot--half" href="../img/onboarding/onb_step_2_3.png" target="_blank" rel="noopener" aria-label="View the personal access token setup screenshot at full size (opens in a new tab)">
-          <img src="../img/onboarding/onb_step_2_3.png" alt="Personal access token setup in Databricks." width="654" height="460" loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset="../img/onboarding/onb_step_2_3.webp" />
+            <img src="../img/onboarding/onb_step_2_3.png" width="654" height="460" alt="Personal access token setup in Databricks." loading="lazy" />
+          </picture>
         </a>
         <aside class="guide-tip">
           The extension only makes read-only queries to your workspace. Your token is stored locally in the browser and is sent only to that workspace.
@@ -167,7 +173,7 @@
     <div class="bar">
       <div class="footer-id">
         <span class="wordmark small">
-        <img class="wm-s" src="../img/FinOpsWay_logo.png" alt="FinOpsWay" />
+        <img class="wm-s" src="../img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" />
         </span>
       </div>
       <nav class="nav">
