@@ -767,6 +767,9 @@ h3 {
   background: var(--ink);
   line-height: 0;
 }
+/* Lets the img inside a <picture> lay out as if the wrapper were absent. */
+picture { display: contents; }
+
 .shot img {
   display: block;
   width: 100%;
