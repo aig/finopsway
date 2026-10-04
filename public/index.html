@@ -10,7 +10,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=028" />
+  <link rel="stylesheet" href="./styles.css?v=039" />
   <script src="./menu.js?v=001" defer></script>
   <script data-goatcounter="https://s.finopsway.com/count"
           async src="//s.finopsway.com/count.js"></script>
@@ -76,7 +76,7 @@
     <div class="bar">
       <a class="lockup" href="./" aria-label="FinOpsWay home">
         <span class="wordmark">
-          <img class="wm-s" src="./img/FinOpsWay_logo_bl.png" alt="FinOpsWay" />
+          <img class="wm-s" src="./img/FinOpsWay_logo_bl.png" width="574" height="120" alt="FinOpsWay" />
         </span>
         <span class="tagline">Databricks costs, in context</span>
       </a>
@@ -86,7 +86,7 @@
         <a href="#whatelse">Features</a>
         <a href="#why">Why</a>
         <a href="#authors">Contacts</a>
-        <a href="#privacy">Your data</a>
+        <a href="./security/">Security</a>
         <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Sponsor on GitHub" title="Sponsor on GitHub"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg></a>
       </nav>
       <details class="mobile-menu">
@@ -97,7 +97,7 @@
           <a href="#whatelse">Features</a>
           <a href="#why">Why</a>
           <a href="#authors">Contacts</a>
-          <a href="#privacy">Your data</a>
+          <a href="./security/">Security</a>
           <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg> Sponsor on GitHub</a>
         </nav>
       </details>
@@ -111,7 +111,7 @@
     <div class="hero">
       <div class="hero-row">
         <div class="hero_left">
-          <h1><span class="finopsway-title">FinOpsWay</span>: Track Databricks costs in the <img class="wm-s databricks-mark" src="./img/databricks_logo.png" alt="Databricks" /> interface</h1>
+          <h1><span class="finopsway-title">FinOpsWay</span>: Track Databricks costs in the <img class="wm-s databricks-mark" src="./img/databricks_logo.png" width="1420" height="224" alt="Databricks" /> interface</h1>
           <p class="standfirst">
             FinOpsWay is a free FinOps browser extension for Databricks. Track Databricks costs directly in your workspace, alongside your jobs, clusters, and pipelines.
           </p>
@@ -122,8 +122,9 @@
         <div class="hero_right">
           <figure class="shot">
             <picture>
-              <source media="(max-width: 720px)" srcset="./img/examples/workspace_popover.png" width="454" height="688" />
-              <img src="./img/examples/workspace_popover.png" width="988" height="700" loading="lazy"
+              <source type="image/webp" srcset="./img/examples/workspace_popover_960.webp 960w, ./img/examples/workspace_popover.webp 1415w"
+                sizes="(max-width: 720px) 100vw, 480px" />
+              <img src="./img/examples/workspace_popover.png" width="1415" height="1111" fetchpriority="high"
                 alt="A Databricks workspace home page. In the top navigation, a chip reads: workspace $3.13, 24 h to 18:00, 4 h ago. Open below it, a panel with 24 h, 7 d and 14 d tabs, a bar chart whose last hours are hatched, a table of cost per SKU against the previous 24 hours, and a note that the window ends at 18:00 because billing has not reported the four hours since." />
             </picture>
             <b class="pin" style="left: 22.5%; top: 4.1%" aria-hidden="true">1</b>
@@ -209,27 +210,36 @@
             <p>Keep cost context close while you browse the clusters in your workspace.</p>
           </div>
           <div class="example-visual">
-            <img src="./img/examples/workspace_clusters.jpg" alt="FinOpsWay cost information on the Databricks clusters page." width="1214" height="571" loading="lazy" />
+            <picture>
+              <source type="image/webp" srcset="./img/examples/clusters.webp" />
+              <img src="./img/examples/clusters.jpg" width="1582" height="673" alt="FinOpsWay cost information on the Databricks clusters page." loading="lazy" />
+            </picture>
           </div>
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">02</span> Job runs</p>
+            <p class="example-kicker"><span class="example-number">02</span> Jobs and pipelines</p>
+            <h3>Your Jobs & Pipelines. Their costs.</h3>
+            <p>See cost information alongside your jobs and pipelines, without leaving Databricks.</p>
+          </div>
+          <div class="example-visual">
+            <picture>
+              <source type="image/webp" srcset="./img/examples/jobs_and_pipelines.webp" />
+              <img src="./img/examples/jobs_and_pipelines.jpg" width="1985" height="874" alt="FinOpsWay cost information on the Databricks jobs and pipelines page." loading="lazy" />
+            </picture>
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">03</span> Job runs</p>
             <h3>Every run has a story</h3>
             <p>Bring cost into the picture when you review a job run, right where you already work.</p>
           </div>
           <div class="example-visual">
-            <img src="./img/examples/workspace_job_runs.jpg" alt="FinOpsWay cost information on the Databricks job runs page." width="1421" height="740" loading="lazy" />
-          </div>
-        </article>
-        <article class="example-story">
-          <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">03</span> Jobs and pipelines</p>
-            <h3>Your workflows. Their costs.</h3>
-            <p>See cost information alongside your jobs and pipelines, without leaving Databricks.</p>
-          </div>
-          <div class="example-visual">
-            <img src="./img/examples/workspace_jobs_and_pipelines.jpg" alt="FinOpsWay cost information on the Databricks jobs and pipelines page." width="824" height="472" loading="lazy" />
+            <picture>
+              <source type="image/webp" srcset="./img/examples/job_runs.webp" />
+              <img src="./img/examples/job_runs.jpg" width="1950" height="1180" alt="FinOpsWay cost information on the Databricks job runs page." loading="lazy" />
+            </picture>
           </div>
         </article>
         <article class="example-story">
@@ -239,13 +249,81 @@
             <p>Keep cost in mind as you configure a new cluster, before it becomes part of your daily workflow.</p>
           </div>
           <div class="example-visual">
-            <img src="./img/examples/workspace_new_cluster.jpg" alt="FinOpsWay cost information on the Databricks new cluster setup page." width="893" height="620" loading="lazy" />
+            <picture>
+              <source type="image/webp" srcset="./img/examples/cluster_sql_wh_new.webp" />
+              <img src="./img/examples/cluster_sql_wh_new.jpg" width="1950" height="1180" alt="FinOpsWay cost information on the Databricks new cluster setup page." loading="lazy" />
+            </picture>
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">05</span> Notebooks</p>
+            <h3>Keep Notebooks & Queries costs in context</h3>
+            <p>See cost information while you work in the Notebooks & Queries where analysis and experimentation happen.</p>
+          </div>
+          <div class="example-visual">
+            <picture>
+              <source type="image/webp" srcset="./img/examples/notebooks.webp" />
+              <img src="./img/examples/notebooks.png" width="837" height="240" alt="FinOpsWay cost information in a Databricks notebook." loading="lazy" />
+            </picture>
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">06</span> Databricks Apps</p>
+            <h3>See the cost behind your Apps</h3>
+            <p>Bring cost context to Databricks Apps, without leaving the place you manage them.</p>
+          </div>
+          <div class="example-visual">
+            <picture>
+              <source type="image/webp" srcset="./img/examples/databricks_apps.webp" />
+              <img src="./img/examples/databricks_apps.png" width="1586" height="587" alt="FinOpsWay cost information on the Databricks Apps page." loading="lazy" />
+            </picture>
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">07</span> Lakebase</p>
+            <h3>Database and branch costs, side by side</h3>
+            <p>See the cost of a Lakebase database, not only as a whole but also for each individual branch.</p>
+          </div>
+          <div class="example-visual">
+            <picture>
+              <source type="image/webp" srcset="./img/examples/lakebase_main_and_branches.webp" />
+              <img src="./img/examples/lakebase_main_and_branches.png" width="1462" height="898" alt="FinOpsWay cost information for a Lakebase database and its branches." loading="lazy" />
+            </picture>
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">08</span> Lakebase settings</p>
+            <h3>Costs visible in Lakebase settings</h3>
+            <p>Review Lakebase cost information directly alongside the database settings you manage.</p>
+          </div>
+          <div class="example-visual">
+            <picture>
+              <source type="image/webp" srcset="./img/examples/lakebase_settings_sm.webp" />
+              <img src="./img/examples/lakebase_settings_sm.png" width="1109" height="342" alt="FinOpsWay cost information on the Databricks Lakebase settings page." loading="lazy" />
+            </picture>
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">09</span> Genie Agents</p>
+            <h3>Keep Genie Agent usage in view</h3>
+            <p>See DBU usage alongside the Genie Agents you build and manage in Databricks. Genie is free through January 31, 2027.</p>
+          </div>
+          <div class="example-visual">
+            <picture>
+              <source type="image/webp" srcset="./img/examples/genie_agents.webp" />
+              <img src="./img/examples/genie_agents.png" width="1324" height="665" alt="FinOpsWay cost information on the Databricks Genie Agents page." loading="lazy" />
+            </picture>
           </div>
         </article>
       </div>
-        <svg class="examples-road" viewBox="0 0 1000 1760" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <svg class="examples-road" viewBox="0 0 1000 3700" preserveAspectRatio="none" aria-hidden="true" focusable="false">
           <defs>
-            <path id="examples-road-path" d="M 400,0 C 400,100 670,70 740,160 C 960,420 40,420 260,740 S 960,940 740,1210 S 40,1420 260,1760" />
+            <path id="examples-road-path" d="M 400,0 C 400,100 670,70 740,160 C 960,420 40,420 260,740 S 960,940 740,1210 S 40,1420 260,1760 S 960,1960 740,2140 S 40,2320 260,2500 S 960,2680 740,2900 S 40,3100 260,3300 S 960,3500 740,3700" />
           </defs>
           <use class="examples-road-edge" href="#examples-road-path" />
           <use class="examples-road-surface" href="#examples-road-path" />
@@ -256,47 +334,45 @@
 
     <section class="section why-section" id="why" aria-labelledby="why-title">
       <div class="why-intro">
-        <p class="why-kicker">Why we built it</p>
-        <h2 id="why-title">The best time to see your Databricks cost is before you spend it.</h2>
+        <p class="why-kicker">Why FinOpsWay</p>
+        <h2 id="why-title">Databricks shows admins where the money went. FinOpsWay shows engineers what it costs while they decide.</h2>
         <p class="why-lead">
-          Databricks gives you plenty of ways to understand what you spent. But
-          by the time the bill reaches a dashboard, the engineering decisions
-          behind it are already history.
+          Databricks Governance Hub (Beta) gives account and workspace admins one place to
+          review spend by product, workspace and tag. That answers the question
+          after the bill. But the cluster was sized, the job was scheduled and
+          the query shipped by people who never opened that page.
         </p>
         <p class="why-lead">
-          FinOpsWay puts cost where the work happens - so engineers can see
-          the trade-off while they can still change it.
+          FinOpsWay takes the same billing data to them, on the page where they
+          are already working.
         </p>
       </div>
 
-      <ol class="why-steps">
-        <li class="why-step">
-          <p class="why-step-kicker"><span class="why-step-number">01</span> See cost where work happens</p>
-          <h3>No finance report. A decision-time signal.</h3>
-          <p>
-            Engineers and analysts see what clusters, jobs, pipelines and
-            SQL warehouses cost, right in the workspace, without waiting for
-            a monthly roll-up.
-          </p>
-        </li>
-        <li class="why-step">
-          <p class="why-step-kicker"><span class="why-step-number">02</span> Cost becomes a design input</p>
-          <h3>Make the trade-off visible before committing.</h3>
-          <p>
-            A smaller cluster. A different SKU. A less frequent schedule. When
-            cost is visible alongside the engineering choice, optimization
-            becomes part of the work - not a postmortem.
-          </p>
-        </li>
-        <li class="why-step">
-          <p class="why-step-kicker"><span class="why-step-number">03</span> Turn waste into work</p>
-          <h3>Find spend that isn&rsquo;t earning its place.</h3>
-          <p>
-            Idle compute, forgotten jobs and oversized resources become visible
-            to the people who can actually change them.
-          </p>
-        </li>
-      </ol>
+      <div class="cards" id="governance-hub">
+        <figure class="card why-compare">
+          <picture>
+            <source type="image/webp" srcset="./img/examples/databricks_gov_hub_costs.webp" />
+            <img class="governance-hub-card-image" src="./img/examples/databricks_gov_hub_costs.png" width="1996" height="1144" loading="lazy" alt="Databricks Governance Hub Cost page showing spend metrics, a spend trend, top spending groups, tagged spend, budgets, and cost recommendations." />
+          </picture>
+          <figcaption>
+            <p class="why-compare-label">Governance Hub</p>
+            <h3>Where did the money go?</h3>
+            <p>One view for admins. <a href="https://docs.databricks.com/aws/en/admin/governance-hub/cost" target="_blank" rel="noopener">Read the Databricks docs <span aria-hidden="true">↗</span></a></p>
+          </figcaption>
+        </figure>
+        <figure class="card why-compare">
+          <picture>
+            <source type="image/webp" srcset="./img/examples/databricks_finopsway.webp" />
+            <img class="governance-hub-card-image" src="./img/examples/databricks_finopsway.png" width="1996" height="1144" loading="lazy" alt="FinOpsWay cost information displayed inside a Databricks workspace." />
+          </picture>
+          <figcaption>
+            <p class="why-compare-label">FinOpsWay</p>
+            <h3>What does this cost?</h3>
+            <p>On every page, for whoever is building. <a href="#whatelse">See every page it covers <span aria-hidden="true">↑</span></a></p>
+          </figcaption>
+        </figure>
+      </div>
+
     </section>
 
     <section class="section authors-section" id="authors" aria-labelledby="authors-title">
@@ -309,11 +385,14 @@
           <p>Databricks Solutions Architect Champion</p>
           </div>
           <div class="contact-badges">
-            <img src="./img/databricks_cahmpion.png" width="500" height="479" loading="lazy" alt="Databricks Solutions Architect Champion badge" />
+            <img src="./img/databricks_cahmpion.png" width="200" height="192" loading="lazy" alt="Databricks Solutions Architect Champion badge" />
           </div>
           </div>
           <div class="contact-portrait" aria-hidden="true">
-            <img src="./img/ilya.png" width="1024" height="1046" loading="lazy" alt="" />
+            <picture>
+              <source type="image/webp" srcset="./img/ilya.webp" />
+              <img src="./img/ilya.png" width="340" height="492" loading="lazy" alt="" />
+            </picture>
           </div>
           <a class="contact-link" href="https://www.linkedin.com/in/aniskovets" target="_blank" rel="noopener">LinkedIn profile <span aria-hidden="true">↗</span></a>
         </article>
@@ -324,12 +403,15 @@
           <p>Databricks MVP & Databricks Solutions Architect Champion</p>
           </div>
           <div class="contact-badges">
-            <img src="./img/databricks_cahmpion.png" width="500" height="479" loading="lazy" alt="Databricks Solutions Architect Champion badge" />
+            <img src="./img/databricks_cahmpion.png" width="200" height="192" loading="lazy" alt="Databricks Solutions Architect Champion badge" />
             <img src="./img/databricks_mvp.png" width="392" height="321" loading="lazy" alt="Databricks MVP badge" />
           </div>
           </div>
           <div class="contact-portrait" aria-hidden="true">
-            <img src="./img/maksim.png" width="340" height="492" loading="lazy" alt="" />
+            <picture>
+              <source type="image/webp" srcset="./img/maksim.webp" />
+              <img src="./img/maksim.png" width="340" height="492" loading="lazy" alt="" />
+            </picture>
           </div>
           <a class="contact-link" href="https://www.linkedin.com/in/protmaks" target="_blank" rel="noopener">LinkedIn profile <span aria-hidden="true">↗</span></a>
         </article>
@@ -396,10 +478,12 @@
     <div class="bar">
       <div class="footer-id">
         <span class="wordmark small">
-        <img class="wm-s" src="./img/FinOpsWay_logo.png" alt="FinOpsWay" />
+        <img class="wm-s" src="./img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" />
         </span>
       </div>
       <nav class="nav">
+        <a href="./security/">Security</a>
+        <a href="./cost-methodology/">Cost methodology</a>
         <a href="./privacy/">Privacy policy</a>
         <a href="https://www.linkedin.com/company/finopsway/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="footer-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg> Sponsor on GitHub</a>
