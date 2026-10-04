@@ -10,7 +10,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=031" />
+  <link rel="stylesheet" href="./styles.css?v=034" />
   <script src="./menu.js?v=001" defer></script>
   <link rel="canonical" href="https://finopsway.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -190,6 +190,27 @@
       </p>
     </section>
 
+    <section class="section" id="governance-hub" aria-labelledby="governance-hub-title">
+      <h2 id="governance-hub-title">Databricks Governance Hub gives the overview. FinOpsWay brings cost into the work.</h2>
+      <p class="lead">
+        Databricks Governance Hub includes a Cost page for a centralized view of spend and cost drivers. Account and workspace admins can set the scope to an individual workspace and explore spend by product, resource, workspace, or tag. Databricks currently labels this feature Beta.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h3>Governance Hub</h3>
+          <img class="governance-hub-card-image" src="./img/examples/databricks_gov_hub_costs.png" width="1996" height="1144" loading="lazy" alt="Databricks Governance Hub Cost page showing spend metrics, a spend trend, top spending groups, tagged spend, budgets, and cost recommendations." />
+          <p>Review spend, budgets, tags, recommendations, and the resources driving cost from Databricks&rsquo; governance view.</p>
+          <p><a href="https://docs.databricks.com/aws/en/admin/governance-hub/cost" target="_blank" rel="noopener">Read the Databricks documentation for Governance Hub Cost overview <span aria-hidden="true">↗</span></a>.</p>
+        </article>
+        <article class="card">
+          <h3>FinOpsWay</h3>
+          <img class="governance-hub-card-image" src="./img/examples/databricks_finopsway.png" width="1996" height="1144" loading="lazy" alt="FinOpsWay cost information displayed inside a Databricks workspace." />
+          <p>See detailed cost context inside that workspace, next to the clusters, jobs, pipelines, notebooks, and other resources where engineers make decisions.</p>
+          <p><a href="#whatelse">Explore FinOpsWay features <span aria-hidden="true">↓</span></a></p>
+        </article>
+      </div>
+    </section>
+
     <section class="section examples-section" aria-labelledby="examples-title" id="whatelse">
       <div class="examples-route">
       <div class="examples-intro">
@@ -204,27 +225,27 @@
             <p>Keep cost context close while you browse the clusters in your workspace.</p>
           </div>
           <div class="example-visual">
-            <img src="./img/examples/workspace_clusters.jpg" alt="FinOpsWay cost information on the Databricks clusters page." width="1214" height="571" loading="lazy" />
+            <img src="./img/examples/clusters.jpg" alt="FinOpsWay cost information on the Databricks clusters page." width="1214" height="571" loading="lazy" />
           </div>
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">02</span> Job runs</p>
+            <p class="example-kicker"><span class="example-number">02</span> Jobs and pipelines</p>
+            <h3>Your Jobs & Pipelines. Their costs.</h3>
+            <p>See cost information alongside your jobs and pipelines, without leaving Databricks.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/jobs_and_pipelines.jpg" alt="FinOpsWay cost information on the Databricks jobs and pipelines page." width="824" height="472" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">03</span> Job runs</p>
             <h3>Every run has a story</h3>
             <p>Bring cost into the picture when you review a job run, right where you already work.</p>
           </div>
           <div class="example-visual">
-            <img src="./img/examples/workspace_job_runs.jpg" alt="FinOpsWay cost information on the Databricks job runs page." width="1421" height="740" loading="lazy" />
-          </div>
-        </article>
-        <article class="example-story">
-          <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">03</span> Jobs and pipelines</p>
-            <h3>Your workflows. Their costs.</h3>
-            <p>See cost information alongside your jobs and pipelines, without leaving Databricks.</p>
-          </div>
-          <div class="example-visual">
-            <img src="./img/examples/workspace_jobs_and_pipelines.jpg" alt="FinOpsWay cost information on the Databricks jobs and pipelines page." width="824" height="472" loading="lazy" />
+            <img src="./img/examples/job_runs.jpg" alt="FinOpsWay cost information on the Databricks job runs page." width="1421" height="740" loading="lazy" />
           </div>
         </article>
         <article class="example-story">
@@ -234,13 +255,53 @@
             <p>Keep cost in mind as you configure a new cluster, before it becomes part of your daily workflow.</p>
           </div>
           <div class="example-visual">
-            <img src="./img/examples/workspace_new_cluster.jpg" alt="FinOpsWay cost information on the Databricks new cluster setup page." width="893" height="620" loading="lazy" />
+            <img src="./img/examples/cluster_sql_wh_new.jpg" alt="FinOpsWay cost information on the Databricks new cluster setup page." width="893" height="620" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">05</span> Notebooks</p>
+            <h3>Keep Notebooks & Queries costs in context</h3>
+            <p>See cost information while you work in the Notebooks & Queries where analysis and experimentation happen.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/notebooks.png" alt="FinOpsWay cost information in a Databricks notebook." width="862" height="240" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">06</span> Databricks Apps</p>
+            <h3>See the cost behind your Apps</h3>
+            <p>Bring cost context to Databricks Apps, without leaving the place you manage them.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/databricks_apps.png" alt="FinOpsWay cost information on the Databricks Apps page." width="1586" height="596" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">07</span> Lakebase</p>
+            <h3>Database and branch costs, side by side</h3>
+            <p>See the cost of a Lakebase database, not only as a whole but also for each individual branch.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/lakebase_main_and_branches.png" alt="FinOpsWay cost information for a Lakebase database and its branches." width="1462" height="898" loading="lazy" />
+          </div>
+        </article>
+        <article class="example-story">
+          <div class="example-copy">
+            <p class="example-kicker"><span class="example-number">08</span> Lakebase settings</p>
+            <h3>Costs visible in Lakebase settings</h3>
+            <p>Review Lakebase cost information directly alongside the database settings you manage.</p>
+          </div>
+          <div class="example-visual">
+            <img src="./img/examples/lakebase_settings_sm.png" alt="FinOpsWay cost information on the Databricks Lakebase settings page." width="1109" height="342" loading="lazy" />
           </div>
         </article>
       </div>
-        <svg class="examples-road" viewBox="0 0 1000 1760" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <svg class="examples-road" viewBox="0 0 1000 3300" preserveAspectRatio="none" aria-hidden="true" focusable="false">
           <defs>
-            <path id="examples-road-path" d="M 400,0 C 400,100 670,70 740,160 C 960,420 40,420 260,740 S 960,940 740,1210 S 40,1420 260,1760" />
+            <path id="examples-road-path" d="M 400,0 C 400,100 670,70 740,160 C 960,420 40,420 260,740 S 960,940 740,1210 S 40,1420 260,1760 S 960,1960 740,2140 S 40,2320 260,2500 S 960,2680 740,2900 S 40,3100 260,3300" />
           </defs>
           <use class="examples-road-edge" href="#examples-road-path" />
           <use class="examples-road-surface" href="#examples-road-path" />

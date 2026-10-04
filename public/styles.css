@@ -477,6 +477,10 @@ h1 {
 .example-story:nth-child(2) { --example-accent: #3f6a7d; }
 .example-story:nth-child(3) { --example-accent: #a67b3e; padding-left: 24px; }
 .example-story:nth-child(4) { --example-accent: #797098; padding-right: 24px; }
+.example-story:nth-child(5) { --example-accent: #377971; padding-left: 24px; }
+.example-story:nth-child(6) { --example-accent: #a05252; padding-right: 24px; }
+.example-story:nth-child(7) { --example-accent: #586d99; padding-left: 24px; }
+.example-story:nth-child(8) { --example-accent: #496f9a; padding-right: 24px; }
 .example-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; background: var(--paper); box-shadow: 0 0 24px 16px var(--paper); }
 .example-kicker { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; color: var(--fg-soft); }
 .example-number { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; font-family: var(--mono); font-size: 11px; letter-spacing: 0; }
@@ -745,6 +749,14 @@ h3 {
 .card p {
   font-size: 15.5px;
   max-width: none;
+}
+
+.governance-hub-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
 .shot {
