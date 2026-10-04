@@ -12,6 +12,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="stylesheet" href="./styles.css?v=034" />
   <script src="./menu.js?v=001" defer></script>
+  <script data-goatcounter="https://s.finopsway.com/count"
+          async src="//s.finopsway.com/count.js"></script>
   <link rel="canonical" href="https://finopsway.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="website" />
@@ -112,6 +114,9 @@
           <h1><span class="finopsway-title">FinOpsWay</span>: Track Databricks costs in the <img class="wm-s databricks-mark" src="./img/databricks_logo.png" alt="Databricks" /> interface</h1>
           <p class="standfirst">
             FinOpsWay is a free FinOps browser extension for Databricks. Track Databricks costs directly in your workspace, alongside your jobs, clusters, and pipelines.
+          </p>
+          <p class="standfirst">
+            Costs are not real time. Databricks publishes billing data with a delay of at least a few hours, so the most recent usage appears later.
           </p>
         </div>
         <div class="hero_right">
@@ -330,9 +335,9 @@
           <p class="why-step-kicker"><span class="why-step-number">01</span> See cost where work happens</p>
           <h3>No finance report. A decision-time signal.</h3>
           <p>
-            The engineer sizing a cluster, the analyst running a query, and the
-            team reviewing a pipeline can see what their work costs without
-            waiting for a monthly roll-up.
+            Engineers and analysts see what clusters, jobs, pipelines and
+            SQL warehouses cost, right in the workspace, without waiting for
+            a monthly roll-up.
           </p>
         </li>
         <li class="why-step">
@@ -392,11 +397,58 @@
       </div>
     </section>
 
-    <section class="section trust-block" aria-labelledby="trust-title">
-      <h2 id="trust-title">Your Databricks data stays between your browser and your workspace.</h2>
-      <p class="lead">FinOpsWay has no backend and no telemetry. We do not receive your credentials, billing data, job information or workspace data.</p>
-      <p class="trust-route">Browser <span aria-hidden="true">→</span> Databricks. That's it.</p>
-      <p class="trust-links"><a href="./security/">Security &amp; Privacy <span aria-hidden="true">→</span></a><a href="./cost-methodology/">How costs are calculated <span aria-hidden="true">→</span></a></p>
+    <section class="section" id="privacy">
+      <h2>Your Databricks data stays in your workspace</h2>
+      <p class="lead">
+        The extension has no backend and no telemetry. The only network
+        requests it makes are the queries themselves, sent to the Databricks
+        workspace you are signed in to. We run no server, receive no data and
+        cannot see what you query.
+      </p>
+      <p>
+        The data the extension reads is used only to display your Databricks
+        spend. None of it is sold, shared with third parties or used for
+        advertising. Cloud machine prices are bundled with the extension, so
+        estimating cluster cost does not contact any cloud provider either.
+        <a href="./privacy/">Read the full privacy policy</a>.
+      </p>
+    </section>
+
+    <section class="section" id="where">
+      <h2>Where FinOpsWay runs: clouds, browsers, credentials</h2>
+      <dl class="facts">
+        <div class="fact">
+          <dt>Clouds</dt>
+          <dd>
+            Databricks on AWS (<code>*.cloud.databricks.com</code>) and Azure
+            (<code>*.azuredatabricks.net</code>). The extension works the same
+            way on both.
+          </dd>
+        </div>
+        <div class="fact">
+          <dt>Browsers</dt>
+          <dd>
+            Chrome, Edge and Firefox, as a Manifest V3 extension. Available in the
+            Chrome Web Store (Chrome and Edge) and on Firefox Add-ons.
+          </dd>
+        </div>
+        <div class="fact">
+          <dt>Credential</dt>
+          <dd>
+            A workspace personal access token, pasted into the extension's
+            options page. It is only ever sent to that workspace.
+          </dd>
+        </div>
+        <div class="fact">
+          <dt>Data delay</dt>
+          <dd>
+            Costs come from Databricks billing data, which Databricks publishes
+            at least a few hours after the usage. The widget shows where the
+            reported data ends and how old it is, and the latest hours fill in
+            as Databricks catches up.
+          </dd>
+        </div>
+      </dl>
     </section>
 
   </main>
