@@ -583,13 +583,11 @@ h1 {
   color: var(--fg-soft);
   text-wrap: pretty;
 }
-.why-close {
-  max-width: 52ch;
-  padding-left: 18px;
-  border-left: 3px solid color-mix(in srgb, var(--brand) 45%, var(--paper));
-  font-size: 18px;
-  line-height: 1.75;
-  text-wrap: pretty;
+.governance-hub {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
 }
 @media (max-width: 720px) {
   .why-section { gap: 22px; }
