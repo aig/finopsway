@@ -188,7 +188,8 @@ a:focus-visible,
 }
 
 .masthead .nav a:hover,
-.masthead .nav a[aria-current="page"] {
+.masthead .nav a[aria-current="page"],
+.masthead .nav a[aria-current="location"] {
   color: #fff;
   background: transparent;
 }
@@ -207,7 +208,8 @@ a:focus-visible,
 }
 
 .masthead .nav a:not(.nav-download):hover::after,
-.masthead .nav a[aria-current="page"]::after {
+.masthead .nav a[aria-current="page"]::after,
+.masthead .nav a[aria-current="location"]::after {
   transform: scaleX(1);
 }
 
