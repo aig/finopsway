@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=050" />
+  <link rel="stylesheet" href="/styles.css?v=051" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -34,7 +34,22 @@
     <header class="article-hero"><nav class="feature-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/features/">Features</a><span>/</span><span aria-current="page">Databricks Lakebase Costs</span></nav><p class="eyebrow">FinOpsWay features</p><h1>Databricks Lakebase Costs</h1><p class="article-standfirst">Lakebase is Databricks’ managed PostgreSQL database for applications. FinOpsWay shows its database and branch costs, plus hourly compute estimates in settings.</p></header>
     <div class="article-body">
       <h2 id="cost-context">What makes up Lakebase costs?</h2>
-      <ul><li><strong>Compute:</strong> resources that run the database.</li><li><strong>Storage:</strong> the database data you retain.</li><li><strong>Sync pipelines:</strong> extra compute when synced tables copy data into Lakebase.</li></ul><p>These are separate cost components. Databricks explains them in its <a href="https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres">Lakebase cost guide</a>. Check <a href="https://www.databricks.com/product/pricing/lakebase">current Lakebase pricing</a> for your cloud and region.</p>
+      <ul><li><strong>Compute:</strong> resources that run the database.</li><li><strong>Storage:</strong> the database data you retain.</li><li><strong>Sync pipelines:</strong> extra compute when synced tables copy data into Lakebase.</li></ul><p>These are separate cost components. Databricks explains them in its <a href="https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres">Lakebase cost guide</a>. Check the <a href="https://www.databricks.com/product/pricing/lakebase">current Lakebase pricing</a> for your cloud and region.</p>
+      <section class="pricing-in-feature" aria-labelledby="price-components-title">
+        <h2 id="price-components-title">Lakebase price components</h2>
+        <p>FinOpsWay shows actual spent amounts and hourly estimates in your workspace. The figures below are examples from the product, not a live quote.</p>
+        <div class="table-wrap">
+          <table class="pricing-table">
+            <thead><tr><th>Component</th><th>How it is calculated</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td>Compute</td><td>Hourly compute range for the selected CU settings</td><td>$0.37 to $0.74 per hour</td></tr>
+              <tr><td>Storage</td><td>Data retained in the database</td><td>Usage based</td></tr>
+              <tr><td>Sync pipelines</td><td>Compute used to copy and update data</td><td>Usage based</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="feature-cta"><strong>Stay on FinOpsWay:</strong> <a href="/cost-methodology/">See how cost is calculated</a> or <a href="/onboarding/">Connect your workspace</a>.</p>
+      </section>
       <figure>
         <img src="/img/examples/lakebase_main_page.png" width="1462" height="534" loading="lazy" alt="Lakebase Projects with FinOpsWay cost badges beside flowapp and databricksadmin, plus the reporting period in the toolbar." />
         <figcaption>See each project’s reported cost beside its name.</figcaption>
