@@ -37,6 +37,22 @@
         <h1 id="examples-title">Databricks cost monitoring features</h1>
         <p>FinOpsWay places cost context next to the Databricks resources you use every day.</p>
       </div>
+      <section class="pricing-in-feature" aria-labelledby="feature-rates-title">
+        <h2 id="feature-rates-title">Cost reference ranges</h2>
+        <p>Public list-rate examples across supported workload types. The rate that applies depends on product, SKU, cloud, region and contract.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>Cost category</th><th>Billing detail</th><th>Public reference</th></tr></thead>
+          <tbody>
+            <tr><td>Classic compute</td><td>DBUs plus cloud machine costs</td><td>$0.15 to $0.55 / DBU</td></tr>
+            <tr><td>Serverless compute</td><td>Underlying compute included for listed SKUs</td><td>$0.35 to $0.75 / DBU</td></tr>
+            <tr><td>Lakebase compute</td><td>Cloud reference range across AWS, Azure and GCP</td><td>$0.069 to $0.111 / CU-hour</td></tr>
+            <tr><td>Lakebase storage</td><td>Database storage billed separately</td><td>$0.345 to $0.390 / GB-month</td></tr>
+            <tr><td>Databricks Apps</td><td>Medium to XLarge app capacity, at $0.75 / DBU</td><td>$0.375 to $2.25 / hour</td></tr>
+            <tr><td>Genie Agents</td><td>Beyond eligible free usage</td><td>$0.070 / DBU</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Reference prices checked Oct 6, 2026. Promotions and regional list prices can change. Some products add cloud infrastructure charges. Sources: <a href="https://www.databricks.com/product/pricing/jobs">Jobs</a>, <a href="https://www.databricks.com/product/pricing/lakeflow-spark-declarative-pipelines">Pipelines</a>, <a href="https://www.databricks.com/product/pricing/datascience-ml">Compute</a>, <a href="https://www.databricks.com/product/pricing/databricks-apps">Apps</a>, <a href="https://www.databricks.com/product/pricing/lakebase">Lakebase</a> and <a href="https://www.databricks.com/product/pricing/genie">Genie</a>.</p>
+      </section>
       <div class="examples-stories">
         <article class="example-story">
           <div class="example-copy">
@@ -55,7 +71,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">02</span> Clusters</p>
+            <p class="example-kicker"><span class="example-number">01</span> Clusters</p>
             <h2><a href="/features/databricks-cluster-costs/">Databricks Cluster Costs</a></h2>
             <p>Keep cost context close while you browse the clusters in your workspace.</p>
           </div>
@@ -68,7 +84,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">03</span> Jobs and pipelines</p>
+            <p class="example-kicker"><span class="example-number">02</span> Jobs and pipelines</p>
             <h2><a href="/features/databricks-job-costs/">Databricks Job and Pipeline Costs</a></h2>
             <p>See cost information alongside your jobs and pipelines, without leaving Databricks.</p>
           </div>
@@ -81,7 +97,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">04</span> Job runs</p>
+            <p class="example-kicker"><span class="example-number">03</span> Job runs</p>
             <h2><a href="/features/databricks-job-run-costs/">Databricks Job Run Costs</a></h2>
             <p>Bring cost into the picture when you review a job run, right where you already work.</p>
           </div>
@@ -94,7 +110,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">05</span> SQL warehouse setup</p>
+            <p class="example-kicker"><span class="example-number">04</span> SQL warehouse setup</p>
             <h2><a href="/features/databricks-sql-warehouse-costs/">Databricks SQL Warehouse Costs</a></h2>
             <p>Compare hourly cost estimates beside SQL warehouse sizes before choosing compute.</p>
           </div>
@@ -107,7 +123,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">06</span> Notebooks</p>
+            <p class="example-kicker"><span class="example-number">05</span> Notebooks</p>
             <h2><a href="/features/databricks-notebook-costs/">Databricks Notebook Costs</a></h2>
             <p>See cost badges beside notebook names and review the compute behind your analysis.</p>
           </div>
@@ -120,7 +136,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">07</span> Databricks Apps</p>
+            <p class="example-kicker"><span class="example-number">06</span> Databricks Apps</p>
             <h2><a href="/features/databricks-apps-costs/">Databricks Apps Costs</a></h2>
             <p>Bring cost context to Databricks Apps, without leaving the place you manage them.</p>
           </div>
@@ -133,7 +149,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">08</span> Lakebase</p>
+            <p class="example-kicker"><span class="example-number">07</span> Lakebase</p>
             <h2><a href="/features/databricks-lakebase-costs/">Databricks Lakebase Costs</a></h2>
             <p>See the cost of a Lakebase database, not only as a whole but also for each individual branch.</p>
           </div>
@@ -146,7 +162,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">09</span> Lakebase settings</p>
+            <p class="example-kicker"><span class="example-number">08</span> Lakebase settings</p>
             <h2><a href="/features/databricks-lakebase-costs/#settings">Lakebase Costs in Database Settings</a></h2>
             <p>Review Lakebase cost information directly alongside the database settings you manage.</p>
           </div>
@@ -159,7 +175,7 @@
         </article>
         <article class="example-story">
           <div class="example-copy">
-            <p class="example-kicker"><span class="example-number">10</span> Genie Agents</p>
+            <p class="example-kicker"><span class="example-number">09</span> Genie Agents</p>
             <h2><a href="/features/databricks-genie-agent-usage/">Databricks Genie Agent Costs</a></h2>
             <p>See DBU usage alongside the Genie Agents you build and manage in Databricks. Genie Agents usage by users is free through January 31, 2027; service principal usage is billed.</p>
           </div>

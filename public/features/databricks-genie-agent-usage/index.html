@@ -35,6 +35,20 @@
     <div class="article-body">
       <h2 id="cost-context">Is Genie Agent usage free?</h2>
       <p>As checked on October 6, 2026, Databricks says Genie Agents usage by users is free through January 31, 2027. Service principals, the identities used by automated services, are excluded and billed.</p><p>Genie Code has different rules. Check the <a href="https://docs.databricks.com/aws/en/genie/monitor-cost">official Genie billing documentation</a> before applying an allowance or promotion to your usage.</p>
+      <section class="pricing-in-feature" aria-labelledby="genie-rates-title">
+        <h2 id="genie-rates-title">Genie Agent reference rates</h2>
+        <p>Public list pricing in USD per DBU, with the current user promotion and included monthly usage shown separately.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>Usage</th><th>Billing detail</th><th>Reference rate</th></tr></thead>
+          <tbody>
+            <tr><td>User usage through Jan 31, 2027</td><td>Promotional free usage</td><td>$0</td></tr>
+            <tr><td>User usage from Feb 1, 2027</td><td>150 DBUs per user each month included</td><td>$0 within allowance</td></tr>
+            <tr><td>Usage beyond allowance</td><td>Compute may be billed separately</td><td>$0.070 / DBU</td></tr>
+            <tr><td>Service principal usage</td><td>Not covered by the user allowance</td><td>$0.070 / DBU</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Public rates checked Oct 6, 2026. Cloud, region and contract can change the rate. Genie compute such as SQL Serverless is billed separately. Check <a href="https://www.databricks.com/product/pricing/genie">current Genie pricing</a> before estimating a charge.</p>
+      </section>
       <figure><picture><source type="image/webp" srcset="/img/examples/genie_agents.webp" /><img src="/img/examples/genie_agents.png" width="1324" height="665" loading="lazy" alt="Genie Agent DBU badges with a tooltip showing the usage period." /></picture><figcaption>Genie Agent DBU badges with a tooltip showing the usage period.</figcaption></figure>
       <h2 id="workflow">How to review agent usage</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open Genie Agents.</li><li>Read the DBU badge beside an agent. Check the badge details for its reporting period.</li><li>Compare similar periods and workloads. Check which identity ran the agent before interpreting usage as a charge.</li></ol>

@@ -44,6 +44,21 @@
       <p>The cost banner appears in the Databricks workspace interface. It summarizes the selected reporting period and gives you a quick way to open a broader view of workspace costs.</p>
       <h2 id="cost-details">Open the cost details</h2>
       <p>The expanded view includes period controls, a cost chart and a cost-by-SKU breakdown. Use these details to compare activity across periods and decide which resource or workload to investigate next.</p>
+      <section class="pricing-in-feature" aria-labelledby="banner-rates-title">
+        <h2 id="banner-rates-title">Reference rates behind workspace spend</h2>
+        <p>A workspace total combines different product meters. These public USD rates are examples by billing model, not one flat workspace price.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>Cost category</th><th>Billing detail</th><th>Public reference</th></tr></thead>
+          <tbody>
+            <tr><td>Classic compute</td><td>DBUs plus cloud machine charges</td><td>$0.15 to $0.55 / DBU</td></tr>
+            <tr><td>Serverless compute</td><td>DBUs, underlying compute included for listed serverless SKUs</td><td>$0.35 to $0.75 / DBU</td></tr>
+            <tr><td>Lakebase compute</td><td>Autoscaling and Always-On CU usage</td><td>$0.069 to $0.111 / CU-hour</td></tr>
+            <tr><td>Lakebase database storage</td><td>Storage billed separately from compute</td><td>$0.345 to $0.390 / GB-month</td></tr>
+            <tr><td>Genie Agents</td><td>Free usage rules apply; extra compute may be billed separately</td><td>$0.070 / DBU beyond allowance</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Ranges summarize public reference rates checked Oct 6, 2026. SKU, region, plan, promotion and contract change the applicable amount. Compare <a href="https://www.databricks.com/product/pricing/jobs">Jobs</a>, <a href="https://www.databricks.com/product/pricing/lakeflow-spark-declarative-pipelines">Pipelines</a>, <a href="https://www.databricks.com/product/pricing/databricks-sql">SQL</a>, <a href="https://www.databricks.com/product/pricing/datascience-ml">Compute</a>, <a href="https://www.databricks.com/product/pricing/databricks-apps">Apps</a>, <a href="https://www.databricks.com/product/pricing/lakebase">Lakebase</a> and <a href="https://www.databricks.com/product/pricing/genie">Genie</a> rates. See <a href="/cost-methodology/">how FinOpsWay calculates costs</a>.</p>
+      </section>
       <h2 id="reporting-period">Check the reporting period</h2>
       <p>Choose from the available reporting windows, such as 24 hours, 7 days and 14 days. The displayed total applies to the selected window, so compare like-for-like periods when reviewing a change.</p>
       <h2 id="billing-freshness">See when billing data is available</h2>

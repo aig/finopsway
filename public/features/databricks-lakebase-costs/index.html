@@ -36,22 +36,19 @@
       <h2 id="cost-context">What makes up Lakebase costs?</h2>
       <ul><li><strong>Compute:</strong> resources that run the database.</li><li><strong>Storage:</strong> the database data you retain.</li><li><strong>Sync pipelines:</strong> extra compute when synced tables copy data into Lakebase.</li></ul><p>These are separate cost components. Databricks explains them in its <a href="https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres">Lakebase cost guide</a>. Check the <a href="https://www.databricks.com/product/pricing/lakebase">current Lakebase pricing</a> for your cloud and region.</p>
       <section class="pricing-in-feature" aria-labelledby="price-components-title">
-        <h2 id="price-components-title">Lakebase costs by cloud and region</h2>
-        <p>Compare the cost components in one table. Select the cloud and region used by your workspace because compute, storage and sync pricing vary by location.</p>
+        <h2 id="price-components-title">Lakebase rates by cloud</h2>
+        <p>Compare the published reference rates shown for each cloud. The exact price can vary by region, plan and promotion.</p>
         <div class="table-wrap">
           <table class="pricing-table">
-            <thead><tr><th>Cost component</th><th>Cloud</th><th>Region</th><th>Price view</th></tr></thead>
+            <thead><tr><th>Cost component</th><th>AWS</th><th>Azure</th><th>GCP</th></tr></thead>
             <tbody>
-              <tr><td>Compute</td><td>AWS</td><td>Selected AWS region</td><td>Hourly CU estimate based on the current workspace rate</td></tr>
-              <tr><td>Storage</td><td>AWS</td><td>Selected AWS region</td><td>Stored database data, reported separately from compute</td></tr>
-              <tr><td>Sync pipelines</td><td>AWS</td><td>Selected AWS region</td><td>Extra compute for data copy and update work</td></tr>
-              <tr><td>Compute</td><td>Azure</td><td>Selected Azure region</td><td>Hourly CU estimate based on the current workspace rate</td></tr>
-              <tr><td>Storage</td><td>Azure</td><td>Selected Azure region</td><td>Stored database data, reported separately from compute</td></tr>
-              <tr><td>Sync pipelines</td><td>Azure</td><td>Selected Azure region</td><td>Extra compute for data copy and update work</td></tr>
+              <tr><td>Autoscaling compute, per CU-hour</td><td>$0.092</td><td>$0.111</td><td>$0.104</td></tr>
+              <tr><td>Always-On baseline, per CU-hour</td><td>$0.069</td><td>$0.083</td><td>$0.078</td></tr>
+              <tr><td>Database storage, per GB-month</td><td>$0.345</td><td>$0.390</td><td>$0.345</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="table-note">Prices are region- and contract-dependent. Check the current <a href="https://www.databricks.com/product/pricing/lakebase">Lakebase pricing</a> before making a budget decision.</p>
+        <p class="table-note">Reference rates shown in the supplied comparison, not a region-specific quote. Promotions, contract terms and region selection can change the final rate. Check current <a href="https://www.databricks.com/product/pricing/lakebase">Lakebase pricing</a> before budgeting.</p>
         <p class="feature-cta"><strong>Stay on FinOpsWay:</strong> <a href="/cost-methodology/">See how cost is calculated</a> or <a href="/onboarding/">Connect your workspace</a>.</p>
       </section>
       <figure>

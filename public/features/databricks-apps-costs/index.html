@@ -35,6 +35,19 @@
     <div class="article-body">
       <h2 id="cost-context">How are Databricks Apps billed?</h2>
       <p>Databricks charges for an app’s provisioned compute while it runs. The amount depends on capacity and running time, not simply how many people open it. See the <a href="https://docs.databricks.com/aws/en/dev-tools/databricks-apps/">Databricks Apps billing overview</a>.</p><p>An app may also use a SQL warehouse, a Lakebase database or other services. Review those resources separately when estimating the full application cost.</p>
+      <section class="pricing-in-feature" aria-labelledby="apps-rates-title">
+        <h2 id="apps-rates-title">Published Databricks Apps rates</h2>
+        <p>Example list-rate estimate using $0.75 per DBU. App capacity and running time determine DBU consumption.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>App size</th><th>Usage rate</th><th>Reference compute cost</th></tr></thead>
+          <tbody>
+            <tr><td>Medium</td><td>0.5 DBU / hour</td><td>$0.375 / hour</td></tr>
+            <tr><td>Large</td><td>1 DBU / hour</td><td>$0.75 / hour</td></tr>
+            <tr><td>XLarge</td><td>3 DBU / hour</td><td>$2.25 / hour</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Reference calculation from the $0.75 / DBU list rate checked Oct 6, 2026. Cloud, region, contract and promotional terms may change the amount. App dependencies such as SQL warehouses and Lakebase are billed separately. See <a href="https://www.databricks.com/product/pricing/databricks-apps">current Apps pricing</a>.</p>
+      </section>
       <figure><picture><source type="image/webp" srcset="/img/examples/databricks_apps.webp" /><img src="/img/examples/databricks_apps.png" width="1586" height="587" loading="lazy" alt="App cost badges beside names, with stopped compute statuses on the same page." /></picture><figcaption>App cost badges beside names, with stopped compute statuses on the same page.</figcaption></figure>
       <h2 id="workflow">How to check app spending</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open Apps in Databricks.</li><li>Read the cost beside the app name and check the reporting period.</li><li>Review its running status and supporting resources. Investigate test apps left running when they are no longer needed.</li></ol>

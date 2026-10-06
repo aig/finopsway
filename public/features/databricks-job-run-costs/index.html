@@ -35,6 +35,18 @@
     <div class="article-body">
       <h2 id="cost-context">What does cost per job run tell you?</h2>
       <p>It helps you find executions to investigate. Look at the data processed, compute configuration and any retries before deciding why a run cost more.</p><p>A failed execution can still consume compute. Review failed or repaired runs when explaining a job’s total. Databricks provides <a href="https://docs.databricks.com/aws/en/admin/system-tables/jobs-cost">billing queries for run costs and failures</a>.</p>
+      <section class="pricing-in-feature" aria-labelledby="run-rates-title">
+        <h2 id="run-rates-title">Reference rates behind a job run</h2>
+        <p>A run is billed according to its selected job compute model and consumed DBUs.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>Compute model</th><th>Infrastructure</th><th>Published rate</th></tr></thead>
+          <tbody>
+            <tr><td>Jobs Classic clusters</td><td>Cloud compute billed separately</td><td>$0.15 / DBU</td></tr>
+            <tr><td>Jobs Serverless</td><td>Underlying compute included</td><td>$0.35 / DBU</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">The total for a run depends on its DBU usage and compute model. Public reference rates checked Oct 6, 2026, not a region-specific quote. See <a href="https://www.databricks.com/product/pricing/jobs">current Jobs pricing</a>.</p>
+      </section>
       <figure><picture><source type="image/webp" srcset="/img/examples/job_runs.webp" /><img src="/img/examples/job_runs.jpg" width="1950" height="1180" loading="lazy" alt="Run cost appears beside start time, with duration and status in the same table." /></picture><figcaption>Run cost appears beside start time, with duration and status in the same table.</figcaption></figure>
       <h2 id="workflow">How to compare two job runs</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a>, open Jobs &amp; Pipelines and select a job.</li><li>Open Runs and read the cost badges beside the execution start times.</li><li>Compare runs with similar input data. Check duration, status and billing freshness for both.</li></ol>

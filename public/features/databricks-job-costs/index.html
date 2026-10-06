@@ -35,6 +35,22 @@
     <div class="article-body">
       <h2 id="cost-context">What changes job and pipeline costs?</h2>
       <p>Check how often the workload runs, how long it takes and which compute it uses. More scheduled runs can increase the total even when each run costs the same.</p><p>For a pipeline, check its update schedule and the amount of data processed. Compare a routine update with another routine update, rather than with a one-off historical load.</p>
+      <section class="pricing-in-feature" aria-labelledby="job-rates-title">
+        <h2 id="job-rates-title">Published job and pipeline rates</h2>
+        <p>Reference list rates in USD per DBU. Classic compute also incurs cloud infrastructure charges.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>Workload model</th><th>Infrastructure</th><th>Published rate</th></tr></thead>
+          <tbody>
+            <tr><td>Jobs Classic clusters</td><td>Cloud compute billed separately</td><td>$0.15 / DBU</td></tr>
+            <tr><td>Jobs Serverless</td><td>Underlying compute included</td><td>$0.35 / DBU</td></tr>
+            <tr><td>Pipelines Classic Core</td><td>Cloud compute billed separately</td><td>$0.20 / DBU</td></tr>
+            <tr><td>Pipelines Classic Pro</td><td>Cloud compute billed separately</td><td>$0.25 / DBU</td></tr>
+            <tr><td>Pipelines Classic Advanced</td><td>Cloud compute billed separately</td><td>$0.36 / DBU</td></tr>
+            <tr><td>Pipelines Serverless</td><td>Underlying compute included</td><td>$0.35 / DBU</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Public reference rates checked Oct 6, 2026, not region-specific quotes. Check current <a href="https://www.databricks.com/product/pricing/jobs">Jobs pricing</a> and <a href="https://www.databricks.com/product/pricing/lakeflow-spark-declarative-pipelines">Pipelines pricing</a>.</p>
+      </section>
       <figure><picture><source type="image/webp" srcset="/img/examples/jobs_and_pipelines.webp" /><img src="/img/examples/jobs_and_pipelines.jpg" width="1985" height="874" loading="lazy" alt="FinOpsWay places cost badges beside job and pipeline names." /></picture><figcaption>FinOpsWay places cost badges beside job and pipeline names.</figcaption></figure>
       <h2 id="workflow">How to monitor a job or pipeline</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open Jobs &amp; Pipelines.</li><li>Read the cost beside a workload. Check the reporting period and billing freshness.</li><li>Open the workload. For jobs, use the Runs tab to investigate individual executions.</li></ol>

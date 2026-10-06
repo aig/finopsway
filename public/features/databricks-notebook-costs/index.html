@@ -35,6 +35,18 @@
     <div class="article-body">
       <h2 id="cost-context">Where do notebook costs come from?</h2>
       <p>Check the compute used to run the notebook. With serverless compute, Databricks manages the machines and billing records can identify the notebook. With a shared all-purpose cluster, several notebooks can use the same machines.</p><p>Databricks explains how to find notebook usage in its <a href="https://docs.databricks.com/aws/en/admin/system-tables/serverless-billing">serverless billing documentation</a>. Shared cluster spending needs an allocation rule before you assign it to individual users or notebooks.</p>
+      <section class="pricing-in-feature" aria-labelledby="notebook-rates-title">
+        <h2 id="notebook-rates-title">Reference rates for notebook compute</h2>
+        <p>Notebook compute follows the selected compute model. These Databricks list rates are in USD per DBU.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>Compute model</th><th>Infrastructure</th><th>Published rate</th></tr></thead>
+          <tbody>
+            <tr><td>Classic all-purpose</td><td>Cloud machine charges are additional</td><td>$0.55 / DBU</td></tr>
+            <tr><td>Serverless</td><td>Underlying compute included</td><td>$0.75 / DBU</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Public reference rates checked Oct 6, 2026. Shared clusters can run several notebooks, so these are compute rates, not a per-notebook price. Check <a href="https://www.databricks.com/product/pricing/datascience-ml">current Compute for Data Science pricing</a>.</p>
+      </section>
       <figure><picture><source type="image/webp" srcset="/img/examples/notebooks.webp" /><img src="/img/examples/notebooks.png" width="837" height="240" loading="lazy" alt="Cost badges beside notebook names in the workspace list." /></picture><figcaption>Cost badges beside notebook names in the workspace list.</figcaption></figure>
       <h2 id="workflow">How to review notebook spending</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open the workspace list containing your notebooks.</li><li>Find the cost badge beside the notebook name and check the reporting period.</li><li>Open the notebook to review its compute and workload. Compare experiments with similar data and complete billing.</li></ol>
