@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=062" />
+  <link rel="stylesheet" href="/styles.css?v=063" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -52,6 +52,7 @@
       <h2 id="workflow">How to check app spending</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open Apps in Databricks.</li><li>Read the cost beside the app name and check the reporting period.</li><li>Review its running status and supporting resources. Investigate test apps left running when they are no longer needed.</li></ol>
       <p class="feature-example"><strong>Example:</strong> The screenshot shows stopped apps with recorded costs. Stopping an app does not erase the cost of the hours it already ran.</p>
+      <aside class="feature-advice" aria-labelledby="apps-schedule-advice-title"><span class="feature-advice-icon" aria-hidden="true">!</span><div><h3 id="apps-schedule-advice-title">Stop Apps when nobody needs them</h3><p>Schedule a start before business hours and a stop when work ends. <a href="/guides/databricks-apps-start-stop/">Read the guide to scheduled App start and stop</a>.</p></div></aside>
 
       <h2 id="questions">Common questions</h2>
       <h3>Does stopping the app stop every related charge?</h3><p>It stops the app’s compute charges. A database or warehouse used by the app has its own lifecycle. Check each dependency separately. <a href="https://docs.databricks.com/aws/en/dev-tools/databricks-apps/key-concepts" target="_blank" rel="noopener">Databricks documents app states here</a>.</p><h3>Why is the number different from my invoice?</h3><p>FinOpsWay uses available billing data and does not apply private contract discounts. Recent usage can also arrive later. Use the <a href="/cost-methodology/">cost methodology</a> when comparing totals.</p>

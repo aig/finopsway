@@ -1139,6 +1139,11 @@ picture { display: contents; }
 .feature-steps { padding-left: 24px; margin: 0 0 22px; }
 .feature-steps li + li { margin-top: 10px; }
 .feature-example { padding: 16px 20px; border-left: 3px solid var(--brand); background: var(--surface); }
+.feature-advice { display: flex; gap: 14px; align-items: flex-start; margin: 24px 0; padding: 17px 19px; border: 1px solid #a8cfad; border-radius: 10px; background: #e9f5eb; color: #245531; }
+.feature-advice h3 { margin: 0; color: #245531; font-size: 16px; line-height: 1.4; }
+.feature-advice p { margin: 4px 0 0; font-size: 15px; line-height: 1.5; }
+.feature-advice a { color: #245531; font-weight: 800; }
+.feature-advice-icon { display: grid; flex: 0 0 24px; width: 24px; height: 24px; place-items: center; border: 2px solid #2f7540; border-radius: 50%; background: #fff; color: #2f7540; font-weight: 900; line-height: 1; }
 .feature-limits, .feature-sources { color: var(--fg-soft); font-size: 15px; line-height: 1.6; }
 .pricing-in-feature { margin: 32px 0; padding: clamp(22px, 4vw, 34px); border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
 .pricing-in-feature > h2 { margin-top: 0; }
