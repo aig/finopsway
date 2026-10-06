@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=051" />
+  <link rel="stylesheet" href="/styles.css?v=052" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -32,22 +32,38 @@
   <header class="masthead is-compact"><div class="head"><div class="bar"><a class="lockup" href="/" aria-label="FinOpsWay home"><span class="wordmark"><img class="wm-s" src="/img/FinOpsWay_logo_bl.png" width="574" height="120" alt="FinOpsWay" /></span><span class="tagline">Databricks costs, in context</span></a><nav class="nav desktop-nav" aria-label="Main navigation"><a class="nav-download" href="/#download">Download</a><a href="/onboarding/">Setup</a><a href="/#whatelse">Features</a><a href="/#why">Why</a><a href="/#authors">Contacts</a><a href="/security/">Security</a><a href="/guides/">Guides</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Sponsor on GitHub" title="Sponsor on GitHub"><span class="heart" aria-hidden="true">♥</span></a></nav><details class="mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav class="mobile-nav" aria-label="Main navigation"><a href="/#download">Download</a><a href="/onboarding/">Setup</a><a href="/#whatelse">Features</a><a href="/#why">Why</a><a href="/#authors">Contacts</a><a href="/security/">Security</a><a href="/guides/">Guides</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener">Sponsor on GitHub</a></nav></details></div></div></header>
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><nav class="feature-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/features/">Features</a><span>/</span><span aria-current="page">Databricks Lakebase Costs</span></nav><p class="eyebrow">FinOpsWay features</p><h1>Databricks Lakebase Costs</h1><p class="article-standfirst">Lakebase is Databricks’ managed PostgreSQL database for applications. FinOpsWay shows its database and branch costs, plus hourly compute estimates in settings.</p></header>
+    <section class="workspace-popover-feature" aria-labelledby="workspace-popover-title">
+      <h2 id="workspace-popover-title">Workspace panel</h2>
+      <p>FinOpsWay shows cost context beside Databricks resources in the workspace interface.</p>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="/img/examples/workspace_popover_960.webp 960w, /img/examples/workspace_popover.webp 1415w" />
+          <img src="/img/examples/workspace_popover_960.webp" width="960" height="754" loading="lazy" alt="FinOpsWay workspace panel with cost totals, reporting periods, a chart and cost-by-SKU details." />
+        </picture>
+        <figcaption>Workspace cost, reporting periods and recent billing data in one panel.</figcaption>
+      </figure>
+      <a class="text-link" href="/features/workspace-popover/">Learn about the workspace panel <span aria-hidden="true">→</span></a>
+    </section>
     <div class="article-body">
       <h2 id="cost-context">What makes up Lakebase costs?</h2>
       <ul><li><strong>Compute:</strong> resources that run the database.</li><li><strong>Storage:</strong> the database data you retain.</li><li><strong>Sync pipelines:</strong> extra compute when synced tables copy data into Lakebase.</li></ul><p>These are separate cost components. Databricks explains them in its <a href="https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres">Lakebase cost guide</a>. Check the <a href="https://www.databricks.com/product/pricing/lakebase">current Lakebase pricing</a> for your cloud and region.</p>
       <section class="pricing-in-feature" aria-labelledby="price-components-title">
-        <h2 id="price-components-title">Lakebase price components</h2>
-        <p>FinOpsWay shows actual spent amounts and hourly estimates in your workspace. The figures below are examples from the product, not a live quote.</p>
+        <h2 id="price-components-title">Lakebase costs by cloud and region</h2>
+        <p>Compare the cost components in one table. Select the cloud and region used by your workspace because compute, storage and sync pricing vary by location.</p>
         <div class="table-wrap">
           <table class="pricing-table">
-            <thead><tr><th>Component</th><th>How it is calculated</th><th>Example</th></tr></thead>
+            <thead><tr><th>Cost component</th><th>Cloud</th><th>Region</th><th>Price view</th></tr></thead>
             <tbody>
-              <tr><td>Compute</td><td>Hourly compute range for the selected CU settings</td><td>$0.37 to $0.74 per hour</td></tr>
-              <tr><td>Storage</td><td>Data retained in the database</td><td>Usage based</td></tr>
-              <tr><td>Sync pipelines</td><td>Compute used to copy and update data</td><td>Usage based</td></tr>
+              <tr><td>Compute</td><td>AWS</td><td>Selected AWS region</td><td>Hourly CU estimate based on the current workspace rate</td></tr>
+              <tr><td>Storage</td><td>AWS</td><td>Selected AWS region</td><td>Stored database data, reported separately from compute</td></tr>
+              <tr><td>Sync pipelines</td><td>AWS</td><td>Selected AWS region</td><td>Extra compute for data copy and update work</td></tr>
+              <tr><td>Compute</td><td>Azure</td><td>Selected Azure region</td><td>Hourly CU estimate based on the current workspace rate</td></tr>
+              <tr><td>Storage</td><td>Azure</td><td>Selected Azure region</td><td>Stored database data, reported separately from compute</td></tr>
+              <tr><td>Sync pipelines</td><td>Azure</td><td>Selected Azure region</td><td>Extra compute for data copy and update work</td></tr>
             </tbody>
           </table>
         </div>
+        <p class="table-note">Prices are region- and contract-dependent. Check the current <a href="https://www.databricks.com/product/pricing/lakebase">Lakebase pricing</a> before making a budget decision.</p>
         <p class="feature-cta"><strong>Stay on FinOpsWay:</strong> <a href="/cost-methodology/">See how cost is calculated</a> or <a href="/onboarding/">Connect your workspace</a>.</p>
       </section>
       <figure>
