@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=056" />
+  <link rel="stylesheet" href="/styles.css?v=059" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -33,13 +33,25 @@
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><nav class="feature-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span aria-current="page">Features</span></nav><p class="eyebrow">FinOpsWay features</p><h1>Databricks Cost Banner</h1><p class="article-standfirst">Check workspace spend and billing freshness without leaving Databricks.</p></header>
     <div class="article-body">
-      <figure>
-        <picture>
-          <source type="image/webp" srcset="/img/examples/workspace_popover_960.webp 960w, /img/examples/workspace_popover.webp 1415w" />
-          <img src="/img/examples/workspace_popover_960.webp" width="960" height="754" fetchpriority="high" alt="FinOpsWay cost banner in the Databricks workspace with its expanded view showing reporting periods, a chart and cost by SKU." />
-        </picture>
-        <figcaption>The banner keeps the workspace cost view close while you work in Databricks.</figcaption>
-      </figure>
+      <div class="banner-feature-overview">
+        <figure class="shot banner-feature-shot">
+          <picture>
+            <source type="image/webp" srcset="/img/examples/workspace_popover_960.webp 960w, /img/examples/workspace_popover.webp 1415w" />
+            <img src="/img/examples/workspace_popover_960.webp" width="960" height="754" fetchpriority="high" alt="FinOpsWay cost banner in the Databricks workspace with its expanded view showing reporting periods, a chart and cost by SKU." />
+          </picture>
+          <b class="pin" style="left: 22.5%; top: 4.1%" aria-hidden="true">1</b>
+          <b class="pin" style="left: 64.0%; top: 5.7%" aria-hidden="true">2</b>
+          <b class="pin" style="left: 90.1%; top: 18.4%" aria-hidden="true">3</b>
+          <b class="pin" style="left: 65.3%; top: 61%" aria-hidden="true">4</b>
+          <figcaption>The banner keeps the workspace cost view close while you work in Databricks.</figcaption>
+        </figure>
+        <ol class="callouts banner-feature-callouts">
+          <li><b>Widget on every page</b>Cost display within your workspace</li>
+          <li><b>Aggregate by period</b>Data coverage: 24 h, 7 d, months, custom</li>
+          <li><b>Diagram</b>Visual graph for the selected period</li>
+          <li><b>Division into SKUs</b>Detailed SKU information</li>
+        </ol>
+      </div>
       <h2 id="at-a-glance">Workspace spend at a glance</h2>
       <p>The cost banner appears in the Databricks workspace interface. It summarizes the selected reporting period and gives you a quick way to open a broader view of workspace costs.</p>
       <h2 id="cost-details">Open the cost details</h2>
@@ -73,7 +85,7 @@
       <p class="feature-cta"><strong>Get started:</strong> <a href="/onboarding/">Connect your workspace</a> or explore <a href="#other-features-title">all FinOpsWay features</a>.</p>
       <section class="feature-download" aria-labelledby="feature-download-title"><h2 id="feature-download-title">Add FinOpsWay to your browser</h2><p>Install the free extension from your browser’s store. No FinOpsWay account is required.</p><div class="download-grid"><a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" target="_blank" rel="noopener"><span class="browser-icon"><img src="/img/google_chrome.svg" alt="" /></span><span class="download-card-copy"><span class="download-card-label">Available for</span><strong>Google Chrome</strong><span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span></span></a><a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" target="_blank" rel="noopener"><span class="browser-icon"><img src="/img/edge.svg" alt="" /></span><span class="download-card-copy"><span class="download-card-label">Available for</span><strong>Microsoft Edge</strong><span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span></span></a><a class="download-card" href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" target="_blank" rel="noopener"><span class="browser-icon"><img src="/img/firefox.svg" alt="" /></span><span class="download-card-copy"><span class="download-card-label">Available for</span><strong>Mozilla Firefox</strong><span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span></span></a></div><p class="note">Microsoft Edge uses the Chrome Web Store listing.</p></section>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All features</p><nav><a href="/features/" aria-current="page">Cost Banner</a><a href="/features/databricks-cluster-costs/">Cluster Costs</a><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouse Costs</a><a href="/features/databricks-job-costs/">Job and Pipeline Costs</a><a href="/features/databricks-job-cluster-costs/">Job Cluster Costs</a><a href="/features/databricks-job-run-costs/">Job Run Costs</a><a href="/features/databricks-notebook-costs/">Notebook Costs</a><a href="/features/databricks-apps-costs/">Apps Costs</a><a href="/features/databricks-lakebase-costs/">Lakebase Costs</a><a href="/features/databricks-genie-agent-usage/">Genie Agent Costs</a></nav></aside>
+    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All features</p><nav><a href="/features/" aria-current="page">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Cluster Costs</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouse Costs</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Job and Pipeline Costs</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-cluster-costs/">Job Cluster Costs</a><a href="/features/databricks-job-run-costs/">Job Run Costs</a></div></div><a href="/features/databricks-notebook-costs/">Notebook Costs</a><a href="/features/databricks-apps-costs/">Apps Costs</a><a href="/features/databricks-lakebase-costs/">Lakebase Costs</a><a href="/features/databricks-genie-agent-usage/">Genie Agent Costs</a></nav></aside>
   </main>
   <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/features/">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
 </body>
