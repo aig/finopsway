@@ -1336,6 +1336,9 @@ picture { display: contents; }
   }
 }
 
+/* Feature pages start closer to the compact site header. */
+.feature-page .article-hero { padding-top: clamp(26px, 4.5vw, 46px); }
+
 @media (max-width: 560px) {
   .fact {
     grid-template-columns: 1fr;
