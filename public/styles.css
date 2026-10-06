@@ -1151,6 +1151,20 @@ picture { display: contents; }
 .pricing-table td:nth-child(2), .pricing-table td:nth-child(3) { color: var(--fg-soft); font-weight: 700; }
 .pricing-table tr:last-child td { border-bottom: 0; }
 .pricing-table td:last-child { color: var(--brand-ink); font-weight: 700; }
+.pricing-cell-label { display: none; }
+@media (max-width: 800px) {
+  .pricing-in-feature { padding: 20px 16px; }
+  .pricing-in-feature .table-wrap { overflow: visible; border: 0; border-radius: 0; }
+  .pricing-table { display: block; min-width: 0; background: transparent; }
+  /* Keep column headers available to assistive technology. */
+  .pricing-table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .pricing-table tbody { display: grid; gap: 16px; }
+  .pricing-table tbody tr { display: block; min-width: 0; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+  .pricing-table td { display: block; padding: 12px 14px; border: 0; overflow-wrap: anywhere; font-size: 16px; line-height: 1.5; }
+  .pricing-table td:first-child { border-radius: 9px 9px 0 0; background: var(--pale); color: var(--ink); }
+  .pricing-table td + td { border-top: 1px solid var(--border); }
+  .pricing-cell-label { display: block; margin-bottom: 4px; color: var(--fg-soft); font-size: 13px; font-weight: 500; }
+}
 .table-note { margin-top: 16px; color: var(--fg-soft); font-size: 14px; line-height: 1.5; }
 .feature-cta { margin: 20px 0 0; color: var(--fg-soft); font-size: 15px; }
 .feature-cta a { font-weight: 800; }

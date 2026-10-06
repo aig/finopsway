@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=052" />
+  <link rel="stylesheet" href="/styles.css?v=053" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -38,11 +38,11 @@
       <section class="pricing-in-feature" aria-labelledby="job-cluster-rates-title">
         <h2 id="job-cluster-rates-title">Published classic compute rates</h2>
         <p>Public Databricks reference rates in USD per DBU. The final total depends on cloud, region, plan and contract.</p>
-        <div class="table-wrap"><table class="pricing-table">
-          <thead><tr><th>Compute model</th><th>Cloud infrastructure</th><th>Published rate</th></tr></thead>
-          <tbody>
-            <tr><td>Jobs Classic clusters</td><td>Cloud compute billed separately</td><td>$0.15 / DBU</td></tr>
-            <tr><td>Classic all-purpose</td><td>Cloud machine charges are additional</td><td>$0.55 / DBU</td></tr>
+        <div class="table-wrap"><table class="pricing-table" role="table">
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Compute model</th><th scope="col" role="columnheader">Cloud infrastructure</th><th scope="col" role="columnheader">Published rate</th></tr></thead>
+          <tbody role="rowgroup">
+            <tr role="row"><td role="cell">Jobs Classic clusters</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.15 / DBU</td></tr>
+            <tr role="row"><td role="cell">Classic all-purpose</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Cloud machine charges are additional</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.55 / DBU</td></tr>
           </tbody>
         </table></div>
         <p class="table-note">Public reference rates checked Oct 6, 2026. Use the Databricks pricing pages for the latest cloud and region-specific rates. This page is a preliminary detail page for job cluster cost context.</p>

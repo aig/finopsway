@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=052" />
+  <link rel="stylesheet" href="/styles.css?v=053" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -38,13 +38,13 @@
       <section class="pricing-in-feature" aria-labelledby="sql-rates-title">
         <h2 id="sql-rates-title">Published SQL warehouse rates</h2>
         <p>Reference Databricks list rates in USD per DBU. The selected cloud, region and contract can change the applicable price.</p>
-        <div class="table-wrap"><table class="pricing-table">
-          <thead><tr><th>Warehouse type</th><th>Infrastructure</th><th>Published rate</th></tr></thead>
-          <tbody>
-            <tr><td>SQL Classic</td><td>Cloud compute billed separately</td><td>$0.22 / DBU</td></tr>
-            <tr><td>SQL Pro</td><td>Cloud compute billed separately</td><td>$0.55 / DBU</td></tr>
-            <tr><td>SQL Serverless</td><td>Cloud instance cost included</td><td>$0.70 / DBU</td></tr>
-            <tr><td>Lakehouse RT</td><td>Cloud instance cost included; promotion may apply</td><td>$0.55 / DBU</td></tr>
+        <div class="table-wrap"><table class="pricing-table" role="table">
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Warehouse type</th><th scope="col" role="columnheader">Infrastructure</th><th scope="col" role="columnheader">Published rate</th></tr></thead>
+          <tbody role="rowgroup">
+            <tr role="row"><td role="cell">SQL Classic</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.22 / DBU</td></tr>
+            <tr role="row"><td role="cell">SQL Pro</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.55 / DBU</td></tr>
+            <tr role="row"><td role="cell">SQL Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud instance cost included</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.70 / DBU</td></tr>
+            <tr role="row"><td role="cell">Lakehouse RT</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud instance cost included; promotion may apply</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.55 / DBU</td></tr>
           </tbody>
         </table></div>
         <p class="table-note">Public rates checked Oct 6, 2026. Lakehouse RT is marked promotional through January 31, 2027. Confirm current <a href="https://www.databricks.com/product/pricing/databricks-sql">Databricks SQL rates</a> for your plan and cloud.</p>

@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=052" />
+  <link rel="stylesheet" href="/styles.css?v=053" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -38,12 +38,12 @@
       <section class="pricing-in-feature" aria-labelledby="apps-rates-title">
         <h2 id="apps-rates-title">Published Databricks Apps rates</h2>
         <p>Example list-rate estimate using $0.75 per DBU. App capacity and running time determine DBU consumption.</p>
-        <div class="table-wrap"><table class="pricing-table">
-          <thead><tr><th>App size</th><th>Usage rate</th><th>Reference compute cost</th><th>Reference cost per 30 days</th></tr></thead>
-          <tbody>
-            <tr><td>Medium</td><td>0.5 DBU / hour</td><td>$0.375 / hour</td><td>$270</td></tr>
-            <tr><td>Large</td><td>1 DBU / hour</td><td>$0.75 / hour</td><td>$540</td></tr>
-            <tr><td>XLarge</td><td>3 DBU / hour</td><td>$2.25 / hour</td><td>$1,620</td></tr>
+        <div class="table-wrap"><table class="pricing-table" role="table">
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">App size</th><th scope="col" role="columnheader">Usage rate</th><th scope="col" role="columnheader">Reference compute cost</th><th scope="col" role="columnheader">Reference cost per 30 days</th></tr></thead>
+          <tbody role="rowgroup">
+            <tr role="row"><td role="cell">Medium</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Usage rate</span>0.5 DBU / hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Reference compute cost</span>$0.375 / hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Reference cost per 30 days</span>$270</td></tr>
+            <tr role="row"><td role="cell">Large</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Usage rate</span>1 DBU / hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Reference compute cost</span>$0.75 / hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Reference cost per 30 days</span>$540</td></tr>
+            <tr role="row"><td role="cell">XLarge</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Usage rate</span>3 DBU / hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Reference compute cost</span>$2.25 / hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Reference cost per 30 days</span>$1,620</td></tr>
           </tbody>
         </table></div>
         <p class="table-note">Monthly figures assume one app runs continuously for 30 days (720 hours), calculated from the $0.75 / DBU list rate checked Oct 6, 2026. Cloud, region, contract and promotional terms may change the amount. App dependencies such as SQL warehouses and Lakebase are billed separately. See <a href="https://www.databricks.com/product/pricing/databricks-apps">current Apps pricing</a>.</p>
