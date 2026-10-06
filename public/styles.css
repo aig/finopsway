@@ -1195,7 +1195,7 @@ picture { display: contents; }
 .author-row img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top; }
 .author-row p { font-size: 14px; line-height: 1.35; }
 .author-row p:last-child { color: var(--fg-soft); }
-.article-body { margin: 0 auto; padding: clamp(30px, 5vw, 58px) 0 clamp(10px, 3vw, 30px); }
+.article-body { margin: 0 auto; }
 .article-body > p { margin: 0 0 22px; }
 .article-body h2 { margin: 42px 0 15px; color: var(--ink); font-size: clamp(25px, 3vw, 33px); line-height: 1.15; letter-spacing: -.025em; }
 .article-body figure { margin: 36px 0; }
