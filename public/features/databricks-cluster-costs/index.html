@@ -39,13 +39,15 @@
         <h2 id="cluster-rates-title">Published compute rates</h2>
         <p>Public Databricks reference rates in USD per DBU. The final rate depends on cloud, region, plan and contract.</p>
         <div class="table-wrap"><table class="pricing-table">
-          <thead><tr><th>Compute model</th><th>Cloud infrastructure</th><th>Published rate</th></tr></thead>
+          <thead><tr><th>Compute model</th><th>Cloud</th><th>Cloud infrastructure</th><th>Published rate</th></tr></thead>
           <tbody>
-            <tr><td>Classic all-purpose</td><td>Cloud machine charges are additional</td><td>$0.55 / DBU</td></tr>
-            <tr><td>Serverless</td><td>Underlying compute included</td><td>$0.75 / DBU</td></tr>
+            <tr><td>Classic all-purpose</td><td>AWS, Azure, GCP</td><td>Cloud machine charges are additional</td><td>$0.55 / DBU</td></tr>
+            <tr><td>Jobs Classic</td><td>AWS, Azure, GCP</td><td>Cloud compute billed separately</td><td>$0.15 / DBU</td></tr>
+            <tr><td>SQL warehouses</td><td>AWS, Azure, GCP</td><td>Cloud compute billed separately</td><td>$0.22 / DBU</td></tr>
+            <tr><td>Serverless</td><td>Included by Databricks</td><td>Underlying compute included</td><td>$0.75 / DBU</td></tr>
           </tbody>
         </table></div>
-        <p class="table-note">Public reference rates checked Oct 6, 2026. See <a href="https://www.databricks.com/product/pricing/datascience-ml">Databricks Compute for Data Science pricing</a> for current cloud and region rates.</p>
+        <p class="table-note">Public reference rates checked Oct 6, 2026. See <a href="https://www.databricks.com/product/pricing/datascience-ml">Databricks Compute for Data Science pricing</a> and <a href="https://www.databricks.com/product/pricing/sql">Databricks SQL pricing</a> for current cloud and region rates.</p>
       </section>
       <figure><picture><source type="image/webp" srcset="/img/examples/clusters.webp" /><img src="/img/examples/clusters.jpg" width="1582" height="673" loading="lazy" alt="Compute view example: SQL warehouse totals and hourly estimates. Classic cluster charges depend on their own configuration." /></picture><figcaption>Compute view example: SQL warehouse totals and hourly estimates. Classic cluster charges depend on their own configuration.</figcaption></figure>
       <h2 id="workflow">How to check compute spending</h2>
