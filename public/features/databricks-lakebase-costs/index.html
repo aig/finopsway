@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=060" />
+  <link rel="stylesheet" href="/styles.css?v=061" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -34,7 +34,7 @@
     <header class="article-hero"><nav class="feature-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/features/">Features</a><span>/</span><span aria-current="page">Databricks Lakebase Costs</span></nav><p class="eyebrow">FinOpsWay features</p><h1>Databricks Lakebase Costs</h1><p class="article-standfirst">Lakebase is Databricks’ managed PostgreSQL database for applications. FinOpsWay shows its database and branch costs, plus hourly compute estimates in settings.</p></header>
     <div class="article-body">
       <h2 id="cost-context">What makes up Lakebase costs?</h2>
-      <ul><li><strong>Compute:</strong> resources that run the database.</li><li><strong>Storage:</strong> the database data you retain.</li><li><strong>Sync pipelines:</strong> extra compute when synced tables copy data into Lakebase.</li></ul><p>These are separate cost components. Databricks explains them in its <a href="https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres">Lakebase cost guide</a>. Check the <a href="https://www.databricks.com/product/pricing/lakebase">current Lakebase pricing</a> for your cloud and region.</p>
+      <ul><li><strong>Compute:</strong> resources that run the database.</li><li><strong>Storage:</strong> the database data you retain.</li><li><strong>Sync pipelines:</strong> extra compute when synced tables copy data into Lakebase.</li></ul><p>These are separate cost components. Databricks explains them in its <a href="https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres" target="_blank" rel="noopener">Lakebase cost guide</a>. Check the <a href="https://www.databricks.com/product/pricing/lakebase" target="_blank" rel="noopener">current Lakebase pricing</a> for your cloud and region.</p>
       <section class="pricing-in-feature" aria-labelledby="price-components-title">
         <h2 id="price-components-title">Lakebase rates by cloud</h2>
         <p>Compare the published reference rates shown for each cloud. The exact price can vary by region, plan and promotion.</p>
@@ -59,7 +59,7 @@
             </tbody>
           </table>
         </div>
-        <p class="table-note">Reference rates shown in the supplied comparison, not a region-specific quote. Promotions, contract terms and region selection can change the final rate. Check current <a href="https://www.databricks.com/product/pricing/lakebase">Lakebase pricing</a> before budgeting.</p>
+        <p class="table-note">Reference rates shown in the supplied comparison, not a region-specific quote. Promotions, contract terms and region selection can change the final rate. Check current <a href="https://www.databricks.com/product/pricing/lakebase" target="_blank" rel="noopener">Lakebase pricing</a> before budgeting.</p>
         <p class="feature-cta"><strong>Stay on FinOpsWay:</strong> <a href="/cost-methodology/">See how cost is calculated</a> or <a href="/onboarding/">Connect your workspace</a>.</p>
       </section>
       <figure>
@@ -79,7 +79,7 @@
         <img src="/img/examples/lakebase_new.png" width="1080" height="691" loading="lazy" alt="Lakebase Create project dialog with a FinOpsWay estimate of $0.37 to $0.74 per hour beside the production branch configuration." />
         <figcaption>Preview the hourly compute range before creating the project.</figcaption>
       </figure>
-      <h2 id="settings">Hourly estimates in Lakebase settings</h2><p>A CU, or <a href="https://docs.databricks.com/aws/en/oltp/projects/manage-computes">compute unit</a>, describes compute size. FinOpsWay shows hourly estimates beside the minimum and maximum CU settings. This range is not a forecast of actual monthly usage.</p><figure>
+      <h2 id="settings">Hourly estimates in Lakebase settings</h2><p>A CU, or <a href="https://docs.databricks.com/aws/en/oltp/projects/manage-computes" target="_blank" rel="noopener">compute unit</a>, describes compute size. FinOpsWay shows hourly estimates beside the minimum and maximum CU settings. This range is not a forecast of actual monthly usage.</p><figure>
         <a href="/img/examples/lakebase_settings.png" target="_blank" rel="noopener" aria-label="View full Lakebase compute settings, including scale-to-zero (opens in a new tab)">
           <picture><img src="/img/examples/lakebase-autoscaling-costs.jpg" width="1109" height="342" loading="lazy" alt="Lakebase autoscaling settings with hourly estimates beside the minimum 0.5 CU and maximum 1 CU." /></picture>
         </a>

@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=060" />
+  <link rel="stylesheet" href="/styles.css?v=061" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -39,10 +39,10 @@
         <h2 id="job-cluster-rates-title">Published classic compute rates</h2>
         <p>Public Databricks reference rates in USD per DBU. The final total depends on cloud, region, plan and contract.</p>
         <div class="table-wrap"><table class="pricing-table" role="table">
-          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Compute model</th><th scope="col" role="columnheader">Cloud infrastructure</th><th scope="col" role="columnheader">Published rate</th></tr></thead>
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Compute model</th><th scope="col" role="columnheader">Cloud</th><th scope="col" role="columnheader">Cloud infrastructure</th><th scope="col" role="columnheader">Published compute rates</th></tr></thead>
           <tbody role="rowgroup">
-            <tr role="row"><td role="cell">Jobs Classic clusters</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.15 / DBU</td></tr>
-            <tr role="row"><td role="cell">Classic all-purpose</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Cloud machine charges are additional</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.55 / DBU</td></tr>
+            <tr role="row"><td role="cell">Jobs Classic clusters</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>≈ $0.10-$1.00+ / VM hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.15 / DBU</td></tr>
+            <tr role="row"><td role="cell">Classic all-purpose</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>≈ $0.10-$1.00+ / VM hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.55 / DBU</td></tr>
           </tbody>
         </table></div>
         <p class="table-note">Public reference rates checked Oct 6, 2026. Use the Databricks pricing pages for the latest cloud and region-specific rates. This page is a preliminary detail page for job cluster cost context.</p>
@@ -54,7 +54,7 @@
       <h2 id="questions">Common questions</h2>
       <h3>Why is my cloud bill higher than the DBU total?</h3><p>Because classic compute includes separate cloud infrastructure charges. The Databricks DBU amount does not replace the VM cost, it sits beside it.</p><h3>Does this apply to all-purpose clusters too?</h3><p>Yes. Classic all-purpose clusters and classic job clusters both add cloud machine spend. Serverless compute is different because the underlying infrastructure is managed by Databricks.</p>
       <p class="feature-limits">Billing can lag by several hours. Check the reported period and freshness before comparing spend across workloads. <a href="/cost-methodology/">How FinOpsWay calculates costs</a>.</p>
-      <p class="feature-sources">Reference: <a href="https://www.databricks.com/product/pricing/jobs">Databricks Jobs pricing</a> and <a href="https://www.databricks.com/product/pricing/datascience-ml">Databricks compute pricing</a>.</p>
+      <p class="feature-sources">Reference: <a href="https://www.databricks.com/product/pricing/jobs" target="_blank" rel="noopener">Databricks Jobs pricing</a> and <a href="https://www.databricks.com/product/pricing/datascience-ml" target="_blank" rel="noopener">Databricks compute pricing</a>.</p>
       <section class="feature-download" aria-labelledby="feature-download-title">
         <h2 id="feature-download-title">Add FinOpsWay to your browser</h2>
         <p>Install the free extension from your browser’s store. No FinOpsWay account is required.</p>

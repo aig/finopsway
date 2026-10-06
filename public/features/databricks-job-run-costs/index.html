@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=060" />
+  <link rel="stylesheet" href="/styles.css?v=061" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -34,18 +34,18 @@
     <header class="article-hero"><nav class="feature-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/features/">Features</a><span>/</span><span aria-current="page">Databricks Job Run Costs</span></nav><p class="eyebrow">FinOpsWay features</p><h1>Databricks Job Run Costs</h1><p class="article-standfirst">A job run is one execution of a job. FinOpsWay places cost beside runs in Databricks, so you can review spending alongside start time, duration and status.</p></header>
     <div class="article-body">
       <h2 id="cost-context">What does cost per job run tell you?</h2>
-      <p>It helps you find executions to investigate. Look at the data processed, compute configuration and any retries before deciding why a run cost more.</p><p>A failed execution can still consume compute. Review failed or repaired runs when explaining a job’s total. Databricks provides <a href="https://docs.databricks.com/aws/en/admin/system-tables/jobs-cost">billing queries for run costs and failures</a>.</p>
+      <p>It helps you find executions to investigate. Look at the data processed, compute configuration and any retries before deciding why a run cost more.</p><p>A failed execution can still consume compute. Review failed or repaired runs when explaining a job’s total. Databricks provides <a href="https://docs.databricks.com/aws/en/admin/system-tables/jobs-cost" target="_blank" rel="noopener">billing queries for run costs and failures</a>.</p>
       <section class="pricing-in-feature" aria-labelledby="run-rates-title">
         <h2 id="run-rates-title">Reference rates behind a job run</h2>
         <p>A run is billed according to its selected job compute model and consumed DBUs.</p>
         <div class="table-wrap"><table class="pricing-table" role="table">
-          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Compute model</th><th scope="col" role="columnheader">Infrastructure</th><th scope="col" role="columnheader">Published rate</th></tr></thead>
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Compute model</th><th scope="col" role="columnheader">Cloud</th><th scope="col" role="columnheader">Cloud infrastructure</th><th scope="col" role="columnheader">Published compute rates</th></tr></thead>
           <tbody role="rowgroup">
-            <tr role="row"><td role="cell">Jobs Classic clusters</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.15 / DBU</td></tr>
-            <tr role="row"><td role="cell">Jobs Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>-</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.35 / DBU</td></tr>
+            <tr role="row"><td role="cell">Jobs Classic clusters</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>≈ $0.10-$1.00+ / VM hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.15 / DBU</td></tr>
+            <tr role="row"><td role="cell">Jobs Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Included in DBU rate</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.35 / DBU</td></tr>
           </tbody>
         </table></div>
-        <p class="table-note">The total for a run depends on its DBU usage and compute model. Public reference rates checked Oct 6, 2026, not a region-specific quote. See <a href="https://www.databricks.com/product/pricing/jobs">current Jobs pricing</a>.</p>
+        <p class="table-note">The total for a run depends on its DBU usage and compute model. Public reference rates checked Oct 6, 2026, not a region-specific quote. See <a href="https://www.databricks.com/product/pricing/jobs" target="_blank" rel="noopener">current Jobs pricing</a>.</p>
       </section>
       <figure><picture><img src="/img/examples/databricks-job-run-costs.jpg" width="1950" height="1180" loading="lazy" alt="Run cost appears beside start time, with duration and status in the same table." /></picture><figcaption>Run cost appears beside start time, with duration and status in the same table.</figcaption></figure>
       <h2 id="workflow">How to compare two job runs</h2>

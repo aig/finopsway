@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=060" />
+  <link rel="stylesheet" href="/styles.css?v=061" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -39,17 +39,17 @@
         <h2 id="job-rates-title">Published job and pipeline rates</h2>
         <p>Reference list rates in USD per DBU. Classic compute also incurs cloud infrastructure charges.</p>
         <div class="table-wrap"><table class="pricing-table" role="table">
-          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Workload model</th><th scope="col" role="columnheader">Infrastructure</th><th scope="col" role="columnheader">Published rate</th></tr></thead>
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Compute model</th><th scope="col" role="columnheader">Cloud</th><th scope="col" role="columnheader">Cloud infrastructure</th><th scope="col" role="columnheader">Published compute rates</th></tr></thead>
           <tbody role="rowgroup">
-            <tr role="row"><td role="cell">Jobs Classic clusters</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.15 / DBU</td></tr>
-            <tr role="row"><td role="cell">Jobs Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>-</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.35 / DBU</td></tr>
-            <tr role="row"><td role="cell">Pipelines Classic Core</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.20 / DBU</td></tr>
-            <tr role="row"><td role="cell">Pipelines Classic Pro</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.25 / DBU</td></tr>
-            <tr role="row"><td role="cell">Pipelines Classic Advanced</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud compute billed separately</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.36 / DBU</td></tr>
-            <tr role="row"><td role="cell">Pipelines Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>-</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.35 / DBU</td></tr>
+            <tr role="row"><td role="cell">Jobs Classic clusters</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>≈ $0.10-$1.00+ / VM hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.15 / DBU</td></tr>
+            <tr role="row"><td role="cell">Jobs Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Included in DBU rate</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.35 / DBU</td></tr>
+            <tr role="row"><td role="cell">Pipelines Classic Core</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>≈ $0.10-$1.00+ / VM hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.20 / DBU</td></tr>
+            <tr role="row"><td role="cell">Pipelines Classic Pro</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>≈ $0.10-$1.00+ / VM hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.25 / DBU</td></tr>
+            <tr role="row"><td role="cell">Pipelines Classic Advanced</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>≈ $0.10-$1.00+ / VM hour</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.36 / DBU</td></tr>
+            <tr role="row"><td role="cell">Pipelines Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Included in DBU rate</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.35 / DBU</td></tr>
           </tbody>
         </table></div>
-        <p class="table-note">Public reference rates checked Oct 6, 2026, not region-specific quotes. Check current <a href="https://www.databricks.com/product/pricing/jobs">Jobs pricing</a> and <a href="https://www.databricks.com/product/pricing/lakeflow-spark-declarative-pipelines">Pipelines pricing</a>.</p>
+        <p class="table-note">Public reference rates checked Oct 6, 2026, not region-specific quotes. Check current <a href="https://www.databricks.com/product/pricing/jobs" target="_blank" rel="noopener">Jobs pricing</a> and <a href="https://www.databricks.com/product/pricing/lakeflow-spark-declarative-pipelines" target="_blank" rel="noopener">Pipelines pricing</a>.</p>
       </section>
       <figure><picture><img src="/img/examples/databricks-jobs-and-pipelines-costs.jpg" width="1985" height="874" loading="lazy" alt="FinOpsWay places cost badges beside job and pipeline names." /></picture><figcaption>FinOpsWay places cost badges beside job and pipeline names.</figcaption></figure>
       <h2 id="workflow">How to monitor a job or pipeline</h2>
@@ -59,7 +59,7 @@
       <h2 id="questions">Common questions</h2>
       <h3>What is the difference between job cost and run cost?</h3><p>Job cost covers the workload over a period. <a href="/features/databricks-job-run-costs/">Run cost</a> focuses on one execution. Start with the job total, then inspect the runs behind it.</p><h3>Can all compute costs be assigned to a job?</h3><p>No. Databricks documents job attribution for jobs compute and serverless compute. Work on all-purpose compute or SQL warehouses needs separate treatment; a shared resource total is not automatically one job’s cost.</p>
       <p class="feature-limits">Billing can lag by several hours. Check the reported period and freshness. <a href="/cost-methodology/">How FinOpsWay calculates costs</a>.</p>
-      <p class="feature-sources">Reference: <a href="https://docs.databricks.com/aws/en/admin/system-tables/jobs-cost">Databricks job and pipeline cost monitoring</a>.</p>
+      <p class="feature-sources">Reference: <a href="https://docs.databricks.com/aws/en/admin/system-tables/jobs-cost" target="_blank" rel="noopener">Databricks job and pipeline cost monitoring</a>.</p>
       <section class="feature-download" aria-labelledby="feature-download-title">
         <h2 id="feature-download-title">Add FinOpsWay to your browser</h2>
         <p>Install the free extension from your browser’s store. No FinOpsWay account is required.</p>

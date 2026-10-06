@@ -1167,13 +1167,14 @@ picture { display: contents; }
 }
 .table-note { margin-top: 16px; color: var(--fg-soft); font-size: 14px; line-height: 1.5; }
 .pricing-promo-note { display: flex; gap: 14px; align-items: flex-start; margin: 18px 0 0; padding: 15px 18px; border: 1px solid #e7b82e; border-radius: 10px; background: #fff8dc; color: #5d4700; }
-.pricing-promo-note p { margin: 0; font-size: 14px; line-height: 1.45; }
-.pricing-promo-note strong, .pricing-promo-note p span { display: block; }
-.pricing-promo-note p span { margin-top: 2px; }
+.pricing-promo-note h5 { margin: 0; font-size: 14px; line-height: 1.45; }
+.pricing-promo-note p { margin: 3px 0 0; font-size: 14px; line-height: 1.45; }
 .pricing-promo-lamp { position: relative; flex: 0 0 17px; width: 17px; height: 17px; margin: 2px 3px 0 1px; border: 2px solid #9d7100; border-radius: 50%; background: #ffd85b; box-shadow: 0 7px 0 -4px #9d7100; }
 .pricing-promo-lamp::before, .pricing-promo-lamp::after { position: absolute; top: 5px; width: 4px; height: 2px; border-radius: 2px; background: #9d7100; content: ""; }
 .pricing-promo-lamp::before { right: 19px; box-shadow: 26px 0 0 #9d7100; }
 .pricing-promo-lamp::after { top: -8px; left: 5px; width: 2px; height: 4px; }
+.pricing-promo-rate { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.pricing-promo-rate .pricing-promo-lamp { flex-basis: 13px; width: 13px; height: 13px; margin: 0 1px 0 0; transform: scale(.76); transform-origin: left center; }
 .feature-cta { margin: 20px 0 0; color: var(--fg-soft); font-size: 15px; }
 .feature-cta a { font-weight: 800; }
 .article-page.feature-page { max-width: calc(1120px + var(--pad) * 2); display: grid; grid-template-columns: minmax(0, 1fr) 248px; column-gap: clamp(32px, 5vw, 64px); align-items: start; }

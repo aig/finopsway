@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=060" />
+  <link rel="stylesheet" href="/styles.css?v=061" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -39,19 +39,19 @@
         <h2 id="sql-rates-title">Published SQL warehouse rates</h2>
         <p>Reference Databricks list rates in USD per DBU. The selected cloud, region and contract can change the applicable price.</p>
         <div class="table-wrap"><table class="pricing-table" role="table">
-          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Warehouse type</th><th scope="col" role="columnheader">Infrastructure</th><th scope="col" role="columnheader">Published rate</th></tr></thead>
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Compute model</th><th scope="col" role="columnheader">Cloud</th><th scope="col" role="columnheader">Cloud infrastructure</th><th scope="col" role="columnheader">Published compute rates</th></tr></thead>
           <tbody role="rowgroup">
-            <tr role="row"><td role="cell">SQL Classic</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>From about $1.25/hour for 2X-Small on AWS</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.22 / DBU</td></tr>
-            <tr role="row"><td role="cell">SQL Pro</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>From about $1.25/hour for 2X-Small on AWS</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.55 / DBU</td></tr>
-            <tr role="row"><td role="cell">SQL Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>Cloud instance cost included</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.70 / DBU</td></tr>
-            <tr role="row"><td role="cell">Lakehouse RT</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Infrastructure</span>-</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published rate</span>$0.55 / DBU</td></tr>
+            <tr role="row"><td role="cell">SQL Classic</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>From about $1.25/hour for 2X-Small on AWS</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.22 / DBU</td></tr>
+            <tr role="row"><td role="cell">SQL Pro</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>From about $1.25/hour for 2X-Small on AWS</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.55 / DBU</td></tr>
+            <tr role="row"><td role="cell">SQL Serverless</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Included in DBU rate</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span>$0.70 / DBU</td></tr>
+            <tr role="row"><td role="cell">Lakehouse RT</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud</span>AWS, Azure, GCP</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Cloud infrastructure</span>Included in DBU rate</td><td role="cell"><span class="pricing-cell-label" aria-hidden="true">Published compute rates</span><span class="pricing-promo-rate"><span class="pricing-promo-lamp" aria-hidden="true"></span>$0.55 / DBU</span></td></tr>
           </tbody>
         </table></div>
         <aside class="pricing-promo-note" aria-label="Lakehouse RT promotional pricing">
           <span class="pricing-promo-lamp" aria-hidden="true"></span>
-          <p><strong>Lakehouse RT promotional price</strong><span>$0.55 / DBU through January 31, 2027.</span></p>
+          <div><h5>Promotion - Save 30% off the prices shown below until January 31, 2027</h5><p>Lakehouse RT costs $0.55 / DBU during the promotion. After it ends, the list price is about $0.79 / DBU.</p></div>
         </aside>
-        <p class="table-note">AWS estimate assumes one 2X-Small cluster with two i3.2xlarge instances in us-east-1. Cloud instance pricing varies by cloud and region. Public rates checked Oct 6, 2026. Confirm current <a href="https://www.databricks.com/product/pricing/databricks-sql">Databricks SQL rates</a> for your plan and cloud.</p>
+        <p class="table-note">AWS estimate assumes one 2X-Small cluster with two i3.2xlarge instances in us-east-1. Cloud instance pricing varies by cloud and region. Public rates checked Oct 6, 2026. Confirm current <a href="https://www.databricks.com/product/pricing/databricks-sql" target="_blank" rel="noopener">Databricks SQL rates</a> for your plan and cloud.</p>
       </section>
       <figure><picture><img src="/img/examples/databricks-sql-warehouse-costs.jpg" width="1950" height="1180" loading="lazy" alt="Hourly estimates beside SQL warehouse sizes. Screenshot prices are examples, not current quotes." /></picture><figcaption>Hourly estimates beside SQL warehouse sizes. Screenshot prices are examples, not current quotes.</figcaption></figure>
       <h2 id="workflow">How to compare warehouse sizes</h2>
@@ -59,9 +59,9 @@
       <p class="feature-example"><strong>Example:</strong> The screenshot shows $2.80/hour for 2X-Small. At that example rate, 10 hours would be $28 if the configuration stayed fixed. Your region, rates and usage can differ.</p>
 
       <h2 id="questions">Common questions</h2>
-      <h3>Does an idle warehouse still cost money?</h3><p>Yes, while it remains running. Auto Stop helps limit idle time. See <a href="https://docs.databricks.com/aws/en/compute/sql-warehouse/create">Databricks warehouse settings</a> for the behavior of your warehouse type.</p><h3>Is the cheapest hourly size always cheapest overall?</h3><p>Not necessarily. A smaller warehouse may take longer to finish. Compare the same workload’s runtime and total cost. Shared warehouse cost also differs from the cost of one query.</p>
+      <h3>Does an idle warehouse still cost money?</h3><p>Yes, while it remains running. Auto Stop helps limit idle time. See <a href="https://docs.databricks.com/aws/en/compute/sql-warehouse/create" target="_blank" rel="noopener">Databricks warehouse settings</a> for the behavior of your warehouse type.</p><h3>Is the cheapest hourly size always cheapest overall?</h3><p>Not necessarily. A smaller warehouse may take longer to finish. Compare the same workload’s runtime and total cost. Shared warehouse cost also differs from the cost of one query.</p>
       <p class="feature-limits">Billing can lag by several hours. Check the reported period and freshness. <a href="/cost-methodology/">How FinOpsWay calculates costs</a>.</p>
-      <p class="feature-sources">Reference: <a href="https://docs.databricks.com/aws/en/compute/sql-warehouse/warehouse-types">Databricks SQL warehouse types</a>.</p>
+      <p class="feature-sources">Reference: <a href="https://docs.databricks.com/aws/en/compute/sql-warehouse/warehouse-types" target="_blank" rel="noopener">Databricks SQL warehouse types</a>.</p>
       <section class="feature-download" aria-labelledby="feature-download-title">
         <h2 id="feature-download-title">Add FinOpsWay to your browser</h2>
         <p>Install the free extension from your browser’s store. No FinOpsWay account is required.</p>
