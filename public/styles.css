@@ -1139,6 +1139,7 @@ picture { display: contents; }
 .feature-steps { padding-left: 24px; margin: 0 0 22px; }
 .feature-steps li + li { margin-top: 10px; }
 .feature-example { padding: 16px 20px; border-left: 3px solid var(--brand); background: var(--surface); }
+.feature-image-placeholder { display: grid; min-height: clamp(180px, 28vw, 320px); place-items: center; margin: 0 0 36px; padding: 24px; border: 1px dashed #9abca0; border-radius: 14px; background: #eff7f0; color: #32663d; font-size: clamp(18px, 2.3vw, 24px); font-weight: 800; text-align: center; }
 .feature-advice { display: flex; gap: 14px; align-items: flex-start; margin: 24px 0; padding: 17px 19px; border: 1px solid #a8cfad; border-radius: 10px; background: #e9f5eb; color: #245531; }
 .feature-advice h3 { margin: 0; color: #245531; font-size: 16px; line-height: 1.4; }
 .feature-advice p { margin: 4px 0 0; font-size: 15px; line-height: 1.5; }

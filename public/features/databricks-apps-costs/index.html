@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=064" />
+  <link rel="stylesheet" href="/styles.css?v=065" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -33,6 +33,7 @@
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Apps Costs</h1><p class="article-standfirst">Databricks Apps hosts data and AI applications in your workspace. FinOpsWay shows cost beside app names, so you can review spending and the current compute status together.</p></header>
     <div class="article-body">
+      <figure><picture><img src="/img/examples/databricks-apps-costs.jpg" width="1586" height="587" loading="lazy" alt="App cost badges beside names, with stopped compute statuses on the same page." /></picture><figcaption>App cost badges beside names, with stopped compute statuses on the same page.</figcaption></figure>
       <h2 id="cost-context">How are Databricks Apps billed?</h2>
       <p>Databricks charges for an app’s provisioned compute while it runs. The amount depends on capacity and running time, not simply how many people open it. See the <a href="https://docs.databricks.com/aws/en/dev-tools/databricks-apps/" target="_blank" rel="noopener">Databricks Apps billing overview</a>.</p><p>An app may also use a SQL warehouse, a Lakebase database or other services. Review those resources separately when estimating the full application cost.</p>
       <section class="pricing-in-feature" aria-labelledby="apps-rates-title">
@@ -48,7 +49,6 @@
         </table></div>
         <p class="table-note">Monthly figures assume one app runs continuously for 30 days (720 hours), calculated from the $0.75 / DBU list rate checked Oct 6, 2026. Cloud, region, contract and promotional terms may change the amount. App dependencies such as SQL warehouses and Lakebase are billed separately. See <a href="https://www.databricks.com/product/pricing/databricks-apps" target="_blank" rel="noopener">current Apps pricing</a>.</p>
       </section>
-      <figure><picture><img src="/img/examples/databricks-apps-costs.jpg" width="1586" height="587" loading="lazy" alt="App cost badges beside names, with stopped compute statuses on the same page." /></picture><figcaption>App cost badges beside names, with stopped compute statuses on the same page.</figcaption></figure>
       <h2 id="workflow">How to check app spending</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open Apps in Databricks.</li><li>Read the cost beside the app name and check the reporting period.</li><li>Review its running status and supporting resources. Investigate test apps left running when they are no longer needed.</li></ol>
       <p class="feature-example"><strong>Example:</strong> The screenshot shows stopped apps with recorded costs. Stopping an app does not erase the cost of the hours it already ran.</p>
@@ -90,7 +90,7 @@
         <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
       </section>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Run Costs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/" aria-current="page">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div></nav></aside>
+    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/" aria-current="page">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint Costs</a></nav></aside>
   </main>
   <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/features/">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
 </body>

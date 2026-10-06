@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=064" />
+  <link rel="stylesheet" href="/styles.css?v=065" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -33,6 +33,7 @@
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Cluster Costs</h1><p class="article-standfirst">A Databricks cluster is a group of machines that runs your code. Its cost depends on the compute you use and how long it runs. FinOpsWay brings cost information into the Databricks interface.</p></header>
     <div class="article-body">
+      <figure><picture><img src="/img/examples/databricks-cluster-costs.jpg" width="1582" height="673" loading="lazy" alt="Compute view example: SQL warehouse totals and hourly estimates. Classic cluster charges depend on their own configuration." /></picture><figcaption>Compute view example: SQL warehouse totals and hourly estimates. Classic cluster charges depend on their own configuration.</figcaption></figure>
       <h2 id="cost-context">What makes up a Databricks cluster cost?</h2>
       <p>For classic compute, check two parts: <strong>Databricks usage + cloud machines</strong>. A DBU, or Databricks Unit, measures usage of the Databricks service. DBUs are multiplied by the applicable price; machine charges are separate.</p><p>FinOpsWay combines available Databricks usage with cloud machine estimates for AWS and Azure. It does not apply private contract discounts. See the <a href="/cost-methodology/">cost calculation method</a>.</p><p><strong>Classic all-purpose clusters and job clusters both add cloud infrastructure costs.</strong> The Databricks DBU rate is only part of the spend; the compute machines are billed separately by the cloud provider.</p>
       <section class="pricing-in-feature" aria-labelledby="cluster-rates-title">
@@ -49,7 +50,6 @@
         </table></div>
         <p class="table-note">Public reference rates checked Oct 6, 2026. Infrastructure amounts are approximate per VM hour. A cluster can use several VMs. See <a href="https://www.databricks.com/product/pricing/datascience-ml" target="_blank" rel="noopener">Databricks Compute for Data Science pricing</a> and <a href="https://www.databricks.com/product/pricing/sql" target="_blank" rel="noopener">Databricks SQL pricing</a> for current cloud and region rates.</p>
       </section>
-      <figure><picture><img src="/img/examples/databricks-cluster-costs.jpg" width="1582" height="673" loading="lazy" alt="Compute view example: SQL warehouse totals and hourly estimates. Classic cluster charges depend on their own configuration." /></picture><figcaption>Compute view example: SQL warehouse totals and hourly estimates. Classic cluster charges depend on their own configuration.</figcaption></figure>
       <h2 id="workflow">How to check compute spending</h2>
       <ol class="feature-steps"><li>Connect FinOpsWay using the <a href="/onboarding/">setup guide</a>, then open Compute.</li><li>Choose the reporting period and check when billing was last updated.</li><li>Review the resource total, runtime and size. For shared compute, check what other work ran there.</li></ol>
       <p class="feature-example"><strong>Example:</strong> A cluster shared by two notebooks shows the resource cost. Giving the full amount to each notebook would count the same spend twice.</p>
@@ -90,7 +90,7 @@
         <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
       </section>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/" aria-current="page">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Run Costs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div></nav></aside>
+    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/" aria-current="page">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint Costs</a></nav></aside>
   </main>
   <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/features/">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
 </body>

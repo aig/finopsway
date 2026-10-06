@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=064" />
+  <link rel="stylesheet" href="/styles.css?v=065" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -33,6 +33,7 @@
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Job and Pipeline Costs</h1><p class="article-standfirst">A job runs one or more tasks. A pipeline loads or transforms data. FinOpsWay shows cost beside their names in Jobs & Pipelines, so you can choose which workload to investigate.</p></header>
     <div class="article-body">
+      <figure><picture><img src="/img/examples/databricks-jobs-and-pipelines-costs.jpg" width="1985" height="874" loading="lazy" alt="FinOpsWay places cost badges beside job and pipeline names." /></picture><figcaption>FinOpsWay places cost badges beside job and pipeline names.</figcaption></figure>
       <h2 id="cost-context">What changes job and pipeline costs?</h2>
       <p>Check how often the workload runs, how long it takes and which compute it uses. More scheduled runs can increase the total even when each run costs the same.</p><p>For a pipeline, check its update schedule and the amount of data processed. Compare a routine update with another routine update, rather than with a one-off historical load.</p><p><strong>Job clusters are classic compute.</strong> Their Databricks DBU charge is part of the total, and the cloud machine cost is added separately just like other classic cluster types.</p>
       <section class="pricing-in-feature" aria-labelledby="job-rates-title">
@@ -51,7 +52,6 @@
         </table></div>
         <p class="table-note">Public reference rates checked Oct 6, 2026, not region-specific quotes. Check current <a href="https://www.databricks.com/product/pricing/jobs" target="_blank" rel="noopener">Jobs pricing</a> and <a href="https://www.databricks.com/product/pricing/lakeflow-spark-declarative-pipelines" target="_blank" rel="noopener">Pipelines pricing</a>.</p>
       </section>
-      <figure><picture><img src="/img/examples/databricks-jobs-and-pipelines-costs.jpg" width="1985" height="874" loading="lazy" alt="FinOpsWay places cost badges beside job and pipeline names." /></picture><figcaption>FinOpsWay places cost badges beside job and pipeline names.</figcaption></figure>
       <h2 id="workflow">How to monitor a job or pipeline</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open Jobs &amp; Pipelines.</li><li>Read the cost beside a workload. Check the reporting period and billing freshness.</li><li>Open the workload. For jobs, use the Runs tab to investigate individual executions.</li></ol>
       <p class="feature-example"><strong>Example:</strong> If a daily job runs twice as often, its total can rise without any individual run becoming more expensive. Check the schedule before changing the compute.</p>
@@ -92,7 +92,7 @@
         <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
       </section>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/" aria-current="page">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Run Costs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div></nav></aside>
+    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/" aria-current="page">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint Costs</a></nav></aside>
   </main>
   <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/features/">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
 </body>

@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=064" />
+  <link rel="stylesheet" href="/styles.css?v=065" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -33,6 +33,7 @@
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks SQL Warehouse Costs</h1><p class="article-standfirst">A SQL warehouse runs SQL queries for analysis and dashboards. FinOpsWay adds hourly cost estimates beside warehouse sizes, so you can compare options before saving a configuration.</p></header>
     <div class="article-body">
+      <figure><picture><img src="/img/examples/databricks-sql-warehouse-costs.jpg" width="1950" height="1180" loading="lazy" alt="Hourly estimates beside SQL warehouse sizes. Screenshot prices are examples, not current quotes." /></picture><figcaption>Hourly estimates beside SQL warehouse sizes. Screenshot prices are examples, not current quotes.</figcaption></figure>
       <h2 id="cost-context">How much does a SQL warehouse cost?</h2>
       <p>For a fixed configuration, a simple planning estimate is <strong>hourly cost × running hours</strong>. The result changes with warehouse type, size, scaling and applicable rates.</p><p>A DBU is a Databricks usage unit. The size selector shows DBUs per hour; FinOpsWay adds a money estimate. It is an estimate for that configuration, not a monthly bill.</p>
       <section class="pricing-in-feature" aria-labelledby="sql-rates-title">
@@ -53,7 +54,6 @@
         </aside>
         <p class="table-note">AWS estimate assumes one 2X-Small cluster with two i3.2xlarge instances in us-east-1. Cloud instance pricing varies by cloud and region. Public rates checked Oct 6, 2026. Confirm current <a href="https://www.databricks.com/product/pricing/databricks-sql" target="_blank" rel="noopener">Databricks SQL rates</a> for your plan and cloud.</p>
       </section>
-      <figure><picture><img src="/img/examples/databricks-sql-warehouse-costs.jpg" width="1950" height="1180" loading="lazy" alt="Hourly estimates beside SQL warehouse sizes. Screenshot prices are examples, not current quotes." /></picture><figcaption>Hourly estimates beside SQL warehouse sizes. Screenshot prices are examples, not current quotes.</figcaption></figure>
       <h2 id="workflow">How to compare warehouse sizes</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open a SQL warehouse’s settings.</li><li>Open the size selector and compare its hourly estimates.</li><li>Review scaling and Auto Stop before saving. Auto Stop shuts down an idle warehouse after the configured wait.</li></ol>
       <p class="feature-example"><strong>Example:</strong> The screenshot shows $2.80/hour for 2X-Small. At that example rate, 10 hours would be $28 if the configuration stayed fixed. Your region, rates and usage can differ.</p>
@@ -94,7 +94,7 @@
         <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
       </section>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/" aria-current="page">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Run Costs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div></nav></aside>
+    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/" aria-current="page">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint Costs</a></nav></aside>
   </main>
   <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/features/">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
 </body>

@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=064" />
+  <link rel="stylesheet" href="/styles.css?v=065" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -33,6 +33,7 @@
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Job Run Costs</h1><p class="article-standfirst">A job run is one execution of a job. FinOpsWay places cost beside runs in Databricks, so you can review spending alongside start time, duration and status.</p></header>
     <div class="article-body">
+      <figure><picture><img src="/img/examples/databricks-job-run-costs.jpg" width="1950" height="1180" loading="lazy" alt="Run cost appears beside start time, with duration and status in the same table." /></picture><figcaption>Run cost appears beside start time, with duration and status in the same table.</figcaption></figure>
       <h2 id="cost-context">What does cost per job run tell you?</h2>
       <p>It helps you find executions to investigate. Look at the data processed, compute configuration and any retries before deciding why a run cost more.</p><p>A failed execution can still consume compute. Review failed or repaired runs when explaining a job’s total. Databricks provides <a href="https://docs.databricks.com/aws/en/admin/system-tables/jobs-cost" target="_blank" rel="noopener">billing queries for run costs and failures</a>.</p>
       <section class="pricing-in-feature" aria-labelledby="run-rates-title">
@@ -47,7 +48,6 @@
         </table></div>
         <p class="table-note">The total for a run depends on its DBU usage and compute model. Public reference rates checked Oct 6, 2026, not a region-specific quote. See <a href="https://www.databricks.com/product/pricing/jobs" target="_blank" rel="noopener">current Jobs pricing</a>.</p>
       </section>
-      <figure><picture><img src="/img/examples/databricks-job-run-costs.jpg" width="1950" height="1180" loading="lazy" alt="Run cost appears beside start time, with duration and status in the same table." /></picture><figcaption>Run cost appears beside start time, with duration and status in the same table.</figcaption></figure>
       <h2 id="workflow">How to compare two job runs</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a>, open Jobs &amp; Pipelines and select a job.</li><li>Open Runs and read the cost badges beside the execution start times.</li><li>Compare runs with similar input data. Check duration, status and billing freshness for both.</li></ol>
       <p class="feature-example"><strong>Example:</strong> The screenshot shows several runs at $0.20 each. That is a recorded example, not a standard job price. A longer run deserves investigation, but duration alone does not prove wasted spend.</p>
@@ -88,7 +88,7 @@
         <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
       </section>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/" aria-current="page">Job Run Costs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div></nav></aside>
+    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/" aria-current="page">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint Costs</a></nav></aside>
   </main>
   <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/features/">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
 </body>

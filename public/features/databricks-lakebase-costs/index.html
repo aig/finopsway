@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=064" />
+  <link rel="stylesheet" href="/styles.css?v=065" />
   <script src="/menu.js?v=003" defer></script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FinOpsWay" />
@@ -33,6 +33,10 @@
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Lakebase Costs</h1><p class="article-standfirst">Lakebase is Databricks’ managed PostgreSQL database for applications. FinOpsWay shows its database and branch costs, plus hourly compute estimates in settings.</p></header>
     <div class="article-body">
+      <figure>
+        <img src="/img/examples/lakebase_main_page.png" width="1462" height="534" loading="lazy" alt="Lakebase Projects with FinOpsWay cost badges beside flowapp and databricksadmin, plus the reporting period in the toolbar." />
+        <figcaption>See each project’s reported cost beside its name.</figcaption>
+      </figure>
       <h2 id="cost-context">What makes up Lakebase costs?</h2>
       <ul><li><strong>Compute:</strong> resources that run the database.</li><li><strong>Storage:</strong> the database data you retain.</li><li><strong>Sync pipelines:</strong> extra compute when synced tables copy data into Lakebase.</li></ul><p>These are separate cost components. Databricks explains them in its <a href="https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres" target="_blank" rel="noopener">Lakebase cost guide</a>. Check the <a href="https://www.databricks.com/product/pricing/lakebase" target="_blank" rel="noopener">current Lakebase pricing</a> for your cloud and region.</p>
       <section class="pricing-in-feature" aria-labelledby="price-components-title">
@@ -62,10 +66,6 @@
         <p class="table-note">Reference rates shown in the supplied comparison, not a region-specific quote. Promotions, contract terms and region selection can change the final rate. Check current <a href="https://www.databricks.com/product/pricing/lakebase" target="_blank" rel="noopener">Lakebase pricing</a> before budgeting.</p>
         <p class="feature-cta"><strong>Stay on FinOpsWay:</strong> <a href="/cost-methodology/">See how cost is calculated</a> or <a href="/onboarding/">Connect your workspace</a>.</p>
       </section>
-      <figure>
-        <img src="/img/examples/lakebase_main_page.png" width="1462" height="534" loading="lazy" alt="Lakebase Projects with FinOpsWay cost badges beside flowapp and databricksadmin, plus the reporting period in the toolbar." />
-        <figcaption>See each project’s reported cost beside its name.</figcaption>
-      </figure>
       <h2 id="workflow">How to check database and branch costs</h2>
       <ol class="feature-steps"><li><a href="/onboarding/">Connect FinOpsWay</a> and open Lakebase Projects.</li><li>Read a project’s cost, then open its branches. A branch is an isolated database environment, often used for testing.</li><li>Compare branch costs over the same period. Check billing freshness before investigating a recent change.</li></ol>
       <figure>
@@ -121,7 +121,7 @@
         <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
       </section>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Run Costs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/" aria-current="page">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div></nav></aside>
+    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/" aria-current="page">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint Costs</a></nav></aside>
   </main>
   <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/features/">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
 </body>
