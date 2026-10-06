@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="only light" />
+  <title>Databricks Job Cluster Costs | FinOpsWay</title>
+  <meta name="description" content="Understand Databricks classic job cluster costs: Databricks DBU usage plus separate cloud infrastructure charges." />
+  <link rel="canonical" href="https://finopsway.com/features/databricks-job-cluster-costs/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/styles.css?v=052" />
+  <script src="/menu.js?v=003" defer></script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FinOpsWay" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://finopsway.com/features/databricks-job-cluster-costs/" />
+  <meta property="og:title" content="Databricks Job Cluster Costs | FinOpsWay" />
+  <meta property="og:description" content="Understand Databricks classic job cluster costs: Databricks DBU usage plus separate cloud infrastructure charges." />
+  <meta property="og:image" content="https://finopsway.com/img/examples/jobs_and_pipelines.jpg" />
+  <meta property="og:image:alt" content="Databricks Job Cluster Costs in FinOpsWay" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Databricks Job Cluster Costs | FinOpsWay" />
+  <meta name="twitter:description" content="Understand Databricks classic job cluster costs: Databricks DBU usage plus separate cloud infrastructure charges." />
+  <meta name="twitter:image" content="https://finopsway.com/img/examples/jobs_and_pipelines.jpg" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://finopsway.com/features/databricks-job-cluster-costs/", "url": "https://finopsway.com/features/databricks-job-cluster-costs/", "name": "Databricks Job Cluster Costs", "description": "Understand Databricks classic job cluster costs: Databricks DBU usage plus separate cloud infrastructure charges.", "inLanguage": "en", "isPartOf": {"@id": "https://finopsway.com/#website"}, "dateModified": "2026-10-06"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finopsway.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://finopsway.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Databricks Job Cluster Costs", "item": "https://finopsway.com/features/databricks-job-cluster-costs/"}]}]}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead is-compact"><div class="head"><div class="bar"><a class="lockup" href="/" aria-label="FinOpsWay home"><span class="wordmark"><img class="wm-s" src="/img/FinOpsWay_logo_bl.png" width="574" height="120" alt="FinOpsWay" /></span><span class="tagline">Databricks costs, in context</span></a><nav class="nav desktop-nav" aria-label="Main navigation"><a class="nav-download" href="/#download">Download</a><a href="/onboarding/">Setup</a><a href="/#whatelse">Features</a><a href="/#why">Why</a><a href="/#authors">Contacts</a><a href="/security/">Security</a><a href="/guides/">Guides</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Sponsor on GitHub" title="Sponsor on GitHub"><span class="heart" aria-hidden="true">♥</span></a></nav><details class="mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav class="mobile-nav" aria-label="Main navigation"><a href="/#download">Download</a><a href="/onboarding/">Setup</a><a href="/#whatelse">Features</a><a href="/#why">Why</a><a href="/#authors">Contacts</a><a href="/security/">Security</a><a href="/guides/">Guides</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener">Sponsor on GitHub</a></nav></details></div></div></header>
+  <main id="main" class="article-page feature-page">
+    <header class="article-hero"><nav class="feature-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/features/">Features</a><span>/</span><span aria-current="page">Databricks Job Cluster Costs</span></nav><p class="eyebrow">FinOpsWay features</p><h1>Databricks Job Cluster Costs</h1><p class="article-standfirst">Classic job clusters are scheduled compute. Their spend is made up of Databricks usage and the separate cloud machine costs that run the cluster itself.</p></header>
+    <div class="article-body">
+      <h2 id="cost-context">What adds up for a job cluster?</h2>
+      <p>Classic job clusters use a Databricks DBU rate and a cloud infrastructure charge. The DBU line captures usage of Databricks compute. The cloud portion reflects the underlying VM or instance that supports the cluster.</p><p><strong>All-purpose clusters and job clusters share the same pattern.</strong> Databricks usage is only one part of the total. The cloud provider charges for the compute machines separately.</p>
+      <section class="pricing-in-feature" aria-labelledby="job-cluster-rates-title">
+        <h2 id="job-cluster-rates-title">Published classic compute rates</h2>
+        <p>Public Databricks reference rates in USD per DBU. The final total depends on cloud, region, plan and contract.</p>
+        <div class="table-wrap"><table class="pricing-table">
+          <thead><tr><th>Compute model</th><th>Cloud infrastructure</th><th>Published rate</th></tr></thead>
+          <tbody>
+            <tr><td>Jobs Classic clusters</td><td>Cloud compute billed separately</td><td>$0.15 / DBU</td></tr>
+            <tr><td>Classic all-purpose</td><td>Cloud machine charges are additional</td><td>$0.55 / DBU</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Public reference rates checked Oct 6, 2026. Use the Databricks pricing pages for the latest cloud and region-specific rates. This page is a preliminary detail page for job cluster cost context.</p>
+      </section>
+      <figure><picture><source type="image/webp" srcset="/img/examples/jobs_and_pipelines.webp" /><img src="/img/examples/jobs_and_pipelines.jpg" width="1985" height="874" loading="lazy" alt="Classic job cluster costs include Databricks usage and separate cloud infrastructure billing." /></picture><figcaption>Classic job cluster spend includes both Databricks usage and cloud compute costs.</figcaption></figure>
+      <h2 id="workflow">How to review job cluster spending</h2>
+      <ol class="feature-steps"><li>Open the Jobs or Compute areas in Databricks.</li><li>Check whether the workload uses classic cluster compute or serverless compute.</li><li>Review job duration and cluster size. Classic clusters add the machine charge on top of DBU usage.</li></ol>
+      <p class="feature-example"><strong>Example:</strong> A short daily job on a classic cluster can look inexpensive at the DBU level, but the cloud machine cost still appears in the total. Review both parts before reducing spend.</p>
+      <h2 id="questions">Common questions</h2>
+      <h3>Why is my cloud bill higher than the DBU total?</h3><p>Because classic compute includes separate cloud infrastructure charges. The Databricks DBU amount does not replace the VM cost, it sits beside it.</p><h3>Does this apply to all-purpose clusters too?</h3><p>Yes. Classic all-purpose clusters and classic job clusters both add cloud machine spend. Serverless compute is different because the underlying infrastructure is managed by Databricks.</p>
+      <p class="feature-limits">Billing can lag by several hours. Check the reported period and freshness before comparing spend across workloads. <a href="/cost-methodology/">How FinOpsWay calculates costs</a>.</p>
+      <p class="feature-sources">Reference: <a href="https://www.databricks.com/product/pricing/jobs">Databricks Jobs pricing</a> and <a href="https://www.databricks.com/product/pricing/datascience-ml">Databricks compute pricing</a>.</p>
+      <section class="feature-download" aria-labelledby="feature-download-title">
+        <h2 id="feature-download-title">Add FinOpsWay to your browser</h2>
+        <p>Install the free extension from your browser’s store. No FinOpsWay account is required.</p>
+      <div class="download-grid">
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" target="_blank" rel="noopener">
+          <span class="browser-icon"><img src="/img/google_chrome.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Google Chrome</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+        <a class="download-card" href="https://chromewebstore.google.com/detail/finopsway-costs/lpfecokigmjdmdcfleiebiainkndhooi" target="_blank" rel="noopener">
+          <span class="browser-icon"><img src="/img/edge.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Microsoft Edge</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+        <a class="download-card" href="https://addons.mozilla.org/firefox/addon/finopsway-costs/" target="_blank" rel="noopener">
+          <span class="browser-icon"><img src="/img/firefox.svg" alt="" /></span>
+          <span class="download-card-copy">
+            <span class="download-card-label">Available for</span>
+            <strong>Mozilla Firefox</strong>
+            <span class="download-card-action">Get the extension <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+      </div>
+        <p class="note">Microsoft Edge uses the Chrome Web Store listing.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="/img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav"><a href="/#whatelse">Features</a><a href="/security/">Security</a><a href="/cost-methodology/">Cost methodology</a><a href="/privacy/">Privacy policy</a></nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
+</body>
+</html>
