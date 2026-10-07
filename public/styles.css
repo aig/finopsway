@@ -1172,6 +1172,9 @@ picture { display: contents; }
   .pricing-cell-label { display: block; margin-bottom: 4px; color: var(--fg-soft); font-size: 13px; font-weight: 500; }
 }
 .table-note { margin-top: 16px; color: var(--fg-soft); font-size: 14px; line-height: 1.5; }
+.pricing-region-note { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 18px 0 0; color: var(--fg-soft); font-size: 14px; line-height: 1.5; }
+.pricing-region { display: inline-flex; align-items: center; padding: 3px 9px; border: 1px solid #9fc9a6; border-radius: 999px; background: #e9f5eb; color: #245531; font-weight: 800; white-space: nowrap; }
+.pricing-region-note a { font-weight: 800; }
 .pricing-promo-note { display: flex; gap: 14px; align-items: flex-start; margin: 18px 0 0; padding: 15px 18px; border: 1px solid #e7b82e; border-radius: 10px; background: #fff8dc; color: #5d4700; }
 .pricing-promo-note h5 { margin: 0; font-size: 14px; line-height: 1.45; }
 .pricing-promo-note p { margin: 3px 0 0; font-size: 14px; line-height: 1.45; }
