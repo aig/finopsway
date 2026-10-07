@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
     link.innerHTML = heart + (link.closest(".mobile-nav") ? " Sponsor on GitHub" : "");
   });
 
+  // A section link (e.g. Features) stays current on every page beneath it.
+  document.querySelectorAll(".masthead .nav a").forEach(function (link) {
+    if (link.origin !== location.origin || link.hash || link.pathname === "/") return;
+    if (location.pathname.indexOf(link.pathname) === 0) link.setAttribute("aria-current", "page");
+  });
+
   document.querySelectorAll('.desktop-nav a[aria-current="page"]').forEach(function (link) {
     document.querySelectorAll(".mobile-nav a").forEach(function (mobileLink) {
       if (mobileLink.href === link.href) mobileLink.setAttribute("aria-current", "page");
