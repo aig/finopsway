@@ -18,4 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
       if (mobileLink.href === link.href) mobileLink.setAttribute("aria-current", "page");
     });
   });
+
+  document.querySelectorAll(".article-list .article-card").forEach(function (card) {
+    var destination = card.querySelector("h2 a");
+    if (!destination) return;
+
+    card.classList.add("is-clickable");
+    card.setAttribute("tabindex", "0");
+
+    card.addEventListener("click", function (event) {
+      if (event.target.closest("a, button, input, select, textarea, summary")) return;
+      window.location.href = destination.href;
+    });
+
+    card.addEventListener("keydown", function (event) {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      destination.click();
+    });
+  });
 });
