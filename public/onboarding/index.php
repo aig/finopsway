@@ -4,7 +4,7 @@ $page = [
   'description' => 'Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace.',
   'path' => '/onboarding/',
   'og_title' => 'Databricks Cost Monitoring Guide | FinOpsWay',
-  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover.jpg',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover-20261008.jpg',
   'image_alt' => 'FinOpsWay showing Databricks costs inside the workspace',
   'styles' => ['/onboarding/onboarding.css?v=007'],
   'scripts' => ['/onboarding/onboarding.js?v=002'],

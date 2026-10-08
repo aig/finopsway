@@ -330,6 +330,12 @@ a:focus-visible,
   min-width: 0;
 }
 
+/* The hero screenshot is near square; keep it to the old landscape shot's height. */
+.hero_right .shot {
+  width: 86%;
+  margin: 0 auto;
+}
+
 .hero_left h1 .databricks-mark {
   display: inline-block;
   height: 0.82em;
