@@ -4,7 +4,7 @@ $page = [
   'description' => 'Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry.',
   'path' => '/privacy/',
   'og_title' => 'Privacy Policy | FinOpsWay',
-  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover.jpg',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover-20261008.jpg',
   'image_alt' => 'FinOpsWay showing Databricks costs inside the workspace',
 ];
 include __DIR__ . '/../includes/header.php';

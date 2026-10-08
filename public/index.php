@@ -4,7 +4,7 @@ $page = [
   'description' => 'Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context.',
   'path' => '/',
   'og_title' => 'FinOpsWay - FinOps for Databricks | Track Databricks Costs',
-  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover.jpg',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover-20261008.jpg',
   'image_alt' => 'FinOpsWay showing Databricks costs inside the workspace',
   'json_ld' => <<<'JSON'
 {
@@ -32,7 +32,7 @@ $page = [
         "price": "0",
         "priceCurrency": "USD"
       },
-      "screenshot": "https://finopsway.com/img/examples/workspace-cost-popover.jpg",
+      "screenshot": "https://finopsway.com/img/examples/workspace-cost-popover-20261008.jpg",
       "featureList": [
         "Databricks cost visibility in workspace navigation",
         "Cost context for jobs, clusters and pipelines",
@@ -65,7 +65,7 @@ include __DIR__ . '/includes/header.php';
         <div class="hero_right">
           <figure class="shot">
             <picture>
-              <img src="./img/examples/workspace-cost-popover.jpg" width="1234" height="1129" fetchpriority="high"
+              <img src="./img/examples/workspace-cost-popover-20261008.jpg" width="1234" height="1129" fetchpriority="high"
                 alt="A Databricks workspace home page. In the top navigation, a chip reads: $114, Sep 8 - Oct 8, to 07:00 UTC, 4 h ago, beside 24 h, 7 d, 30 d, MTD and QTD buttons. Open below it, a panel with a three-month bar chart and the selected period marked on it, a table of cost by product against the previous period, and a note that the period ends at 07:00 UTC because billing has not reported the four hours since." />
             </picture>
             <b class="pin" style="left: 21.9%; top: 3.7%" aria-hidden="true">1</b>
