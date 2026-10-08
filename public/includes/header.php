@@ -1,8 +1,67 @@
 <?php
-// Site masthead. Set $compact = false before including for the full home page masthead.
-// The current section link gets aria-current from menu.js.
-$compact = $compact ?? true;
+// Document start, <head> and masthead, driven by $page; footer.php closes the document.
+// $page keys: title, description, path; og_title turns on Open Graph and Twitter tags.
+// Bump the ?v= cache-busters here, once for the whole site. 'compact' => false only on home.
+$e = fn ($s) => htmlspecialchars($s, ENT_QUOTES | ENT_HTML5);
+$url = 'https://finopsway.com' . $page['path'];
+$og_description = $page['og_description'] ?? $page['description'];
+$compact = $page['compact'] ?? true;
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><?= $e($page['title']) ?></title>
+  <meta name="description" content="<?= $e($page['description']) ?>" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/styles.css?v=069" />
+  <script src="/menu.js?v=006" defer></script>
+<?php foreach ($page['styles'] ?? [] as $href): ?>
+  <link rel="stylesheet" href="<?= $e($href) ?>" />
+<?php endforeach; ?>
+<?php foreach ($page['scripts'] ?? [] as $src): ?>
+  <script src="<?= $e($src) ?>" defer></script>
+<?php endforeach; ?>
+  <script data-goatcounter="https://s.finopsway.com/count"
+          async src="//s.finopsway.com/count.js"></script>
+  <link rel="canonical" href="<?= $e($url) ?>" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+<?php if (isset($page['og_title'])): ?>
+  <meta property="og:type" content="<?= $e($page['og_type'] ?? 'website') ?>" />
+  <meta property="og:site_name" content="FinOpsWay" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="<?= $e($url) ?>" />
+  <meta property="og:title" content="<?= $e($page['og_title']) ?>" />
+  <meta property="og:description" content="<?= $e($og_description) ?>" />
+<?php if (isset($page['image'])): ?>
+  <meta property="og:image" content="<?= $e($page['image']) ?>" />
+  <meta property="og:image:alt" content="<?= $e($page['image_alt']) ?>" />
+<?php endif; ?>
+<?php if (isset($page['published'])): ?>
+  <meta property="article:published_time" content="<?= $e($page['published']) ?>" />
+  <meta property="article:modified_time" content="<?= $e($page['modified']) ?>" />
+  <meta property="article:author" content="<?= $e($page['author']) ?>" />
+<?php endif; ?>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<?= $e($page['og_title']) ?>" />
+  <meta name="twitter:description" content="<?= $e($page['twitter_description'] ?? $og_description) ?>" />
+<?php if (isset($page['image'])): ?>
+  <meta name="twitter:image" content="<?= $e($page['image']) ?>" />
+  <meta name="twitter:image:alt" content="<?= $e($page['image_alt']) ?>" />
+<?php endif; ?>
+<?php endif; ?>
+<?php if (isset($page['json_ld'])): ?>
+  <script type="application/ld+json">
+<?= $page['json_ld'] ?>
+
+  </script>
+<?php endif; ?>
+</head>
+<body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="masthead<?= $compact ? ' is-compact' : '' ?>">

@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How FinOpsWay Calculates Databricks Costs</title>
-  <meta name="description" content="Learn how FinOpsWay combines Databricks usage and cloud infrastructure estimates, and understand current limitations." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" /><link rel="icon" href="/img/favicon.svg" type="image/svg+xml" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../styles.css?v=069" /><script src="../menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script><link rel="canonical" href="https://finopsway.com/cost-methodology/" /><meta name="robots" content="index, follow, max-image-preview:large" />
-</head>
-<body>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'How FinOpsWay Calculates Databricks Costs',
+  'description' => 'Learn how FinOpsWay combines Databricks usage and cloud infrastructure estimates, and understand current limitations.',
+  'path' => '/cost-methodology/',
+];
+include __DIR__ . '/../includes/header.php';
+?>
   <main id="main" class="section prose methodology-page">
     <p class="eyebrow">Cost methodology</p><h1 class="prose-title">How FinOpsWay calculates Databricks costs</h1>
     <p class="security-lead">FinOpsWay combines Databricks usage cost with an estimate of cloud infrastructure cost, then shows the result in the Databricks interface.</p>
@@ -26,5 +19,3 @@
     <p>Questions about the calculation? <a href="mailto:mail@finopsway.com">Contact us</a>. See also <a href="../security/">Security &amp; Privacy</a>.</p>
   </main>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-</body>
-</html>

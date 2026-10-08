@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="only light" />
-  <title>Databricks Job Run Cost: Compare Execution Costs | FinOpsWay</title>
-  <meta name="description" content="Compare Databricks job run costs by execution. Review retries, identify expensive runs and check why recent billing can be incomplete." />
-  <link rel="canonical" href="https://finopsway.com/features/databricks-job-run-costs/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=069" />
-  <script src="/menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/features/databricks-job-run-costs/" />
-  <meta property="og:title" content="Databricks Job Run Cost: Compare Execution Costs | FinOpsWay" />
-  <meta property="og:description" content="Compare Databricks job run costs by execution. Review retries, identify expensive runs and check why recent billing can be incomplete." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/databricks-job-run-costs.jpg" />
-  <meta property="og:image:alt" content="Databricks Job Run Costs in FinOpsWay" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Databricks Job Run Cost: Compare Execution Costs | FinOpsWay" />
-  <meta name="twitter:description" content="Compare Databricks job run costs by execution. Review retries, identify expensive runs and check why recent billing can be incomplete." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/databricks-job-run-costs.jpg" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://finopsway.com/features/databricks-job-run-costs/", "url": "https://finopsway.com/features/databricks-job-run-costs/", "name": "Databricks Job Run Costs: Compare Executions", "description": "See the cost of individual Databricks job runs. Compare executions, investigate retries and understand why the latest run may have incomplete billing.", "inLanguage": "en", "isPartOf": {"@id": "https://finopsway.com/#website"}, "dateModified": "2026-10-06"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finopsway.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://finopsway.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Databricks Job Run Costs", "item": "https://finopsway.com/features/databricks-job-run-costs/"}]}]}</script>
-</head>
-<body>
-<?php include __DIR__ . '/../../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Databricks Job Run Cost: Compare Execution Costs | FinOpsWay',
+  'description' => 'Compare Databricks job run costs by execution. Review retries, identify expensive runs and check why recent billing can be incomplete.',
+  'path' => '/features/databricks-job-run-costs/',
+  'og_title' => 'Databricks Job Run Cost: Compare Execution Costs | FinOpsWay',
+  'image' => 'https://finopsway.com/img/examples/databricks-job-run-costs.jpg',
+  'image_alt' => 'Databricks Job Run Costs in FinOpsWay',
+  'json_ld' => <<<'JSON'
+{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://finopsway.com/features/databricks-job-run-costs/", "url": "https://finopsway.com/features/databricks-job-run-costs/", "name": "Databricks Job Run Costs: Compare Executions", "description": "See the cost of individual Databricks job runs. Compare executions, investigate retries and understand why the latest run may have incomplete billing.", "inLanguage": "en", "isPartOf": {"@id": "https://finopsway.com/#website"}, "dateModified": "2026-10-06"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finopsway.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://finopsway.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Databricks Job Run Costs", "item": "https://finopsway.com/features/databricks-job-run-costs/"}]}]}
+JSON,
+];
+include __DIR__ . '/../../includes/header.php';
+?>
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Job Run Costs</h1><p class="article-standfirst">A job run is one execution of a job. FinOpsWay places cost beside runs in Databricks, so you can review spending alongside start time, duration and status.</p></header>
     <div class="article-body">
@@ -93,5 +74,3 @@
     <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-serverless-cluster-costs/">Serverless Clusters</a><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a><a href="/features/databricks-all-purpose-cluster-costs/">All-Purpose Clusters</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/" aria-current="page">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint</a></nav></aside>
   </main>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
-</body>
-</html>

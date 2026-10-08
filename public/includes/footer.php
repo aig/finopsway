@@ -19,3 +19,5 @@
       <a href="/privacy/#trademarks">Full notice</a>.
     </p>
   </footer>
+</body>
+</html>

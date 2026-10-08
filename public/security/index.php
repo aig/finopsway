@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Security &amp; Privacy | FinOpsWay</title>
-  <meta name="description" content="Understand FinOpsWay's browser-to-Databricks architecture, local credential handling and least-privilege approach." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../styles.css?v=069" />
-  <script src="../menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="canonical" href="https://finopsway.com/security/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-</head>
-<body>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Security & Privacy | FinOpsWay',
+  'description' => 'Understand FinOpsWay\'s browser-to-Databricks architecture, local credential handling and least-privilege approach.',
+  'path' => '/security/',
+];
+include __DIR__ . '/../includes/header.php';
+?>
   <main id="main" class="section prose security-page">
     <p class="eyebrow">Private by design</p>
     <h1 class="prose-title">Security &amp; Privacy</h1>
@@ -56,5 +44,3 @@
     <p>For a detailed account of local storage and workspace endpoints, read the <a href="../privacy/">privacy policy</a>. For a security review, <a href="mailto:mail@finopsway.com">contact us</a>.</p>
   </main>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-</body>
-</html>

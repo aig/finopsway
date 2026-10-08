@@ -19,10 +19,13 @@ Marketing site for the FinOpsWay browser extension. PHP pages and CSS in
 
 ## Conventions
 
-- Bump the `?v=NNN` cache-buster on `styles.css` / `menu.js` links in every
-  page that references them when the file changes.
-- The site header and footer live once, in `public/includes/header.php` and
-  `public/includes/footer.php`; pages include them. Set `$compact = false`
-  before the header include only on the home page.
+- Shared markup lives once in `public/includes/`. `header.php` opens the
+  document (doctype, `<head>`, `<body>`, masthead) and `footer.php` closes it.
+  Each page sets a `$page` array (title, description, path, optional Open
+  Graph, article and JSON-LD fields) and includes both; the key list is at the
+  top of `header.php`. Only the home page sets `'compact' => false`.
+- Bump the `?v=NNN` cache-buster in `public/includes/header.php` when
+  `styles.css` or `menu.js` changes. Page-only assets go in `$page['styles']`
+  or `$page['scripts']` with their own cache-buster.
 - Section copy and its styles live together: markup in `public/index.php`,
   styles appended near the related block in `public/styles.css`.

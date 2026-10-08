@@ -1,36 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="only light" />
-  <title>Databricks Cost Banner | FinOpsWay</title>
-  <meta name="description" content="See how FinOpsWay's Databricks cost banner summarizes workspace spend, reporting periods, billing freshness and cost details." />
-  <link rel="canonical" href="https://finopsway.com/features/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=069" />
-  <script src="/menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/features/" />
-  <meta property="og:title" content="Databricks Cost Banner | FinOpsWay" />
-  <meta property="og:description" content="See workspace spend, reporting periods and billing freshness in the Databricks interface." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-cost-popover-960.jpg" />
-  <meta property="og:image:alt" content="FinOpsWay cost banner and expanded workspace cost details in Databricks." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Databricks Cost Banner | FinOpsWay" />
-  <meta name="twitter:description" content="See workspace spend, reporting periods and billing freshness in the Databricks interface." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-cost-popover-960.jpg" />
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://finopsway.com/features/","url":"https://finopsway.com/features/","name":"Databricks Cost Banner","description":"See how FinOpsWay's Databricks cost banner summarizes workspace spend, reporting periods, billing freshness and cost details.","inLanguage":"en","isPartOf":{"@id":"https://finopsway.com/#website"},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"Databricks Cluster Costs","url":"https://finopsway.com/features/databricks-cluster-costs/"},{"@type":"ListItem","position":2,"name":"Databricks SQL Warehouse Costs","url":"https://finopsway.com/features/databricks-sql-warehouse-costs/"},{"@type":"ListItem","position":3,"name":"Databricks Job and Pipeline Costs","url":"https://finopsway.com/features/databricks-job-costs/"},{"@type":"ListItem","position":4,"name":"Databricks Job Run Costs","url":"https://finopsway.com/features/databricks-job-run-costs/"},{"@type":"ListItem","position":5,"name":"Databricks Notebook Costs","url":"https://finopsway.com/features/databricks-notebook-costs/"},{"@type":"ListItem","position":6,"name":"Databricks Apps Costs","url":"https://finopsway.com/features/databricks-apps-costs/"},{"@type":"ListItem","position":7,"name":"Databricks Lakebase Costs","url":"https://finopsway.com/features/databricks-lakebase-costs/"},{"@type":"ListItem","position":8,"name":"Databricks Genie Agent Costs","url":"https://finopsway.com/features/databricks-genie-agent-usage/"},{"@type":"ListItem","position":9,"name":"Databricks Genie Code Costs","url":"https://finopsway.com/features/databricks-genie-code-costs/"},{"@type":"ListItem","position":10,"name":"Databricks Serving Endpoint Costs","url":"https://finopsway.com/features/databricks-serving-endpoint-costs/"},{"@type":"ListItem","position":11,"name":"Databricks All-Purpose Cluster Costs","url":"https://finopsway.com/features/databricks-all-purpose-cluster-costs/"},{"@type":"ListItem","position":12,"name":"Databricks Serverless Cluster Costs","url":"https://finopsway.com/features/databricks-serverless-cluster-costs/"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finopsway.com/"},{"@type":"ListItem","position":2,"name":"Features","item":"https://finopsway.com/features/"}]}]}</script>
-</head>
-<body>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Databricks Cost Banner | FinOpsWay',
+  'description' => 'See how FinOpsWay\'s Databricks cost banner summarizes workspace spend, reporting periods, billing freshness and cost details.',
+  'path' => '/features/',
+  'og_title' => 'Databricks Cost Banner | FinOpsWay',
+  'og_description' => 'See workspace spend, reporting periods and billing freshness in the Databricks interface.',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover-960.jpg',
+  'image_alt' => 'FinOpsWay cost banner and expanded workspace cost details in Databricks.',
+  'json_ld' => <<<'JSON'
+{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://finopsway.com/features/","url":"https://finopsway.com/features/","name":"Databricks Cost Banner","description":"See how FinOpsWay's Databricks cost banner summarizes workspace spend, reporting periods, billing freshness and cost details.","inLanguage":"en","isPartOf":{"@id":"https://finopsway.com/#website"},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"Databricks Cluster Costs","url":"https://finopsway.com/features/databricks-cluster-costs/"},{"@type":"ListItem","position":2,"name":"Databricks SQL Warehouse Costs","url":"https://finopsway.com/features/databricks-sql-warehouse-costs/"},{"@type":"ListItem","position":3,"name":"Databricks Job and Pipeline Costs","url":"https://finopsway.com/features/databricks-job-costs/"},{"@type":"ListItem","position":4,"name":"Databricks Job Run Costs","url":"https://finopsway.com/features/databricks-job-run-costs/"},{"@type":"ListItem","position":5,"name":"Databricks Notebook Costs","url":"https://finopsway.com/features/databricks-notebook-costs/"},{"@type":"ListItem","position":6,"name":"Databricks Apps Costs","url":"https://finopsway.com/features/databricks-apps-costs/"},{"@type":"ListItem","position":7,"name":"Databricks Lakebase Costs","url":"https://finopsway.com/features/databricks-lakebase-costs/"},{"@type":"ListItem","position":8,"name":"Databricks Genie Agent Costs","url":"https://finopsway.com/features/databricks-genie-agent-usage/"},{"@type":"ListItem","position":9,"name":"Databricks Genie Code Costs","url":"https://finopsway.com/features/databricks-genie-code-costs/"},{"@type":"ListItem","position":10,"name":"Databricks Serving Endpoint Costs","url":"https://finopsway.com/features/databricks-serving-endpoint-costs/"},{"@type":"ListItem","position":11,"name":"Databricks All-Purpose Cluster Costs","url":"https://finopsway.com/features/databricks-all-purpose-cluster-costs/"},{"@type":"ListItem","position":12,"name":"Databricks Serverless Cluster Costs","url":"https://finopsway.com/features/databricks-serverless-cluster-costs/"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finopsway.com/"},{"@type":"ListItem","position":2,"name":"Features","item":"https://finopsway.com/features/"}]}]}
+JSON,
+];
+include __DIR__ . '/../includes/header.php';
+?>
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Cost Banner</h1><p class="article-standfirst">Check workspace spend and billing freshness without leaving Databricks.</p></header>
     <div class="article-body">
@@ -90,5 +72,3 @@
     <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/" aria-current="page">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-serverless-cluster-costs/">Serverless Clusters</a><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a><a href="/features/databricks-all-purpose-cluster-costs/">All-Purpose Clusters</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint</a></nav></aside>
   </main>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-</body>
-</html>

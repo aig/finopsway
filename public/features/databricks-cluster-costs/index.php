@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="only light" />
-  <title>Databricks Cluster Pricing and Cost Monitoring | FinOpsWay</title>
-  <meta name="description" content="Review Databricks cluster pricing, DBU usage, cloud compute and idle time. FinOpsWay shows cluster cost context in your workspace." />
-  <link rel="canonical" href="https://finopsway.com/features/databricks-cluster-costs/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=069" />
-  <script src="/menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/features/databricks-cluster-costs/" />
-  <meta property="og:title" content="Databricks Cluster Pricing and Cost Monitoring | FinOpsWay" />
-  <meta property="og:description" content="Review Databricks cluster pricing, DBU usage, cloud compute and idle time. FinOpsWay shows cluster cost context in your workspace." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/databricks-cluster-costs.jpg" />
-  <meta property="og:image:alt" content="Databricks Cluster Costs in FinOpsWay" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Databricks Cluster Pricing and Cost Monitoring | FinOpsWay" />
-  <meta name="twitter:description" content="Review Databricks cluster pricing, DBU usage, cloud compute and idle time. FinOpsWay shows cluster cost context in your workspace." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/databricks-cluster-costs.jpg" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://finopsway.com/features/databricks-cluster-costs/", "url": "https://finopsway.com/features/databricks-cluster-costs/", "name": "Databricks Cluster Costs: DBUs and Cloud Compute", "description": "Understand Databricks cluster costs: DBU usage, cloud compute and idle time. See how FinOpsWay shows compute spending inside your workspace.", "inLanguage": "en", "isPartOf": {"@id": "https://finopsway.com/#website"}, "dateModified": "2026-10-06"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finopsway.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://finopsway.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Databricks Cluster Costs", "item": "https://finopsway.com/features/databricks-cluster-costs/"}]}]}</script>
-</head>
-<body>
-<?php include __DIR__ . '/../../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Databricks Cluster Pricing and Cost Monitoring | FinOpsWay',
+  'description' => 'Review Databricks cluster pricing, DBU usage, cloud compute and idle time. FinOpsWay shows cluster cost context in your workspace.',
+  'path' => '/features/databricks-cluster-costs/',
+  'og_title' => 'Databricks Cluster Pricing and Cost Monitoring | FinOpsWay',
+  'image' => 'https://finopsway.com/img/examples/databricks-cluster-costs.jpg',
+  'image_alt' => 'Databricks Cluster Costs in FinOpsWay',
+  'json_ld' => <<<'JSON'
+{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://finopsway.com/features/databricks-cluster-costs/", "url": "https://finopsway.com/features/databricks-cluster-costs/", "name": "Databricks Cluster Costs: DBUs and Cloud Compute", "description": "Understand Databricks cluster costs: DBU usage, cloud compute and idle time. See how FinOpsWay shows compute spending inside your workspace.", "inLanguage": "en", "isPartOf": {"@id": "https://finopsway.com/#website"}, "dateModified": "2026-10-06"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finopsway.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://finopsway.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Databricks Cluster Costs", "item": "https://finopsway.com/features/databricks-cluster-costs/"}]}]}
+JSON,
+];
+include __DIR__ . '/../../includes/header.php';
+?>
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Cluster Costs</h1><p class="article-standfirst">A Databricks cluster is a group of machines that runs your code. Its cost depends on the compute you use and how long it runs. FinOpsWay brings cost information into the Databricks interface.</p></header>
     <div class="article-body">
@@ -95,5 +76,3 @@
     <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/" aria-current="page">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-serverless-cluster-costs/">Serverless Clusters</a><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a><a href="/features/databricks-all-purpose-cluster-costs/">All-Purpose Clusters</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint</a></nav></aside>
   </main>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
-</body>
-</html>

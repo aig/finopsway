@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="only light" />
-  <title>Databricks Notebook Cost Monitoring | FinOpsWay</title>
-  <meta name="description" content="Monitor Databricks notebook cost beside notebook names. Compare experiment spend and see how serverless billing differs from shared cluster costs." />
-  <link rel="canonical" href="https://finopsway.com/features/databricks-notebook-costs/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=069" />
-  <script src="/menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/features/databricks-notebook-costs/" />
-  <meta property="og:title" content="Databricks Notebook Cost Monitoring | FinOpsWay" />
-  <meta property="og:description" content="Monitor Databricks notebook cost beside notebook names. Compare experiment spend and see how serverless billing differs from shared cluster costs." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/databricks-notebook-costs.jpg" />
-  <meta property="og:image:alt" content="Databricks Notebook Costs in FinOpsWay" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Databricks Notebook Cost Monitoring | FinOpsWay" />
-  <meta name="twitter:description" content="Monitor Databricks notebook cost beside notebook names. Compare experiment spend and see how serverless billing differs from shared cluster costs." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/databricks-notebook-costs.jpg" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://finopsway.com/features/databricks-notebook-costs/", "url": "https://finopsway.com/features/databricks-notebook-costs/", "name": "Databricks Notebook Costs: Track Compute Spending", "description": "See Databricks notebook costs beside notebook names. Learn how serverless billing differs from shared cluster costs and how to compare experiments.", "inLanguage": "en", "isPartOf": {"@id": "https://finopsway.com/#website"}, "dateModified": "2026-10-06"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finopsway.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://finopsway.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Databricks Notebook Costs", "item": "https://finopsway.com/features/databricks-notebook-costs/"}]}]}</script>
-</head>
-<body>
-<?php include __DIR__ . '/../../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Databricks Notebook Cost Monitoring | FinOpsWay',
+  'description' => 'Monitor Databricks notebook cost beside notebook names. Compare experiment spend and see how serverless billing differs from shared cluster costs.',
+  'path' => '/features/databricks-notebook-costs/',
+  'og_title' => 'Databricks Notebook Cost Monitoring | FinOpsWay',
+  'image' => 'https://finopsway.com/img/examples/databricks-notebook-costs.jpg',
+  'image_alt' => 'Databricks Notebook Costs in FinOpsWay',
+  'json_ld' => <<<'JSON'
+{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://finopsway.com/features/databricks-notebook-costs/", "url": "https://finopsway.com/features/databricks-notebook-costs/", "name": "Databricks Notebook Costs: Track Compute Spending", "description": "See Databricks notebook costs beside notebook names. Learn how serverless billing differs from shared cluster costs and how to compare experiments.", "inLanguage": "en", "isPartOf": {"@id": "https://finopsway.com/#website"}, "dateModified": "2026-10-06"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finopsway.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://finopsway.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Databricks Notebook Costs", "item": "https://finopsway.com/features/databricks-notebook-costs/"}]}]}
+JSON,
+];
+include __DIR__ . '/../../includes/header.php';
+?>
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Notebook Costs</h1><p class="article-standfirst">A notebook contains code and results; compute runs the code. FinOpsWay shows notebook cost badges in the workspace list, helping you identify which analysis or experiment to review.</p></header>
     <div class="article-body">
@@ -96,5 +77,3 @@
     <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-serverless-cluster-costs/">Serverless Clusters</a><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a><a href="/features/databricks-all-purpose-cluster-costs/">All-Purpose Clusters</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/" aria-current="page">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint</a></nav></aside>
   </main>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
-</body>
-</html>

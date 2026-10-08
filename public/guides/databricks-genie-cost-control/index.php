@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Databricks Genie Cost Control: Budgets and Usage Blocks | FinOpsWay</title>
-  <meta name="description" content="Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" /><link rel="icon" href="/img/favicon.svg" type="image/svg+xml" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../../styles.css?v=069" /><script src="../../menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="canonical" href="https://finopsway.com/guides/databricks-genie-cost-control/" /><meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="article" /><meta property="og:site_name" content="FinOpsWay" /><meta property="og:locale" content="en_US" /><meta property="og:url" content="https://finopsway.com/guides/databricks-genie-cost-control/" /><meta property="og:title" content="Databricks Genie Cost Control: Budgets and Usage Blocks" /><meta property="og:description" content="Set a Genie budget, block usage at the threshold and review usage from system tables." /><meta property="og:image" content="https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg" /><meta property="og:image:alt" content="Databricks Genie cost control thumbnail" /><meta property="article:published_time" content="2026-08-17" /><meta property="article:modified_time" content="2026-10-06" /><meta property="article:author" content="https://www.linkedin.com/in/protmaks/" />
-  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Databricks Genie Cost Control: Budgets and Usage Blocks" /><meta name="twitter:description" content="Set a Genie budget, block usage at the threshold and review usage from system tables." /><meta name="twitter:image" content="https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://finopsway.com/guides/databricks-genie-cost-control/"},"headline":"Databricks Genie cost control: budgets and usage blocks","description":"Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables.","image":"https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg","datePublished":"2026-08-17","dateModified":"2026-10-06","author":{"@type":"Person","name":"Maksim Pachkouski","url":"https://www.linkedin.com/in/protmaks/"},"publisher":{"@type":"Organization","name":"FinOpsWay","url":"https://finopsway.com/"},"articleSection":"Databricks Genie cost control","keywords":"Databricks Genie, Genie budgets, block usage, Unity AI Gateway, Databricks cost control"}</script>
-</head>
-<body>
-<?php include __DIR__ . '/../../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Databricks Genie Cost Control: Budgets and Usage Blocks | FinOpsWay',
+  'description' => 'Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables.',
+  'path' => '/guides/databricks-genie-cost-control/',
+  'og_type' => 'article',
+  'og_title' => 'Databricks Genie Cost Control: Budgets and Usage Blocks',
+  'og_description' => 'Set a Genie budget, block usage at the threshold and review usage from system tables.',
+  'image' => 'https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg',
+  'image_alt' => 'Databricks Genie cost control thumbnail',
+  'published' => '2026-08-17',
+  'modified' => '2026-10-06',
+  'author' => 'https://www.linkedin.com/in/protmaks/',
+  'json_ld' => <<<'JSON'
+{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://finopsway.com/guides/databricks-genie-cost-control/"},"headline":"Databricks Genie cost control: budgets and usage blocks","description":"Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables.","image":"https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg","datePublished":"2026-08-17","dateModified":"2026-10-06","author":{"@type":"Person","name":"Maksim Pachkouski","url":"https://www.linkedin.com/in/protmaks/"},"publisher":{"@type":"Organization","name":"FinOpsWay","url":"https://finopsway.com/"},"articleSection":"Databricks Genie cost control","keywords":"Databricks Genie, Genie budgets, block usage, Unity AI Gateway, Databricks cost control"}
+JSON,
+];
+include __DIR__ . '/../../includes/header.php';
+?>
   <main id="main" class="article-page">
     <header class="article-hero"><p class="eyebrow">Genie cost control</p><h1>Databricks Genie cost control: budgets and usage blocks</h1><p class="article-standfirst">A budget notification tells you spend has crossed a limit. A usage block stops new Genie requests at that limit.</p><div class="author-row"><img src="../../img/maksim-profile.jpg" width="96" height="96" alt="Maksim Pachkouski" /><div><p><strong>Maksim Pachkouski</strong></p><p>Databricks MVP · August 17, 2026 · 5 min read</p><p><a href="https://medium.com/databrickscommunity/databricks-genie-cost-control-how-to-set-budgets-and-block-usage-a13014c1f9ba" target="_blank" rel="noopener">Original publication on Medium ↗</a></p></div></div></header>
     <article class="article-body">
@@ -68,5 +68,3 @@ databricks account budgets get &lt;budget-id&gt; \
     </article>
   </main>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
-</body>
-</html>

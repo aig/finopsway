@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy | FinOpsWay</title>
-  <meta name="description" content="Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../styles.css?v=069" />
-  <script src="../menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="canonical" href="https://finopsway.com/privacy/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/privacy/" />
-  <meta property="og:title" content="Privacy Policy | FinOpsWay" />
-  <meta property="og:description" content="Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | FinOpsWay" />
-  <meta name="twitter:description" content="Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-</head>
-
-<body>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Privacy Policy | FinOpsWay',
+  'description' => 'Learn how FinOpsWay handles Databricks cost data and workspace credentials. The browser extension has no backend or telemetry.',
+  'path' => '/privacy/',
+  'og_title' => 'Privacy Policy | FinOpsWay',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover.jpg',
+  'image_alt' => 'FinOpsWay showing Databricks costs inside the workspace',
+];
+include __DIR__ . '/../includes/header.php';
+?>
 
   <main id="main" class="section prose">
     <h1 class="prose-title">Privacy policy</h1>
@@ -267,6 +243,3 @@
   </main>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-</body>
-
-</html>

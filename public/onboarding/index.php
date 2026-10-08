@@ -1,40 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Databricks Cost Monitoring Guide | FinOpsWay</title>
-  <meta name="description" content="Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../styles.css?v=069" />
-  <script src="../menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="stylesheet" href="./onboarding.css?v=007" />
-  <script src="./onboarding.js?v=002" defer></script>
-  <link rel="canonical" href="https://finopsway.com/onboarding/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/onboarding/" />
-  <meta property="og:title" content="Databricks Cost Monitoring Guide | FinOpsWay" />
-  <meta property="og:description" content="Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Databricks Cost Monitoring Guide | FinOpsWay" />
-  <meta name="twitter:description" content="Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-</head>
-
-<body>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Databricks Cost Monitoring Guide | FinOpsWay',
+  'description' => 'Set up FinOpsWay to monitor Databricks costs. Install the free browser extension, configure a cluster and connect your Databricks workspace.',
+  'path' => '/onboarding/',
+  'og_title' => 'Databricks Cost Monitoring Guide | FinOpsWay',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover.jpg',
+  'image_alt' => 'FinOpsWay showing Databricks costs inside the workspace',
+  'styles' => ['/onboarding/onboarding.css?v=007'],
+  'scripts' => ['/onboarding/onboarding.js?v=002'],
+];
+include __DIR__ . '/../includes/header.php';
+?>
 
   <main id="main" class="guide-layout">
     <div class="guide-content">
@@ -136,6 +112,3 @@
   </main>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-</body>
-
-</html>

@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Monitor All-Purpose Cluster Idle Time | FinOpsWay</title>
-  <meta name="description" content="Use Databricks cluster events to find all-purpose clusters that spend too long waiting for auto termination." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" /><link rel="icon" href="/img/favicon.svg" type="image/svg+xml" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../../styles.css?v=069" /><script src="../../menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="canonical" href="https://finopsway.com/guides/all-purpose-cluster-monitoring/" /><meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="article" /><meta property="og:site_name" content="FinOpsWay" /><meta property="og:locale" content="en_US" /><meta property="og:url" content="https://finopsway.com/guides/all-purpose-cluster-monitoring/" /><meta property="og:title" content="Databricks Cost Optimization: Monitor All-Purpose Cluster Idle Time" /><meta property="og:description" content="Use Databricks cluster events to find scheduled jobs on all-purpose clusters, expose idle timeout cost and prevent the pattern with policies." /><meta property="og:image" content="https://finopsway.com/guides/all-purpose-cluster-monitoring/images/original_1.jpg" /><meta property="og:image:alt" content="Databricks all-purpose cluster cost comparison and timeline" /><meta property="article:published_time" content="2026-02-02" /><meta property="article:modified_time" content="2026-10-05" /><meta property="article:author" content="https://www.linkedin.com/in/protmaks/" />
-  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Databricks Cost Optimization: Monitor All-Purpose Cluster Idle Time" /><meta name="twitter:description" content="Find scheduled jobs on all-purpose clusters, expose idle timeout cost and prevent the pattern with policies." /><meta name="twitter:image" content="https://finopsway.com/guides/all-purpose-cluster-monitoring/images/original_1.jpg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://finopsway.com/guides/all-purpose-cluster-monitoring/"},"headline":"Databricks cost optimization: monitoring all-purpose clusters with the API","description":"Use Databricks cluster events to find scheduled jobs on all-purpose clusters, expose idle timeout cost and prevent the pattern with policies.","image":"https://finopsway.com/guides/all-purpose-cluster-monitoring/images/original_1.jpg","datePublished":"2026-02-02","dateModified":"2026-10-05","author":{"@type":"Person","name":"Maksim Pachkouski","url":"https://www.linkedin.com/in/protmaks/"},"publisher":{"@type":"Organization","name":"FinOpsWay","url":"https://finopsway.com/"},"articleSection":"Databricks cost optimization","keywords":"Databricks cost optimization, all-purpose clusters, jobs compute, cluster events API, auto termination"}</script>
-</head>
-<body>
-<?php include __DIR__ . '/../../includes/header.php'; ?>
+<?php
+$page = [
+  'title' => 'Monitor All-Purpose Cluster Idle Time | FinOpsWay',
+  'description' => 'Use Databricks cluster events to find all-purpose clusters that spend too long waiting for auto termination.',
+  'path' => '/guides/all-purpose-cluster-monitoring/',
+  'og_type' => 'article',
+  'og_title' => 'Databricks Cost Optimization: Monitor All-Purpose Cluster Idle Time',
+  'og_description' => 'Use Databricks cluster events to find scheduled jobs on all-purpose clusters, expose idle timeout cost and prevent the pattern with policies.',
+  'twitter_description' => 'Find scheduled jobs on all-purpose clusters, expose idle timeout cost and prevent the pattern with policies.',
+  'image' => 'https://finopsway.com/guides/all-purpose-cluster-monitoring/images/original_1.jpg',
+  'image_alt' => 'Databricks all-purpose cluster cost comparison and timeline',
+  'published' => '2026-02-02',
+  'modified' => '2026-10-05',
+  'author' => 'https://www.linkedin.com/in/protmaks/',
+  'json_ld' => <<<'JSON'
+{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://finopsway.com/guides/all-purpose-cluster-monitoring/"},"headline":"Databricks cost optimization: monitoring all-purpose clusters with the API","description":"Use Databricks cluster events to find scheduled jobs on all-purpose clusters, expose idle timeout cost and prevent the pattern with policies.","image":"https://finopsway.com/guides/all-purpose-cluster-monitoring/images/original_1.jpg","datePublished":"2026-02-02","dateModified":"2026-10-05","author":{"@type":"Person","name":"Maksim Pachkouski","url":"https://www.linkedin.com/in/protmaks/"},"publisher":{"@type":"Organization","name":"FinOpsWay","url":"https://finopsway.com/"},"articleSection":"Databricks cost optimization","keywords":"Databricks cost optimization, all-purpose clusters, jobs compute, cluster events API, auto termination"}
+JSON,
+];
+include __DIR__ . '/../../includes/header.php';
+?>
   <main id="main" class="article-page">
     <header class="article-hero"><p class="eyebrow">Cluster monitoring</p><h1>Databricks cost optimization: monitoring all-purpose clusters with the API</h1><p class="article-standfirst">A short scheduled run can leave an all-purpose cluster waiting for auto termination. Cluster events make that idle time visible.</p><div class="author-row"><img src="../../img/maksim-profile.jpg" width="96" height="96" alt="Maksim Pachkouski" /><div><p><strong>Maksim Pachkouski</strong></p><p>Databricks MVP · February 2, 2026 · 5 min read</p><p><a href="https://medium.com/databrickscommunity/databricks-cost-optimization-api-monitoring-of-all-purpose-clusters-b7ad7ddd4702" target="_blank" rel="noopener">Original publication on Medium ↗</a></p></div></div></header>
     <article class="article-body">
@@ -50,5 +51,3 @@ events = workspace_client.clusters.events(...)</code></pre>
     </article>
   </main>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
-</body>
-</html>

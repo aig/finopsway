@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FinOpsWay - FinOps for Databricks | Track Databricks Costs</title>
-  <meta name="description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=069" />
-  <script src="./menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="canonical" href="https://finopsway.com/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/" />
-  <meta property="og:title" content="FinOpsWay - FinOps for Databricks | Track Databricks Costs" />
-  <meta property="og:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FinOpsWay - FinOps for Databricks | Track Databricks Costs" />
-  <meta name="twitter:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-  <script type="application/ld+json">
+<?php
+$page = [
+  'title' => 'FinOpsWay - FinOps for Databricks | Track Databricks Costs',
+  'description' => 'Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context.',
+  'path' => '/',
+  'og_title' => 'FinOpsWay - FinOps for Databricks | Track Databricks Costs',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover.jpg',
+  'image_alt' => 'FinOpsWay showing Databricks costs inside the workspace',
+  'json_ld' => <<<'JSON'
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -65,11 +42,11 @@
     }
   ]
 }
-  </script>
-</head>
-
-<body>
-<?php $compact = false; include __DIR__ . '/includes/header.php'; ?>
+JSON,
+  'compact' => false,
+];
+include __DIR__ . '/includes/header.php';
+?>
 
 
   <main id="main">
@@ -426,7 +403,3 @@
   </main>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
-
-</body>
-
-</html>
