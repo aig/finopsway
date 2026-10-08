@@ -1,7 +1,8 @@
 # finopsway
 
-Marketing site for the FinOpsWay browser extension. Static HTML and CSS in
-[public/](public/), no build step: edit the files and open them in a browser.
+Marketing site for the FinOpsWay browser extension. PHP pages and CSS in
+[public/](public/), no build step. Each page is an `index.php`; serve locally with
+`php -S localhost:8000 -t public`.
 
 ## Writing style
 
@@ -20,5 +21,8 @@ Marketing site for the FinOpsWay browser extension. Static HTML and CSS in
 
 - Bump the `?v=NNN` cache-buster on `styles.css` / `menu.js` links in every
   page that references them when the file changes.
-- Section copy and its styles live together: markup in `public/index.html`,
+- The site header and footer live once, in `public/includes/header.php` and
+  `public/includes/footer.php`; pages include them. Set `$compact = false`
+  before the header include only on the home page.
+- Section copy and its styles live together: markup in `public/index.php`,
   styles appended near the related block in `public/styles.css`.
