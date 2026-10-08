@@ -19,12 +19,12 @@ include __DIR__ . '/../includes/header.php';
       <div class="banner-feature-overview">
         <figure class="shot banner-feature-shot">
           <picture>
-            <img src="/img/examples/workspace-cost-popover-960.jpg" width="960" height="754" fetchpriority="high" alt="FinOpsWay cost banner in the Databricks workspace with its expanded view showing reporting periods, a chart and cost by SKU." />
+            <img src="/img/examples/workspace-cost-popover-960.jpg" width="960" height="878" fetchpriority="high" alt="FinOpsWay cost banner in the Databricks workspace with its expanded view showing reporting periods, a chart and cost by product." />
           </picture>
-          <b class="pin" style="left: 22.5%; top: 4.1%" aria-hidden="true">1</b>
-          <b class="pin" style="left: 64.0%; top: 5.7%" aria-hidden="true">2</b>
-          <b class="pin" style="left: 90.1%; top: 18.4%" aria-hidden="true">3</b>
-          <b class="pin" style="left: 65.3%; top: 61%" aria-hidden="true">4</b>
+          <b class="pin" style="left: 21.9%; top: 3.7%" aria-hidden="true">1</b>
+          <b class="pin" style="left: 64.8%; top: 3.7%" aria-hidden="true">2</b>
+          <b class="pin" style="left: 90.8%; top: 17.7%" aria-hidden="true">3</b>
+          <b class="pin" style="left: 56.7%; top: 44.3%" aria-hidden="true">4</b>
         </figure>
         <ol class="callouts banner-feature-callouts">
           <li><b>Widget on every page</b>Cost display within your workspace</li>

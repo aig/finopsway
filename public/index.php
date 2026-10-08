@@ -65,13 +65,13 @@ include __DIR__ . '/includes/header.php';
         <div class="hero_right">
           <figure class="shot">
             <picture>
-              <img src="./img/examples/workspace-cost-popover.jpg" width="1415" height="1111" fetchpriority="high"
-                alt="A Databricks workspace home page. In the top navigation, a chip reads: workspace $3.13, 24 h to 18:00, 4 h ago. Open below it, a panel with 24 h, 7 d and 14 d tabs, a bar chart whose last hours are hatched, a table of cost per SKU against the previous 24 hours, and a note that the window ends at 18:00 because billing has not reported the four hours since." />
+              <img src="./img/examples/workspace-cost-popover.jpg" width="1234" height="1129" fetchpriority="high"
+                alt="A Databricks workspace home page. In the top navigation, a chip reads: $114, Sep 8 - Oct 8, to 07:00 UTC, 4 h ago, beside 24 h, 7 d, 30 d, MTD and QTD buttons. Open below it, a panel with a three-month bar chart and the selected period marked on it, a table of cost by product against the previous period, and a note that the period ends at 07:00 UTC because billing has not reported the four hours since." />
             </picture>
-            <b class="pin" style="left: 22.5%; top: 4.1%" aria-hidden="true">1</b>
-            <b class="pin" style="left: 64.0%; top: 5.7%" aria-hidden="true">2</b>
-            <b class="pin" style="left: 90.1%; top: 18.4%" aria-hidden="true">3</b>
-            <b class="pin" style="left: 65.3%; top: 61%" aria-hidden="true">4</b>
+            <b class="pin" style="left: 21.9%; top: 3.7%" aria-hidden="true">1</b>
+            <b class="pin" style="left: 64.8%; top: 3.7%" aria-hidden="true">2</b>
+            <b class="pin" style="left: 90.8%; top: 17.7%" aria-hidden="true">3</b>
+            <b class="pin" style="left: 56.7%; top: 44.3%" aria-hidden="true">4</b>
           </figure>
         </div>
       </div>
