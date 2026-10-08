@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Databricks Genie Cost Control: Budgets and Usage Blocks | FinOpsWay</title>
-  <meta name="description" content="Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" /><link rel="icon" href="/img/favicon.svg" type="image/svg+xml" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="../../styles.css?v=069" /><script src="../../menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="canonical" href="https://finopsway.com/guides/databricks-genie-cost-control/" /><meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="article" /><meta property="og:site_name" content="FinOpsWay" /><meta property="og:locale" content="en_US" /><meta property="og:url" content="https://finopsway.com/guides/databricks-genie-cost-control/" /><meta property="og:title" content="Databricks Genie Cost Control: Budgets and Usage Blocks" /><meta property="og:description" content="Set a Genie budget, block usage at the threshold and review usage from system tables." /><meta property="og:image" content="https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg" /><meta property="og:image:alt" content="Databricks Genie cost control thumbnail" /><meta property="article:published_time" content="2026-08-17" /><meta property="article:modified_time" content="2026-10-06" /><meta property="article:author" content="https://www.linkedin.com/in/protmaks/" />
-  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Databricks Genie Cost Control: Budgets and Usage Blocks" /><meta name="twitter:description" content="Set a Genie budget, block usage at the threshold and review usage from system tables." /><meta name="twitter:image" content="https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://finopsway.com/guides/databricks-genie-cost-control/"},"headline":"Databricks Genie cost control: budgets and usage blocks","description":"Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables.","image":"https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg","datePublished":"2026-08-17","dateModified":"2026-10-06","author":{"@type":"Person","name":"Maksim Pachkouski","url":"https://www.linkedin.com/in/protmaks/"},"publisher":{"@type":"Organization","name":"FinOpsWay","url":"https://finopsway.com/"},"articleSection":"Databricks Genie cost control","keywords":"Databricks Genie, Genie budgets, block usage, Unity AI Gateway, Databricks cost control"}</script>
-</head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="masthead is-compact"><div class="head"><div class="bar"><a class="lockup" href="../../" aria-label="FinOpsWay home"><span class="wordmark"><img class="wm-s" src="../../img/FinOpsWay_logo_bl.png" width="574" height="120" alt="FinOpsWay" /></span><span class="tagline">Databricks costs, in context</span></a><nav class="nav desktop-nav" aria-label="Main navigation"><a class="nav-download" href="../../#download">Download</a><a href="../../onboarding/">Setup</a><a href="/features/">Features</a><a href="../../#why">Why</a><a href="../../#authors">Contacts</a><a href="../../security/">Security</a><a href="../" aria-current="page">Guides</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Sponsor on GitHub" title="Sponsor on GitHub"><span class="heart" aria-hidden="true">♥</span></a></nav><details class="mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav class="mobile-nav" aria-label="Main navigation"><a href="../../#download">Download</a><a href="../../onboarding/">Setup</a><a href="/features/">Features</a><a href="../../#why">Why</a><a href="../../#authors">Contacts</a><a href="../../security/">Security</a><a href="../" aria-current="page">Guides</a><a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener">Sponsor on GitHub</a></nav></details></div></div></header>
+<?php
+$page = [
+  'title' => 'Databricks Genie Cost Control: Budgets and Usage Blocks | FinOpsWay',
+  'description' => 'Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables.',
+  'path' => '/guides/databricks-genie-cost-control/',
+  'og_type' => 'article',
+  'og_title' => 'Databricks Genie Cost Control: Budgets and Usage Blocks',
+  'og_description' => 'Set a Genie budget, block usage at the threshold and review usage from system tables.',
+  'image' => 'https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg',
+  'image_alt' => 'Databricks Genie cost control thumbnail',
+  'published' => '2026-08-17',
+  'modified' => '2026-10-06',
+  'author' => 'https://www.linkedin.com/in/protmaks/',
+  'json_ld' => <<<'JSON'
+{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://finopsway.com/guides/databricks-genie-cost-control/"},"headline":"Databricks Genie cost control: budgets and usage blocks","description":"Set Databricks Genie budgets, block usage at a threshold and review Genie spend from system tables.","image":"https://finopsway.com/guides/databricks-genie-cost-control/images/image_1.jpg","datePublished":"2026-08-17","dateModified":"2026-10-06","author":{"@type":"Person","name":"Maksim Pachkouski","url":"https://www.linkedin.com/in/protmaks/"},"publisher":{"@type":"Organization","name":"FinOpsWay","url":"https://finopsway.com/"},"articleSection":"Databricks Genie cost control","keywords":"Databricks Genie, Genie budgets, block usage, Unity AI Gateway, Databricks cost control"}
+JSON,
+];
+include __DIR__ . '/../../includes/header.php';
+?>
   <main id="main" class="article-page">
     <header class="article-hero"><p class="eyebrow">Genie cost control</p><h1>Databricks Genie cost control: budgets and usage blocks</h1><p class="article-standfirst">A budget notification tells you spend has crossed a limit. A usage block stops new Genie requests at that limit.</p><div class="author-row"><img src="../../img/maksim-profile.jpg" width="96" height="96" alt="Maksim Pachkouski" /><div><p><strong>Maksim Pachkouski</strong></p><p>Databricks MVP · August 17, 2026 · 5 min read</p><p><a href="https://medium.com/databrickscommunity/databricks-genie-cost-control-how-to-set-budgets-and-block-usage-a13014c1f9ba" target="_blank" rel="noopener">Original publication on Medium ↗</a></p></div></div></header>
     <article class="article-body">
@@ -68,13 +67,4 @@ databricks account budgets get &lt;budget-id&gt; \
       <p>Budgets work best when they are part of an access and review process. A block prevents surprise spend. The usage report explains what happened and helps the team choose the next threshold.</p>
     </article>
   </main>
-  <footer class="footer"><div class="bar"><div class="footer-id"><span class="wordmark small"><img class="wm-s" src="../../img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" /></span></div><nav class="nav">
-        <a href="/security/">Security</a>
-        <a href="/cost-methodology/">Cost methodology</a>
-        <a href="/guides/">Guides</a>
-        <a href="/privacy/">Privacy policy</a>
-        <a href="https://www.linkedin.com/company/finopsway/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="footer-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg> Sponsor on GitHub</a>
-      </nav></div><p class="legal">Not affiliated with Databricks, Inc. Trademarks belong to their owners.</p></footer>
-</body>
-</html>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>

@@ -1,7 +1,8 @@
 # finopsway
 
-Marketing site for the FinOpsWay browser extension. Static HTML and CSS in
-[public/](public/), no build step: edit the files and open them in a browser.
+Marketing site for the FinOpsWay browser extension. PHP pages and CSS in
+[public/](public/), no build step. Each page is an `index.php`; serve locally with
+`php -S localhost:8000 -t public`.
 
 ## Writing style
 
@@ -18,7 +19,13 @@ Marketing site for the FinOpsWay browser extension. Static HTML and CSS in
 
 ## Conventions
 
-- Bump the `?v=NNN` cache-buster on `styles.css` / `menu.js` links in every
-  page that references them when the file changes.
-- Section copy and its styles live together: markup in `public/index.html`,
+- Shared markup lives once in `public/includes/`. `header.php` opens the
+  document (doctype, `<head>`, `<body>`, masthead) and `footer.php` closes it.
+  Each page sets a `$page` array (title, description, path, optional Open
+  Graph, article and JSON-LD fields) and includes both; the key list is at the
+  top of `header.php`. Only the home page sets `'compact' => false`.
+- Bump the `?v=NNN` cache-buster in `public/includes/header.php` when
+  `styles.css` or `menu.js` changes. Page-only assets go in `$page['styles']`
+  or `$page['scripts']` with their own cache-buster.
+- Section copy and its styles live together: markup in `public/index.php`,
   styles appended near the related block in `public/styles.css`.

@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FinOpsWay - FinOps for Databricks | Track Databricks Costs</title>
-  <meta name="description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=069" />
-  <script src="./menu.js?v=006" defer></script>
-  <script data-goatcounter="https://s.finopsway.com/count"
-          async src="//s.finopsway.com/count.js"></script>
-  <link rel="canonical" href="https://finopsway.com/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="FinOpsWay" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://finopsway.com/" />
-  <meta property="og:title" content="FinOpsWay - FinOps for Databricks | Track Databricks Costs" />
-  <meta property="og:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <meta property="og:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta property="og:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FinOpsWay - FinOps for Databricks | Track Databricks Costs" />
-  <meta name="twitter:description" content="Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context." />
-  <meta name="twitter:image" content="https://finopsway.com/img/examples/workspace-cost-popover.jpg" />
-  <meta name="twitter:image:alt" content="FinOpsWay showing Databricks costs inside the workspace" />
-  <script type="application/ld+json">
+<?php
+$page = [
+  'title' => 'FinOpsWay - FinOps for Databricks | Track Databricks Costs',
+  'description' => 'Track Databricks costs in your workspace with FinOpsWay, a free FinOps browser extension. View spending for jobs, clusters and pipelines in context.',
+  'path' => '/',
+  'og_title' => 'FinOpsWay - FinOps for Databricks | Track Databricks Costs',
+  'image' => 'https://finopsway.com/img/examples/workspace-cost-popover.jpg',
+  'image_alt' => 'FinOpsWay showing Databricks costs inside the workspace',
+  'json_ld' => <<<'JSON'
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -65,47 +42,11 @@
     }
   ]
 }
-  </script>
-</head>
-
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="masthead">
-    <div class="head">
-    <div class="bar">
-      <a class="lockup" href="./" aria-label="FinOpsWay home">
-        <span class="wordmark">
-          <img class="wm-s" src="./img/FinOpsWay_logo_bl.png" width="574" height="120" alt="FinOpsWay" />
-        </span>
-        <span class="tagline">Databricks costs, in context</span>
-      </a>
-      <nav class="nav desktop-nav">
-        <a class="nav-download" href="#download">Download</a>
-        <a href="./onboarding/">Setup</a>
-        <a href="/features/">Features</a>
-        <a href="#why">Why</a>
-        <a href="#authors">Contacts</a>
-        <a href="./security/">Security</a>
-        <a href="./guides/">Guides</a>
-        <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener" aria-label="Sponsor on GitHub" title="Sponsor on GitHub"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg></a>
-      </nav>
-      <details class="mobile-menu">
-        <summary>Menu <span aria-hidden="true">☰</span></summary>
-        <nav class="mobile-nav" aria-label="Main navigation">
-          <a href="#download">Download</a>
-          <a href="./onboarding/">Setup</a>
-          <a href="/features/">Features</a>
-          <a href="#why">Why</a>
-          <a href="#authors">Contacts</a>
-          <a href="./security/">Security</a>
-          <a href="./guides/">Guides</a>
-          <a class="nav-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg> Sponsor on GitHub</a>
-        </nav>
-      </details>
-    </div>
-    </div>
-  </header>
+JSON,
+  'compact' => false,
+];
+include __DIR__ . '/includes/header.php';
+?>
 
 
   <main id="main">
@@ -461,28 +402,4 @@
 
   </main>
 
-  <footer class="footer">
-    <div class="bar">
-      <div class="footer-id">
-        <span class="wordmark small">
-        <img class="wm-s" src="./img/FinOpsWay_logo.png" width="574" height="120" alt="FinOpsWay" />
-        </span>
-      </div>
-      <nav class="nav">
-        <a href="/security/">Security</a>
-        <a href="/cost-methodology/">Cost methodology</a>
-        <a href="/guides/">Guides</a>
-        <a href="/privacy/">Privacy policy</a>
-        <a href="https://www.linkedin.com/company/finopsway/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="footer-support" href="https://github.com/sponsors/aig" target="_blank" rel="noopener"><svg class="heart" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"/></svg> Sponsor on GitHub</a>
-      </nav>
-    </div>
-    <p class="legal">
-      Not affiliated with Databricks, Inc. Trademarks belong to their owners.
-      <a href="/privacy/#trademarks">Full notice</a>.
-    </p>
-  </footer>
-
-</body>
-
-</html>
+<?php include __DIR__ . '/includes/footer.php'; ?>
