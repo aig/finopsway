@@ -18,7 +18,7 @@ $compact = $page['compact'] ?? true;
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css?v=069" />
+  <link rel="stylesheet" href="/styles.css?v=070" />
   <script src="/menu.js?v=006" defer></script>
 <?php foreach ($page['styles'] ?? [] as $href): ?>
   <link rel="stylesheet" href="<?= $e($href) ?>" />
