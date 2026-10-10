@@ -1242,7 +1242,7 @@ picture { display: contents; }
 .author-row p:last-child { color: var(--fg-soft); }
 .article-body { margin: 0 auto; }
 .article-body > p { margin: 0 0 22px; }
-.article-body h2 { margin: 42px 0 15px; color: var(--ink); font-size: clamp(25px, 3vw, 33px); line-height: 1.15; letter-spacing: -.025em; }
+.article-body h2 { color: var(--ink); font-size: clamp(25px, 3vw, 33px); line-height: 1.15; letter-spacing: -.025em; }
 .article-body figure { margin: 36px 0; }
 .article-body figure img { display: block; width: 70%; height: auto; margin-inline: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--pale); }
 .article-body figcaption { margin-top: 9px; color: var(--fg-soft); font-size: 14px; line-height: 1.4; }
