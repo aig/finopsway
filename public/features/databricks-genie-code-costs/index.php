@@ -13,7 +13,7 @@ include __DIR__ . '/../../includes/header.php';
   <main id="main" class="article-page feature-page">
     <header class="article-hero"><p class="eyebrow">FinOpsWay features</p><h1>Databricks Genie Code Costs</h1><p class="article-standfirst">Genie Code usage is metered in DBUs. Genie Code support is coming soon in FinOpsWay. This page explains the billing information it will show.</p></header>
     <div class="article-body">
-      <div class="feature-image-placeholder" role="img" aria-label="Genie Code cost coming soon in FinOpsWay">coming soon in FinOpsWay</div>
+      <figure><picture><img src="/img/examples/genie_code.jpg" width="721" height="510" loading="lazy" alt="FinOpsWay cost badge on the Databricks Genie Code new chat screen." /></picture><figcaption>FinOpsWay shows the reported cost on the Databricks Genie Code screen.</figcaption></figure>
       <h2 id="cost-context">How is Genie Code billed?</h2>
       <p>Each identified user receives 150 free DBUs each month. Usage beyond that allowance is billed. Service principals do not receive the allowance.</p>
       <section class="pricing-in-feature" aria-labelledby="genie-code-rates-title">
@@ -35,6 +35,6 @@ include __DIR__ . '/../../includes/header.php';
       <h3>Does a Genie budget include query compute?</h3><p>No. A Genie budget tracks LLM usage. Compute used to run queries, such as a SQL warehouse, is billed separately.</p>
       <p class="feature-limits">Billing data updates every few hours. Check the reported period and freshness. <a href="/cost-methodology/">How FinOpsWay calculates costs</a>.</p>
     </div>
-    <aside class="feature-sidebar" aria-label="All FinOpsWay features"><p class="feature-sidebar-title">All costs features</p><nav><a href="/features/">Cost Banner</a><div class="feature-sidebar-group"><a href="/features/databricks-cluster-costs/">Clusters</a><div class="feature-sidebar-subnav"><a href="/features/databricks-serverless-cluster-costs/">Serverless Clusters</a><a href="/features/databricks-sql-warehouse-costs/">SQL Warehouses</a><a href="/features/databricks-all-purpose-cluster-costs/">All-Purpose Clusters</a></div></div><div class="feature-sidebar-group"><a href="/features/databricks-job-costs/">Jobs and Pipelines</a><div class="feature-sidebar-subnav"><a href="/features/databricks-job-run-costs/">Job Runs</a></div></div><a href="/features/databricks-notebook-costs/">Notebooks</a><a href="/features/databricks-apps-costs/">Databricks Apps</a><a href="/features/databricks-lakebase-costs/">Lakebase (Postgres)</a><div class="feature-sidebar-group"><a href="/features/databricks-genie-agent-usage/">Genie</a><div class="feature-sidebar-subnav"><a href="/features/databricks-genie-agent-usage/">Genie Agents</a><a href="/features/databricks-genie-code-costs/" aria-current="page">Genie Code</a></div></div><a href="/features/databricks-serving-endpoint-costs/">Serving Endpoint</a></nav></aside>
+    <?php include __DIR__ . '/../../includes/feature-sidebar.php'; ?>
   </main>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
