@@ -56,7 +56,7 @@ include __DIR__ . '/includes/header.php';
         <div class="hero_left">
           <h1><span class="finopsway-title">FinOpsWay</span>: Track Databricks costs in the <img class="wm-s databricks-mark" src="./img/databricks_logo.png" width="1420" height="224" alt="Databricks" /> interface</h1>
           <p class="standfirst">
-            FinOpsWay is a free FinOps <a href="./features/">browser extension for Databricks</a>. Track Databricks costs directly in your workspace, alongside your jobs, clusters, and pipelines.
+            FinOpsWay is a free FinOps browser extension for Databricks. Track Databricks costs directly in your workspace, alongside your jobs, clusters, and pipelines.
           </p>
           <p class="standfirst">
             Costs are not real time. Databricks publishes billing data with a delay of at least a few hours.
