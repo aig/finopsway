@@ -100,7 +100,7 @@ include __DIR__ . '/includes/header.php';
     <section class="section" id="download">
       <h2>Download the FinOps extension for Databricks</h2>
       <p class="lead">
-        FinOpsWay is available in the Chrome Web Store and on Firefox Add-ons. It is free and does not need an account.
+        FinOpsWay is available in the Chrome Web Store and on Firefox Add-ons. It is free and does not need an account.<br>
         <a href="./onboarding/">Read the setup guide for creating and configuring a cluster</a>.
       </p>
       <div class="download-grid">
