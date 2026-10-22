@@ -141,7 +141,7 @@ include __DIR__ . '/includes/header.php';
       <div class="examples-route">
       <div class="examples-intro">
         <h2 id="examples-title">Databricks cost monitoring features</h2>
-        <p>FinOpsWay places cost context next to the Databricks resources you use every day. <a href="./features/">Explore All costs features</a>.</p>
+        <p>FinOpsWay places cost context next to the Databricks resources you use every day.<br><a href="./features/">Explore All costs features</a>.</p>
       </div>
       <div class="examples-stories">
         <article class="example-story">
